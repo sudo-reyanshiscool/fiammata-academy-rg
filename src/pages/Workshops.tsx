@@ -38,7 +38,7 @@ export default function Workshops() {
             </div>
             <h3 className="font-display-hero text-[28px] font-extrabold text-white mb-2 uppercase tracking-wide relative z-10">Fiammata Masterclass</h3>
             <p className="text-[12px] uppercase tracking-widest text-primary font-bold mb-4 relative z-10">
-              Hosts: Swastik Katiyar, Shaureya Vardhan, Vedant Jain
+              Hosts: Swastik Katiyar, Shaurea Vardhan, Vedant Jain
             </p>
             <p className="text-[15px] text-white/50 mb-8 flex-1 font-sans relative z-10 leading-relaxed max-w-xl">
               An elite, hands-on masterclass covering everything from enterprise portfolio scaling and project management to aerodynamic car optimization.

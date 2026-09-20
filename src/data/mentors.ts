@@ -35,11 +35,11 @@ export const mentors: Mentor[] = [
   },
   {
     id: "mentor-3",
-    name: "Shaureya Vardhan",
+    name: "Shaurea Vardhan",
     role: "Project Management Lead",
-    image: "/images/shaureya.png",
+    image: "/images/shaurea.png",
     expertise: ["Project Management", "Portfolio Design", "Logistics", "Team Organization"],
-    description: "Shaureya created the highest-scoring Project Management Portfolio of the season, earning a prestigious national nomination. He is an expert in navigating the chaos of a racing season, guiding teams through diverse management categories, strict timeline execution, and building bulletproof documentation that judges love.",
+    description: "Shaurea created the highest-scoring Project Management Portfolio of the season, earning a prestigious national nomination. He is an expert in navigating the chaos of a racing season, guiding teams through diverse management categories, strict timeline execution, and building bulletproof documentation that judges love.",
     categories: ["project-management"],
     phone: "918300000202",
     email: "SHAUREA306150085@genesisgs.edu.in"
