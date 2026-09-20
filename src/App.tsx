@@ -18,6 +18,8 @@ import MentorDashboard from './pages/MentorDashboard';
 import MentorLogin from './pages/MentorLogin';
 import MentorSignup from './pages/MentorSignup';
 import AuthPortal from './pages/AuthPortal';
+import ForgotPassword from './pages/ForgotPassword';
+import UpdatePassword from './pages/UpdatePassword';
 
 // Protected Route Component
 function ProtectedRoute({ children, mentorOnly = false }: { children: React.ReactNode, mentorOnly?: boolean }) {
@@ -58,6 +60,10 @@ function AnimatedPageRoutes() {
         {/* Mentor Auth */}
         <Route path="mentor/login" element={<PageTransition><MentorLogin /></PageTransition>} />
         <Route path="mentor/signup" element={<PageTransition><MentorSignup /></PageTransition>} />
+        
+        {/* Auth Routes */}
+        <Route path="forgot-password" element={<PageTransition><ForgotPassword /></PageTransition>} />
+        <Route path="update-password" element={<PageTransition><UpdatePassword /></PageTransition>} />
         
         {/* Protected Student Routes */}
         <Route path="request/:mentorId" element={

@@ -76,7 +76,10 @@ export default function MentorLogin() {
             />
           </div>
           <div>
-            <label className="block text-[11px] font-bold uppercase tracking-widest text-white/50 mb-1.5">Secure Password</label>
+            <div className="flex items-center justify-between mb-1.5">
+              <label className="block text-[11px] font-bold uppercase tracking-widest text-white/50">Secure Password</label>
+              <Link to="/forgot-password" className="text-[10px] font-bold text-primary hover:underline uppercase tracking-widest">Forgot?</Link>
+            </div>
             <input 
               type="password" 
               value={password}
