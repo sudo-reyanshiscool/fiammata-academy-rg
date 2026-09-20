@@ -20,6 +20,7 @@ import MentorSignup from './pages/MentorSignup';
 import AuthPortal from './pages/AuthPortal';
 import ForgotPassword from './pages/ForgotPassword';
 import UpdatePassword from './pages/UpdatePassword';
+import Preloader from './components/Preloader';
 
 // Protected Route Component
 function ProtectedRoute({ children, mentorOnly = false }: { children: React.ReactNode, mentorOnly?: boolean }) {
@@ -92,6 +93,7 @@ function App() {
     <AuthProvider>
       <ToastProvider>
         <Router>
+          <Preloader />
           <OnboardingGuard>
             <Routes>
               <Route path="/onboarding" element={<Onboarding />} />
