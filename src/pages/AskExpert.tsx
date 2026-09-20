@@ -11,11 +11,19 @@ export default function AskExpert() {
     
     if (!question.trim()) return;
 
+    let recipients = '';
+    if (category === 'Engineering & Car') {
+      recipients = 'VEDANT306150099@genesisgs.edu.in';
+    } else {
+      // Non-engineering categories go to Shaurea, Swastik, and Naisha
+      recipients = 'SHAUREA306150085@genesisgs.edu.in,Swastik316250206@genesisgs.edu.in,naisha@fiammata.com';
+    }
+
     const subject = encodeURIComponent(`Expert Question: ${category}`);
     const body = encodeURIComponent(`From: ${user?.email || 'Guest'}\nCategory: ${category}\n\nQuestion:\n${question}`);
     
     // Open default mail client
-    window.location.href = `mailto:fiammataracingf1@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${recipients}?subject=${subject}&body=${body}`;
   };
 
   return (
