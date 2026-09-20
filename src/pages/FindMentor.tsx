@@ -24,7 +24,7 @@ export default function FindMentor() {
   const [searchQuery, setSearchQuery] = useState('');
 
   const filteredMentors = mentors.filter(mentor => {
-    const matchesCategory = currentCategory === 'all' || mentor.categories.includes(currentCategory);
+    const matchesCategory = currentCategory === 'all' || mentor.categories.some(c => c.toLowerCase() === currentCategory.toLowerCase());
     const searchString = `${mentor.name} ${mentor.expertise.join(' ')} ${mentor.description}`.toLowerCase();
     const matchesQuery = !searchQuery || searchString.includes(searchQuery.toLowerCase());
     return matchesCategory && matchesQuery;
@@ -78,10 +78,13 @@ export default function FindMentor() {
               {CATEGORIES.map(cat => (
                 <button
                   key={cat.id}
-                  onClick={() => setCurrentCategory(cat.id)}
+                  onClick={() => {
+                    setCurrentCategory(cat.id);
+                    setSearchQuery(''); // Clear search to prevent stale queries from hiding category results
+                  }}
                   className={`px-5 py-2.5 rounded text-[12px] font-bold tracking-widest uppercase transition-all duration-300 ${
                     currentCategory === cat.id 
-                      ? 'bg-primary text-white shadow-[0_0_15px_rgba(217,56,45,0.4)] border border-primary' 
+                      ? 'bg-primary text-white shadow-[0_0_15px_rgba(200,16,46,0.4)] border border-primary' 
                       : 'bg-white/5 text-white/50 hover:bg-white/10 hover:text-white border border-white/10'
                   }`}
                 >
@@ -96,7 +99,10 @@ export default function FindMentor() {
               {COMMON_CHALLENGES.map(challenge => (
                 <button
                   key={challenge}
-                  onClick={() => setSearchQuery(challenge)}
+                  onClick={() => {
+                    setSearchQuery(challenge);
+                    setCurrentCategory('all');
+                  }}
                   className="px-3 py-1.5 rounded bg-[#0a0a0a] border border-white/10 text-[11px] font-bold uppercase tracking-wide text-white/70 hover:border-primary/50 hover:text-white transition-colors"
                 >
                   {challenge}
