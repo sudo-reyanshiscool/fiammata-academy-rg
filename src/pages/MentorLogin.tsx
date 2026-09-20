@@ -25,7 +25,7 @@ export default function MentorLogin() {
       'swastik316250206@genesisgs.edu.in',
       'vedant306150099@genesisgs.edu.in',
       'shaurea306150085@genesisgs.edu.in',
-      'naisha@fiammata.com'
+      'naishasingla@gmail.com'
     ];
     
     if (!mentorWhitelist.includes(email.toLowerCase())) {

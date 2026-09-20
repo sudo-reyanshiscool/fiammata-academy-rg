@@ -51,6 +51,8 @@ export const mentors: Mentor[] = [
     image: "https://ui-avatars.com/api/?name=Naisha+Singla&background=D9382D&color=fff&size=512&font-size=0.35&bold=true",
     expertise: ["Enterprise Portfolio", "Sustainability", "Marketing", "Sponsorship Pitching", "Verbal Presentation"],
     description: "Competing on the global stage, Naisha created the highest-scoring Enterprise Portfolio at the 2025 World Finals. Her strategic vision secured a World Finals nomination in Marketing & Sponsorship and won the coveted Sustainability Award. She provides elite-level guidance on global standards, corporate sustainability integration, and world-class presentation delivery.",
-    categories: ["enterprise", "presentation"]
+    categories: ["enterprise", "presentation"],
+    phone: "919625164852",
+    email: "naishasingla@gmail.com"
   }
 ];

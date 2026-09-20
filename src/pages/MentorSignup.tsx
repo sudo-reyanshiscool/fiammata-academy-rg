@@ -25,7 +25,7 @@ export default function MentorSignup() {
       'swastik316250206@genesisgs.edu.in': 'mentor-1',
       'vedant306150099@genesisgs.edu.in': 'mentor-2',
       'shaurea306150085@genesisgs.edu.in': 'mentor-3',
-      'naisha@fiammata.com': 'mentor-4' // TBD placeholder
+      'naishasingla@gmail.com': 'mentor-4'
     };
 
     const userEmail = email.toLowerCase();

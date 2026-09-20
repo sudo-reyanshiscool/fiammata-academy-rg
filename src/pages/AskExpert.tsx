@@ -16,7 +16,7 @@ export default function AskExpert() {
       recipients = 'VEDANT306150099@genesisgs.edu.in';
     } else {
       // Non-engineering categories go to Shaurea, Swastik, and Naisha
-      recipients = 'SHAUREA306150085@genesisgs.edu.in,Swastik316250206@genesisgs.edu.in,naisha@fiammata.com';
+      recipients = 'SHAUREA306150085@genesisgs.edu.in,Swastik316250206@genesisgs.edu.in,naishasingla@gmail.com';
     }
 
     const subject = encodeURIComponent(`Expert Question: ${category}`);
