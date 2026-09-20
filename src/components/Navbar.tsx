@@ -1,5 +1,6 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { useToast } from '../context/ToastContext';
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
 
@@ -7,56 +8,52 @@ function ConfirmSignOutButton({ onConfirm }: { onConfirm: () => void }) {
   const [isConfirming, setIsConfirming] = useState(false);
 
   return (
-    <button
-      onClick={() => {
-        if (isConfirming) {
-          onConfirm();
-        } else {
-          setIsConfirming(true);
-        }
-      }}
-      onMouseLeave={() => setIsConfirming(false)}
-      className={`relative overflow-hidden px-4 py-2 rounded border text-[11px] uppercase tracking-widest font-bold transition-all w-[100px] flex justify-center ${
-        isConfirming 
-          ? 'bg-[#C8102E]/20 text-[#C8102E] border-[#C8102E]/50 shadow-[0_0_15px_rgba(200,16,46,0.2)]' 
-          : 'bg-white/5 hover:bg-white/10 border-white/10 text-white'
-      }`}
-    >
+    <div className="relative">
       <AnimatePresence mode="wait">
         {isConfirming ? (
-          <motion.span
+          <motion.button
             key="confirm"
-            initial={{ y: 10, opacity: 0 }}
+            initial={{ y: -10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -10, opacity: 0 }}
-            transition={{ duration: 0.15 }}
-            className="absolute"
+            exit={{ y: 10, opacity: 0 }}
+            onClick={() => {
+              onConfirm();
+              setIsConfirming(false);
+            }}
+            className="text-[12px] font-bold text-red-500 hover:text-red-400 transition-colors uppercase tracking-widest whitespace-nowrap bg-red-500/10 px-3 py-1.5 rounded"
           >
-            Confirm?
-          </motion.span>
+            CONFIRM OUT
+          </motion.button>
         ) : (
-          <motion.span
+          <motion.button
             key="signout"
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: -10, opacity: 0 }}
-            transition={{ duration: 0.15 }}
-            className="absolute"
+            onClick={() => setIsConfirming(true)}
+            className="text-[12px] font-bold text-white/50 hover:text-white transition-colors uppercase tracking-widest whitespace-nowrap"
           >
-            Sign Out
-          </motion.span>
+            SIGN OUT
+          </motion.button>
         )}
       </AnimatePresence>
-      <span className="opacity-0">Sign Out</span>
-    </button>
+    </div>
   );
 }
 
 export default function Navbar() {
   const location = useLocation();
+  const navigate = useNavigate();
   const { user, isMentor, signOut } = useAuth();
+  const { addToast } = useToast();
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const handleSignOut = async () => {
+    await signOut();
+    addToast('Connection severed. You have successfully signed out.', 'success');
+    navigate('/');
+  };
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 50);
@@ -138,7 +135,7 @@ export default function Navbar() {
                   My Requests
                 </Link>
               )}
-              <ConfirmSignOutButton onConfirm={signOut} />
+              <ConfirmSignOutButton onConfirm={handleSignOut} />
             </div>
           ) : (
             <Link 
