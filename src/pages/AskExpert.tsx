@@ -13,7 +13,7 @@ export default function AskExpert() {
 
     let recipients = '';
     if (category === 'Engineering & Car') {
-      recipients = 'VEDANT306150099@genesisgs.edu.in';
+      recipients = 'VEDANT306150099@genesisgs.edu.in,reyansh@fiammata.com';
     } else {
       // Non-engineering categories go to Shaurea, Swastik, and Naisha
       recipients = 'SHAUREA306150085@genesisgs.edu.in,Swastik316250206@genesisgs.edu.in,naishasingla@gmail.com';

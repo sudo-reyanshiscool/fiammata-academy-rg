@@ -62,7 +62,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       'swastik316250206@genesisgs.edu.in': 'mentor-1',
       'vedant306150099@genesisgs.edu.in': 'mentor-2',
       'shaurea306150085@genesisgs.edu.in': 'mentor-3',
-      'naishasingla@gmail.com': 'mentor-4'
+      'naishasingla@gmail.com': 'mentor-4',
+      'reyansh@fiammata.com': 'mentor-5'
     };
 
     const userEmail = user.email.toLowerCase();
