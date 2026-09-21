@@ -10,7 +10,7 @@ interface MentorCardProps {
 export default function MentorCard({ mentor }: MentorCardProps) {
   return (
     <TiltCard>
-      <article className="group relative flex flex-col justify-between bg-gradient-to-br from-[#C8102E] to-[#8B0000] rounded-2xl overflow-hidden shadow-[0_8px_24px_rgba(217,56,45,0.2)] transition-all duration-500 hover:shadow-[0_20px_40px_rgba(217,56,45,0.5)] border border-[#C8102E] cursor-pointer h-full">
+      <article className="group relative flex flex-col justify-between bg-gradient-to-br from-[#C8102E] to-[#8B0000] rounded-2xl overflow-hidden shadow-[0_8px_24px_rgba(217,56,45,0.2)] transition-all duration-500 hover:shadow-[0_20px_40px_rgba(217,56,45,0.5)] border border-[#C8102E] cursor-pointer h-full btn-spring">
       
       {/* Glare Effect */}
       <div className="absolute inset-0 -translate-x-[150%] bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-30deg] group-hover:animate-[glare_1s_ease-in-out_forwards] z-30 pointer-events-none" />
@@ -30,7 +30,7 @@ export default function MentorCard({ mentor }: MentorCardProps) {
         {/* Floating Role Badge */}
         <div className="absolute bottom-4 left-5 right-5 flex justify-between items-end">
           <div>
-            <h2 className="font-display-hero text-2xl sm:text-[28px] font-extrabold text-white tracking-tight leading-none mb-1 drop-shadow-md">
+            <h2 className="font-display-hero text-2xl sm:text-[28px] font-extrabold text-white optical-display leading-none mb-1 drop-shadow-md">
               {mentor.name.toUpperCase()}
             </h2>
             <p className="text-[13px] font-bold text-white/90 uppercase tracking-widest drop-shadow">{mentor.role.split(' Lead')[0]}</p>
@@ -68,13 +68,15 @@ export default function MentorCard({ mentor }: MentorCardProps) {
         <div className="flex items-center gap-2 pt-4 border-t border-white/20 mt-auto">
           <Link 
             to={`/request/${mentor.id}`} 
-            className="flex-1 inline-flex items-center justify-center h-10 rounded bg-white hover:bg-white/90 text-[#C8102E] font-bold text-[13px] uppercase tracking-wide transition-all shadow-md group-hover:shadow-lg"
+            className="flex-1 inline-flex items-center justify-center h-10 rounded bg-white hover:bg-white/90 text-[#C8102E] font-bold text-[13px] uppercase tracking-wide transition-all shadow-md group-hover:shadow-lg btn-spring"
+            onClick={(e) => e.stopPropagation()}
           >
             Request
           </Link>
           <Link 
             to={`/mentor/${mentor.id}`} 
-            className="flex-1 inline-flex items-center justify-center h-10 rounded bg-black/20 hover:bg-black/30 text-white font-bold text-[13px] uppercase tracking-wide transition-colors"
+            className="flex-1 inline-flex items-center justify-center h-10 rounded bg-black/20 hover:bg-black/30 text-white font-bold text-[13px] uppercase tracking-wide transition-colors btn-spring"
+            onClick={(e) => e.stopPropagation()}
           >
             Profile
           </Link>

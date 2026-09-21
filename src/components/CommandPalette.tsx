@@ -80,9 +80,17 @@ export default function CommandPalette() {
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: -20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: -20 }}
-            transition={{ duration: 0.15, ease: "easeOut" }}
-            className="relative w-full max-w-[600px] bg-[#0a0a0a] border border-white/10 rounded-2xl shadow-2xl overflow-hidden pointer-events-auto cursor-auto flex flex-col"
+            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            transition={{ type: "spring", bounce: 0, duration: 0.4 }}
+            drag="y"
+            dragConstraints={{ top: 0, bottom: 0 }}
+            dragElastic={0.2}
+            onDragEnd={(_, info) => {
+              if (info.offset.y > 100 || info.velocity.y > 500) {
+                setIsOpen(false);
+              }
+            }}
+            className="relative w-full max-w-[600px] glass-panel rounded-2xl shadow-2xl overflow-hidden pointer-events-auto flex flex-col"
           >
             <div className="flex items-center px-4 border-b border-white/10">
               <span className="material-symbols-outlined text-white/50 text-xl mr-3">search</span>
@@ -109,7 +117,7 @@ export default function CommandPalette() {
                 filteredActions.map((action, index) => (
                   <div
                     key={action.name}
-                    className={`px-4 py-3 mx-2 rounded-lg cursor-pointer flex items-center gap-3 transition-colors ${
+                    className={`px-4 py-3 mx-2 rounded-lg cursor-pointer flex items-center gap-3 transition-colors btn-spring ${
                       index === selectedIndex 
                         ? 'bg-primary/20 text-white border border-primary/30' 
                         : 'text-white/60 hover:bg-white/5'

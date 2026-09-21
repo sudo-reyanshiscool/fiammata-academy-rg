@@ -90,23 +90,22 @@ export default function Navbar() {
         className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none"
       >
         <motion.div 
+          initial={false}
           animate={{
-            width: isScrolled ? "95%" : "100%",
-            maxWidth: isScrolled ? "1200px" : "100%",
-            borderRadius: isScrolled ? "100px" : "0px",
-            backgroundColor: isScrolled ? "rgba(10, 10, 10, 0.75)" : "rgba(0, 0, 0, 0.9)",
-            borderBottomColor: isScrolled ? "rgba(255, 255, 255, 0.15)" : "rgba(255, 255, 255, 0.05)",
+            width: isScrolled ? "min(100%, 1140px)" : "100%",
+            borderRadius: isScrolled ? "16px" : "0px",
+            y: isScrolled ? 16 : 0,
             borderTopColor: isScrolled ? "rgba(255, 255, 255, 0.15)" : "transparent",
             borderLeftColor: isScrolled ? "rgba(255, 255, 255, 0.15)" : "transparent",
             borderRightColor: isScrolled ? "rgba(255, 255, 255, 0.15)" : "transparent",
             boxShadow: isScrolled ? "0 20px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05) inset" : "0 4px 30px rgba(0,0,0,0.5)",
             height: isScrolled ? "64px" : "72px"
           }}
-          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="pointer-events-auto backdrop-blur-xl border flex items-center justify-between px-6 lg:px-10 overflow-hidden relative"
+          transition={{ type: "spring", bounce: 0, duration: 0.4 }}
+          className="pointer-events-auto glass-panel flex items-center justify-between px-6 lg:px-10 overflow-hidden relative"
         >
           <div className="flex items-center gap-3 relative z-10">
-            <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3.5 group whitespace-nowrap">
+            <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3.5 group whitespace-nowrap btn-spring">
               <img 
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDixOz_aPV5S18pmP1os4spfKgu8ymEWq0kj8m9olfFVmxFNEt--bdb5BuhKh0pIhmBkzCOHenEvTyehgKyyOi7OcVBA-Tzb_zvwAstMkkwvfoltZwvJBcyt0Csr-alwTzaL8QnzwgxCN3MG8g9bA6B9FA-yIozUyhXgQZc2y7v-x7ytniNu6S_8RfwNSsB7iconm6rB4ARTmYyoHeLETOZkE46lsjZUXAsdb3lXJ0bsQRBC6lF8MNR73agijG6x2eKaQ" 
                 alt="Fiammata Racing" 
@@ -114,17 +113,17 @@ export default function Navbar() {
               />
               <div className="h-6 w-px bg-white/10 hidden sm:block"></div>
               <div className="hidden sm:flex flex-col leading-tight">
-                <span className="font-extrabold text-[13px] tracking-wider text-white uppercase font-display-hero">FIAMMATA ACADEMY</span>
+                <span className="font-extrabold text-[13px] tracking-wider text-white uppercase optical-display font-display-hero">FIAMMATA ACADEMY</span>
                 <span className="text-[9px] font-bold tracking-[0.2em] text-primary uppercase drop-shadow-[0_0_8px_rgba(220,20,60,0.8)]">MENTORSHIP</span>
               </div>
             </Link>
           </div>
           
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8 relative z-10 whitespace-nowrap">
-            <Link to="/" className={linkClass("/")}>Home</Link>
-            <Link to="/find-a-mentor" className={linkClass("/find-a-mentor")}>Find a Mentor</Link>
-            <Link to="/ask-an-expert" className={linkClass("/ask-an-expert")}>Ask an Expert</Link>
-            <Link to="/workshops" className={linkClass("/workshops")}>Workshops</Link>
+            <Link to="/" className={`${linkClass("/")} btn-spring`}>Home</Link>
+            <Link to="/find-a-mentor" className={`${linkClass("/find-a-mentor")} btn-spring`}>Find a Mentor</Link>
+            <Link to="/ask-an-expert" className={`${linkClass("/ask-an-expert")} btn-spring`}>Ask an Expert</Link>
+            <Link to="/workshops" className={`${linkClass("/workshops")} btn-spring`}>Workshops</Link>
           </nav>
           
           <div className="flex items-center gap-3 relative z-10">
@@ -133,26 +132,26 @@ export default function Navbar() {
                 {isMentor ? (
                   <Link 
                     to="/mentor/dashboard" 
-                    className="hidden lg:inline-flex items-center px-4 py-2 rounded text-[11px] font-bold bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 transition-colors uppercase tracking-widest whitespace-nowrap"
+                    className="hidden lg:inline-flex items-center px-4 py-2 rounded text-[11px] font-bold bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 uppercase tracking-widest whitespace-nowrap btn-spring"
                   >
                     Command Center
                   </Link>
                 ) : (
                   <Link 
                     to="/my-requests" 
-                    className="hidden lg:inline-flex items-center px-4 py-2 rounded text-[11px] font-bold text-white hover:bg-white/5 transition-colors border border-white/10 uppercase tracking-widest whitespace-nowrap"
+                    className="hidden lg:inline-flex items-center px-4 py-2 rounded text-[11px] font-bold text-white hover:bg-white/5 border border-white/10 uppercase tracking-widest whitespace-nowrap btn-spring"
                   >
                     My Requests
                   </Link>
                 )}
-                <div className="hidden lg:block">
+                <div className="hidden lg:block btn-spring">
                   <ConfirmSignOutButton onConfirm={handleSignOut} />
                 </div>
               </div>
             ) : (
               <Link 
                 to="/auth-portal"
-                className="hidden lg:block text-[12px] font-bold text-white/50 hover:text-white transition-colors ml-2 uppercase tracking-widest whitespace-nowrap"
+                className="hidden lg:block text-[12px] font-bold text-white/50 hover:text-white transition-colors ml-2 uppercase tracking-widest whitespace-nowrap btn-spring"
               >
                 Log In
               </Link>
@@ -160,7 +159,7 @@ export default function Navbar() {
 
             {/* Mobile Menu Toggle Button */}
             <button 
-              className="lg:hidden flex items-center justify-center w-10 h-10 rounded bg-white/5 text-white/70 hover:text-white hover:bg-white/10 transition-colors"
+              className="lg:hidden flex items-center justify-center w-10 h-10 rounded bg-white/5 text-white/70 hover:text-white hover:bg-white/10 btn-spring"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               <span className="material-symbols-outlined text-[20px]">
@@ -178,14 +177,14 @@ export default function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-[#000000] pt-24 px-6 pb-6 flex flex-col overflow-y-auto"
+            transition={{ type: "spring", bounce: 0, duration: 0.4 }}
+            className="fixed inset-0 z-40 glass-panel pt-24 px-6 pb-6 flex flex-col overflow-y-auto"
           >
             <div className="flex flex-col gap-2 flex-1">
-              <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className={mobileLinkClass("/")}>Home</Link>
-              <Link to="/find-a-mentor" onClick={() => setIsMobileMenuOpen(false)} className={mobileLinkClass("/find-a-mentor")}>Find a Mentor</Link>
-              <Link to="/ask-an-expert" onClick={() => setIsMobileMenuOpen(false)} className={mobileLinkClass("/ask-an-expert")}>Ask an Expert</Link>
-              <Link to="/workshops" onClick={() => setIsMobileMenuOpen(false)} className={mobileLinkClass("/workshops")}>Workshops</Link>
+              <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className={`${mobileLinkClass("/")} btn-spring`}>Home</Link>
+              <Link to="/find-a-mentor" onClick={() => setIsMobileMenuOpen(false)} className={`${mobileLinkClass("/find-a-mentor")} btn-spring`}>Find a Mentor</Link>
+              <Link to="/ask-an-expert" onClick={() => setIsMobileMenuOpen(false)} className={`${mobileLinkClass("/ask-an-expert")} btn-spring`}>Ask an Expert</Link>
+              <Link to="/workshops" onClick={() => setIsMobileMenuOpen(false)} className={`${mobileLinkClass("/workshops")} btn-spring`}>Workshops</Link>
               
               <div className="mt-8 border-t border-white/10 pt-8 flex flex-col gap-4">
                 {user ? (
@@ -195,7 +194,7 @@ export default function Navbar() {
                       <Link 
                         to="/mentor/dashboard" 
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="flex items-center justify-center gap-2 h-14 rounded bg-primary text-white font-bold text-[14px] uppercase tracking-widest"
+                        className="flex items-center justify-center gap-2 h-14 rounded bg-primary text-white font-bold text-[14px] uppercase tracking-widest btn-spring"
                       >
                         <span className="material-symbols-outlined text-[18px]">admin_panel_settings</span>
                         Command Center
@@ -204,7 +203,7 @@ export default function Navbar() {
                       <Link 
                         to="/my-requests" 
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="flex items-center justify-center gap-2 h-14 rounded bg-white/10 text-white font-bold text-[14px] uppercase tracking-widest border border-white/20"
+                        className="flex items-center justify-center gap-2 h-14 rounded bg-white/10 text-white font-bold text-[14px] uppercase tracking-widest border border-white/20 btn-spring"
                       >
                         <span className="material-symbols-outlined text-[18px]">list_alt</span>
                         My Requests
@@ -212,7 +211,7 @@ export default function Navbar() {
                     )}
                     <button 
                       onClick={handleSignOut}
-                      className="flex items-center justify-center gap-2 h-14 rounded bg-red-500/10 text-red-500 font-bold text-[14px] uppercase tracking-widest border border-red-500/20 mt-2"
+                      className="flex items-center justify-center gap-2 h-14 rounded bg-red-500/10 text-red-500 font-bold text-[14px] uppercase tracking-widest border border-red-500/20 mt-2 btn-spring"
                     >
                       <span className="material-symbols-outlined text-[18px]">logout</span>
                       Sign Out
@@ -222,7 +221,7 @@ export default function Navbar() {
                   <Link 
                     to="/auth-portal"
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="flex items-center justify-center gap-2 h-14 rounded bg-white text-black font-bold text-[14px] uppercase tracking-widest"
+                    className="flex items-center justify-center gap-2 h-14 rounded bg-white text-black font-bold text-[14px] uppercase tracking-widest btn-spring"
                   >
                     <span className="material-symbols-outlined text-[18px]">login</span>
                     Secure Login

@@ -53,7 +53,7 @@ export default function Home() {
           <motion.div variants={itemVariants} className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded bg-primary/20 border border-primary/30 text-white text-[11px] font-bold mb-6 tracking-widest backdrop-blur-sm shadow-[0_0_15px_rgba(217,56,45,0.2)] uppercase">
             <span className="material-symbols-outlined text-[15px] text-primary">verified</span>100% Free STEM Mentorship
           </motion.div>
-          <motion.h1 variants={itemVariants} className="font-display-hero text-[42px] sm:text-[64px] sm:leading-[1.1] text-white font-extrabold tracking-tight mb-4 uppercase">
+          <motion.h1 variants={itemVariants} className="font-display-hero text-[42px] sm:text-[64px] sm:leading-[1.1] text-white font-extrabold optical-display mb-4 uppercase">
             Need help?
           </motion.h1>
           <motion.p variants={itemVariants} className="text-[20px] sm:text-[24px] font-medium text-white/60 tracking-tight mb-10 font-sans">

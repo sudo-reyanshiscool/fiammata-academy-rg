@@ -43,7 +43,7 @@ export default function FindMentor() {
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
               Guided Discovery
             </span>
-            <h1 className="font-display-hero text-4xl sm:text-[56px] sm:leading-[1.1] tracking-tight font-extrabold mb-4 text-white uppercase">
+            <h1 className="font-display-hero text-4xl sm:text-[56px] sm:leading-[1.1] optical-display font-extrabold mb-4 text-white uppercase">
               What do you need <span className="text-primary">help with?</span>
             </h1>
             <p className="text-[16px] sm:text-[18px] text-white/50 leading-relaxed font-sans">
@@ -82,7 +82,7 @@ export default function FindMentor() {
                     setCurrentCategory(cat.id);
                     setSearchQuery(''); // Clear search to prevent stale queries from hiding category results
                   }}
-                  className={`px-5 py-2.5 rounded text-[12px] font-bold tracking-widest uppercase transition-all duration-300 ${
+                  className={`px-5 py-2.5 rounded text-[12px] font-bold tracking-widest uppercase transition-all duration-300 btn-spring ${
                     currentCategory === cat.id 
                       ? 'bg-primary text-white shadow-[0_0_15px_rgba(200,16,46,0.4)] border border-primary' 
                       : 'bg-white/5 text-white/50 hover:bg-white/10 hover:text-white border border-white/10'
@@ -103,7 +103,7 @@ export default function FindMentor() {
                     setSearchQuery(challenge);
                     setCurrentCategory('all');
                   }}
-                  className="px-3 py-1.5 rounded bg-[#0a0a0a] border border-white/10 text-[11px] font-bold uppercase tracking-wide text-white/70 hover:border-primary/50 hover:text-white transition-colors"
+                  className="px-3 py-1.5 rounded bg-[#0a0a0a] border border-white/10 text-[11px] font-bold uppercase tracking-wide text-white/70 hover:border-primary/50 hover:text-white transition-colors btn-spring"
                 >
                   {challenge}
                 </button>
@@ -111,7 +111,7 @@ export default function FindMentor() {
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="px-3 py-1.5 rounded bg-primary/10 text-primary border border-primary/20 text-[11px] font-bold uppercase tracking-wide hover:bg-primary/20 transition-colors ml-auto"
+                  className="px-3 py-1.5 rounded bg-primary/10 text-primary border border-primary/20 text-[11px] font-bold uppercase tracking-wide hover:bg-primary/20 transition-colors ml-auto btn-spring"
                 >
                   Clear Search
                 </button>
@@ -129,7 +129,7 @@ export default function FindMentor() {
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0.9 }}
-                    transition={{ duration: 0.2 }}
+                    transition={{ type: "spring", bounce: 0, duration: 0.4 }}
                   >
                     <MentorCard mentor={mentor} />
                   </motion.div>

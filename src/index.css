@@ -39,3 +39,20 @@
   background-color: #C8102E;
   color: #FFFFFF;
 }
+
+@layer utilities {
+  /* Instant Tactile Feedback */
+  .btn-spring {
+    @apply transition-transform duration-100 ease-out active:scale-[0.97] active:duration-75;
+  }
+  
+  /* Apple Glassmorphism */
+  .glass-panel {
+    @apply bg-[#000000]/50 backdrop-blur-[24px] saturate-[180%] border-white/10;
+  }
+  
+  /* Optical Typography for large headers */
+  .optical-display {
+    @apply tracking-[-0.025em] leading-[1.05];
+  }
+}
