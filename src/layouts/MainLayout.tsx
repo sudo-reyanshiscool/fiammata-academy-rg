@@ -1,6 +1,5 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import CustomCursor from '../components/CustomCursor';
 import CommandPalette from '../components/CommandPalette';
 import ScrollToTop from '../components/ScrollToTop';
 import { motion, useScroll, useSpring } from 'framer-motion';
@@ -15,9 +14,8 @@ export default function MainLayout({ children }: { children: ReactNode }) {
   });
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#000000] font-sans text-white antialiased md:cursor-none [&_*]:md:cursor-none">
+    <div className="flex flex-col min-h-screen bg-[#000000] font-sans text-white antialiased">
       <ScrollToTop />
-      <CustomCursor />
       <CommandPalette />
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-primary z-[60] origin-left"
