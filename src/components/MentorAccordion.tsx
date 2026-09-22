@@ -55,9 +55,12 @@ export const MentorAccordion = ({ mentors }: { mentors: Mentor[] }) => {
                 initial={false}
                 animate={{ opacity: isCompressed ? 1 : 0 }}
                 transition={{ duration: 0.4 }}
-                className="absolute inset-0 pointer-events-none flex flex-col items-center justify-end pb-8 bg-gradient-to-t from-[#8B0000]/90 via-[#C8102E]/20 to-black/60"
+                className="absolute inset-0 pointer-events-none bg-gradient-to-t from-[#8B0000]/90 via-[#C8102E]/20 to-black/60"
               >
-                <span className="font-display-hero text-xl font-bold text-white uppercase -rotate-90 origin-bottom whitespace-nowrap mb-8 drop-shadow-lg opacity-70">
+                <span 
+                  className="absolute bottom-8 left-1/2 -translate-x-1/2 font-display-hero text-2xl font-bold text-white uppercase drop-shadow-lg opacity-70 tracking-widest whitespace-nowrap"
+                  style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+                >
                   {mentor.name}
                 </span>
               </motion.div>
