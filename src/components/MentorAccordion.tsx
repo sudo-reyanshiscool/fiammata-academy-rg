@@ -101,11 +101,11 @@ export const MentorAccordion = ({ mentors }: { mentors: Mentor[] }) => {
                 transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: isActive ? 0.1 : 0 }}
                 className={`absolute inset-0 pointer-events-none flex flex-row ${isActive ? 'pointer-events-auto' : ''}`}
               >
-                {/* Solid Red Left Panel covering 60% of the image */}
-                <div className="w-[60%] h-full bg-[#5A0A15] p-12 lg:p-16 flex flex-col justify-center border-r border-[#8B0000] relative z-10">
+                {/* Solid Red Left Panel (Fixed width prevents text wrapping during expansion) */}
+                <div className="w-[480px] shrink-0 h-full bg-[#5A0A15] p-12 lg:p-16 flex flex-col justify-center border-r border-[#8B0000] relative z-10">
                   <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20 mix-blend-overlay pointer-events-none" />
                   <motion.div 
-                    className="max-w-[420px] relative z-10"
+                    className="w-full relative z-10"
                     initial="hidden"
                     animate={isActive ? "show" : "hidden"}
                     variants={{
@@ -193,7 +193,7 @@ export const MentorAccordion = ({ mentors }: { mentors: Mentor[] }) => {
                 </div>
                 
                 {/* Dark Gradient Overlay for the remaining visible image on the right */}
-                <div className="w-[40%] h-full bg-gradient-to-r from-black/60 to-transparent relative z-10 pointer-events-none" />
+                <div className="flex-1 h-full bg-gradient-to-r from-black/60 to-transparent relative z-10 pointer-events-none" />
               </motion.div>
             </motion.div>
           );
