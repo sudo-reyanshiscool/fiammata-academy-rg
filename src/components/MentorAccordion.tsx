@@ -36,16 +36,17 @@ export const MentorAccordion = ({ mentors }: { mentors: Mentor[] }) => {
             >
               {/* Persistent Background Image (Avoids DOM unmounting lag) */}
               <motion.div 
-                className="absolute inset-0 w-full h-full bg-black"
+                className="absolute inset-y-0 right-0 h-full bg-black origin-right"
                 animate={{
-                  filter: isCompressed ? 'grayscale(100%) brightness(0.4)' : 'grayscale(20%) brightness(0.9)'
+                  width: isActive ? "45%" : "100%",
+                  filter: isCompressed ? 'grayscale(100%) brightness(0.4)' : 'grayscale(10%) brightness(0.95)'
                 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
                 <img 
                   src={mentor.image} 
                   alt={mentor.name} 
-                  className="w-full h-full object-cover object-top" 
+                  className="w-full h-full object-cover object-center" 
                 />
               </motion.div>
 
