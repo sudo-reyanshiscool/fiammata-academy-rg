@@ -1,4 +1,4 @@
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import React, { useRef } from "react";
 
 type CharacterProps = {
@@ -19,19 +19,19 @@ const CharacterV1 = ({
 
   const x = useTransform(
     scrollYProgress,
-    [0, 0.8],
+    [0, 1],
     [distanceFromCenter * 50, 0]
   );
   
   const rotateX = useTransform(
     scrollYProgress,
-    [0, 0.8],
+    [0, 1],
     [distanceFromCenter * 30, 0]
   );
   
   const opacity = useTransform(
     scrollYProgress,
-    [0, 0.8],
+    [0, 1],
     [0, 1]
   );
 
@@ -61,6 +61,13 @@ export const ScrollRevealText: React.FC<{
     offset: ["start 90%", "center center"]
   });
 
+  // Apply a very slow spring to the scroll progress so it lags beautifully and gives the viewer time to read
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 30, // Extremely low stiffness makes it slow
+    damping: 15,
+    mass: 1.5
+  });
+
   const characters = text.split("");
   const centerIndex = Math.floor(characters.length / 2);
 
@@ -81,7 +88,7 @@ export const ScrollRevealText: React.FC<{
             char={char}
             index={index}
             centerIndex={centerIndex}
-            scrollYProgress={scrollYProgress}
+            scrollYProgress={smoothProgress}
           />
         ))}
       </div>
