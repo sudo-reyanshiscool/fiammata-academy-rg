@@ -19,7 +19,7 @@
   }
   
   a, button, [role="button"], input[type="submit"], input[type="button"], input[type="reset"], select, .cursor-pointer, [href], a * {
-    cursor: url('/cursor-pointer.svg') 10 2, pointer !important;
+    cursor: pointer !important;
   }
   
   main > :first-child {
