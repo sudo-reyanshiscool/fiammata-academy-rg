@@ -127,7 +127,11 @@ export const MentorAccordion = ({ mentors }: { mentors: Mentor[] }) => {
               <motion.div
                 initial={false}
                 animate={{ opacity: isActive ? 1 : 0, x: isActive ? 0 : -20 }}
-                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: isActive ? 0.1 : 0 }}
+                transition={{ 
+                  duration: isActive ? 0.5 : 0.2, 
+                  ease: [0.16, 1, 0.3, 1], 
+                  delay: isActive ? 0.35 : 0 
+                }}
                 className={`absolute inset-0 pointer-events-none flex flex-row ${isActive ? 'pointer-events-auto' : ''}`}
               >
                 {/* Solid Red Left Panel (Fixed width prevents text wrapping during expansion) */}
@@ -141,7 +145,7 @@ export const MentorAccordion = ({ mentors }: { mentors: Mentor[] }) => {
                       hidden: { opacity: 0 },
                       show: {
                         opacity: 1,
-                        transition: { staggerChildren: 0.08, delayChildren: 0.15 }
+                        transition: { staggerChildren: 0.08, delayChildren: 0.05 }
                       }
                     }}
                     style={{ perspective: "1000px" }}
