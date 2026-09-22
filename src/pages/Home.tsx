@@ -4,6 +4,7 @@ import { mentors } from '../data/mentors';
 import MentorCard from '../components/MentorCard';
 import MagneticButton from '../components/MagneticButton';
 import Marquee from '../components/Marquee';
+import { ScrollRevealText } from '../components/ScrollRevealText';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -220,11 +221,12 @@ export default function Home() {
             <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20 mix-blend-overlay"></div>
             <div className="absolute -right-20 -top-40 w-96 h-96 bg-white opacity-10 blur-3xl rounded-full pointer-events-none"></div>
             
-            <div className="flex flex-col gap-2 text-center md:text-left relative z-10">
-              <h2 className="text-[32px] lg:text-[40px] font-display-hero font-extrabold text-white tracking-tight uppercase leading-none">
-                Ready to accelerate?
-              </h2>
-              <p className="text-[16px] lg:text-[18px] text-white/80 font-sans mt-2">
+            <div className="flex flex-col gap-2 text-center md:text-left relative z-10 w-full">
+              <ScrollRevealText 
+                text="Ready to accelerate?" 
+                className="text-[36px] sm:text-[48px] lg:text-[64px] text-white leading-none mb-2 md:text-left md:justify-start justify-center flex flex-wrap" 
+              />
+              <p className="text-[16px] lg:text-[18px] text-white/80 font-sans md:ml-2">
                 Connect with the engineers who have been there.
               </p>
             </div>
