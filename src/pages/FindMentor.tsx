@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { mentors } from '../data/mentors';
-import { MentorAccordion } from '../components/MentorAccordion';
+import MentorCard from '../components/MentorCard';
 
 const CATEGORIES = [
   { id: 'all', label: 'All' },
@@ -119,24 +119,28 @@ export default function FindMentor() {
             </div>
           </div>
 
-          <motion.div layout className="w-full">
-            <AnimatePresence mode="wait">
+          <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <AnimatePresence>
               {filteredMentors.length > 0 ? (
-                <motion.div 
-                  key="accordion"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                >
-                  <MentorAccordion mentors={filteredMentors} />
-                </motion.div>
+                filteredMentors.map(mentor => (
+                  <motion.div 
+                    key={mentor.id}
+                    layout
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.9 }}
+                    transition={{ type: "spring", bounce: 0, duration: 0.4 }}
+                    className="h-full"
+                  >
+                    <MentorCard mentor={mentor} />
+                  </motion.div>
+                ))
               ) : (
                 <motion.div 
-                  key="empty"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="w-full p-10 text-center bg-white/5 border border-white/10 rounded-2xl"
+                  className="col-span-1 sm:col-span-2 lg:col-span-3 xl:col-span-4 p-10 text-center bg-white/5 border border-white/10 rounded-2xl"
                 >
                   <h3 className="text-xl font-bold text-white mb-2">No mentors found.</h3>
                   <p className="text-white/50">Try adjusting your filters or search query.</p>
