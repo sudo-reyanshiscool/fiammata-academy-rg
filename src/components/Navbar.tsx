@@ -3,6 +3,7 @@ import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
+import { TextRoll } from './TextRoll';
 
 function ConfirmSignOutButton({ onConfirm }: { onConfirm: () => void }) {
   const [isConfirming, setIsConfirming] = useState(false);
@@ -120,10 +121,18 @@ export default function Navbar() {
           </div>
           
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8 relative z-10 whitespace-nowrap">
-            <Link to="/" className={`${linkClass("/")} btn-spring`}>Home</Link>
-            <Link to="/find-a-mentor" className={`${linkClass("/find-a-mentor")} btn-spring`}>Find a Mentor</Link>
-            <Link to="/ask-an-expert" className={`${linkClass("/ask-an-expert")} btn-spring`}>Ask an Expert</Link>
-            <Link to="/workshops" className={`${linkClass("/workshops")} btn-spring`}>Workshops</Link>
+            <Link to="/" className={`${linkClass("/")} btn-spring`}>
+              <TextRoll>Home</TextRoll>
+            </Link>
+            <Link to="/find-a-mentor" className={`${linkClass("/find-a-mentor")} btn-spring`}>
+              <TextRoll>Find a Mentor</TextRoll>
+            </Link>
+            <Link to="/ask-an-expert" className={`${linkClass("/ask-an-expert")} btn-spring`}>
+              <TextRoll>Ask an Expert</TextRoll>
+            </Link>
+            <Link to="/workshops" className={`${linkClass("/workshops")} btn-spring`}>
+              <TextRoll>Workshops</TextRoll>
+            </Link>
           </nav>
           
           <div className="flex items-center gap-3 relative z-10">
