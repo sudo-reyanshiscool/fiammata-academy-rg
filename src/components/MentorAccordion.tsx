@@ -1,18 +1,31 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import type { Mentor } from '../data/mentors';
 import MentorCard from './MentorCard';
 
-const smoothTransition = { ease: [0.16, 1, 0.3, 1] as const, duration: 0.8 };
-
 export const MentorAccordion = ({ mentors }: { mentors: Mentor[] }) => {
   const [activeImage, setActiveImage] = useState<number | null>(null);
+  const hoverTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleHoverStart = (index: number) => {
+    if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
+    hoverTimeout.current = setTimeout(() => {
+      setActiveImage(index);
+    }, 150);
+  };
+
+  const handleParentMouseLeave = () => {
+    if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
+    setActiveImage(null);
+  };
+
+  const smoothTransition = { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const };
 
   return (
     <div 
       className="w-full mx-auto"
-      onMouseLeave={() => setActiveImage(null)}
+      onMouseLeave={handleParentMouseLeave}
     >
       {/* Desktop & Tablet: Horizontal Accordion */}
       <div className="hidden lg:flex w-full items-stretch justify-center gap-6 h-[550px]">
@@ -31,8 +44,11 @@ export const MentorAccordion = ({ mentors }: { mentors: Mentor[] }) => {
                 flexGrow: isActive ? 0 : isCompressed ? 0 : 1,
               }}
               transition={smoothTransition}
-              onHoverStart={() => setActiveImage(index)}
-              onClick={() => setActiveImage(index)}
+              onHoverStart={() => handleHoverStart(index)}
+              onClick={() => {
+                if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
+                setActiveImage(index);
+              }}
             >
               {/* Persistent Background Image (Avoids DOM unmounting lag) */}
               <motion.div 
