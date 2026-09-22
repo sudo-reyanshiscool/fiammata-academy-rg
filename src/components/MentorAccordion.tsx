@@ -106,18 +106,45 @@ export const MentorAccordion = ({ mentors }: { mentors: Mentor[] }) => {
                   <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20 mix-blend-overlay pointer-events-none" />
                   <motion.div 
                     className="max-w-[420px] relative z-10"
-                    initial={false}
-                    animate={{ opacity: isActive ? 1 : 0, y: isActive ? 0 : 20 }}
-                    transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: isActive ? 0.15 : 0 }}
+                    initial="hidden"
+                    animate={isActive ? "show" : "hidden"}
+                    variants={{
+                      hidden: { opacity: 0 },
+                      show: {
+                        opacity: 1,
+                        transition: { staggerChildren: 0.08, delayChildren: 0.15 }
+                      }
+                    }}
+                    style={{ perspective: "1000px" }}
                   >
-                    <h2 className="font-display-hero text-[44px] font-extrabold text-white optical-display leading-[0.9] mb-1 drop-shadow-lg uppercase">
+                    <motion.h2 
+                      variants={{
+                        hidden: { opacity: 0, y: 40, rotateX: -30 },
+                        show: { opacity: 1, y: 0, rotateX: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+                      }}
+                      style={{ transformOrigin: "bottom center" }}
+                      className="font-display-hero text-[44px] font-extrabold text-white optical-display leading-[0.9] mb-1 drop-shadow-lg uppercase"
+                    >
                       {mentor.name}
-                    </h2>
-                    <p className="text-[13px] font-bold text-[#C8102E] bg-white/10 px-3 py-1 inline-block rounded mb-4 uppercase tracking-widest">
+                    </motion.h2>
+
+                    <motion.p 
+                      variants={{
+                        hidden: { opacity: 0, y: 30, rotateX: -20 },
+                        show: { opacity: 1, y: 0, rotateX: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+                      }}
+                      className="text-[13px] font-bold text-[#C8102E] bg-white/10 px-3 py-1 inline-block rounded mb-4 uppercase tracking-widest"
+                    >
                       {mentor.role}
-                    </p>
+                    </motion.p>
                     
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <motion.div 
+                      variants={{
+                        hidden: { opacity: 0, y: 20 },
+                        show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+                      }}
+                      className="flex flex-wrap gap-2 mb-4"
+                    >
                       {mentor.expertise.map((exp, i) => (
                         <span 
                           key={exp} 
@@ -130,13 +157,25 @@ export const MentorAccordion = ({ mentors }: { mentors: Mentor[] }) => {
                           {exp}
                         </span>
                       ))}
-                    </div>
+                    </motion.div>
 
-                    <p className="text-[14px] leading-relaxed text-white/80 mb-6">
+                    <motion.p 
+                      variants={{
+                        hidden: { opacity: 0, y: 20 },
+                        show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+                      }}
+                      className="text-[14px] leading-relaxed text-white/80 mb-6"
+                    >
                       {mentor.description}
-                    </p>
+                    </motion.p>
 
-                    <div className="flex items-center gap-3">
+                    <motion.div 
+                      variants={{
+                        hidden: { opacity: 0, y: 20 },
+                        show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } }
+                      }}
+                      className="flex items-center gap-3"
+                    >
                       <Link 
                         to={`/request/${mentor.id}`} 
                         className="inline-flex items-center justify-center h-12 px-8 rounded bg-white hover:bg-gray-100 text-[#C8102E] font-bold text-[14px] uppercase tracking-widest shadow-lg btn-spring pointer-events-auto"
@@ -149,7 +188,7 @@ export const MentorAccordion = ({ mentors }: { mentors: Mentor[] }) => {
                       >
                         <span className="material-symbols-outlined text-[20px]">arrow_forward</span>
                       </Link>
-                    </div>
+                    </motion.div>
                   </motion.div>
                 </div>
                 
