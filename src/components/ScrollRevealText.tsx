@@ -42,7 +42,8 @@ const CharacterV1 = ({
         x,
         rotateX,
         opacity,
-        transformStyle: "preserve-3d"
+        transformStyle: "preserve-3d",
+        willChange: "transform, opacity"
       }}
     >
       {char}

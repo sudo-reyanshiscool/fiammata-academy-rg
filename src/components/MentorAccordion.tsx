@@ -60,7 +60,6 @@ export const MentorAccordion = ({ mentors }: { mentors: Mentor[] }) => {
                 className="absolute inset-y-0 right-0 h-full bg-black origin-right"
                 animate={{
                   width: isActive ? "45%" : "100%",
-                  filter: isCompressed ? 'grayscale(100%) brightness(0.4)' : 'grayscale(10%) brightness(0.95)'
                 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               >
@@ -68,6 +67,14 @@ export const MentorAccordion = ({ mentors }: { mentors: Mentor[] }) => {
                   src={mentor.image} 
                   alt={mentor.name} 
                   className="w-full h-full object-cover object-center" 
+                />
+                {/* Hardware-accelerated overlay instead of expensive CSS filters */}
+                <motion.div 
+                  className="absolute inset-0 bg-black pointer-events-none"
+                  initial={false}
+                  animate={{ opacity: isCompressed ? 0.7 : 0.1 }}
+                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                  style={{ willChange: "opacity" }}
                 />
               </motion.div>
 
@@ -124,7 +131,7 @@ export const MentorAccordion = ({ mentors }: { mentors: Mentor[] }) => {
               >
                 {/* Solid Red Left Panel (Fixed width prevents text wrapping during expansion) */}
                 <div className="w-[480px] shrink-0 h-full bg-[#5A0A15] p-12 lg:p-16 flex flex-col justify-center border-r border-[#8B0000] relative z-10">
-                  <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20 mix-blend-overlay pointer-events-none" />
+                  <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.05] pointer-events-none" />
                   <motion.div 
                     className="w-full relative z-10"
                     initial="hidden"
