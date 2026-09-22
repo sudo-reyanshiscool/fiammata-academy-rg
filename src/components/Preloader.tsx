@@ -56,10 +56,11 @@ export default function Preloader() {
             {/* Glowing Loading Bar */}
             <div className="w-full h-px bg-white/10 relative overflow-hidden mt-4">
               <motion.div 
-                initial={{ left: '-100%' }}
-                animate={{ left: '100%' }}
+                initial={{ x: '-100%' }}
+                animate={{ x: '200%' }}
                 transition={{ repeat: Infinity, duration: 1, ease: 'linear' }}
-                className="absolute top-0 bottom-0 w-1/2 bg-gradient-to-r from-transparent via-primary to-transparent shadow-[0_0_10px_#C8102E]"
+                className="absolute top-0 bottom-0 left-0 w-1/2 bg-gradient-to-r from-transparent via-primary to-transparent shadow-[0_0_10px_#C8102E]"
+                style={{ willChange: "transform" }}
               />
             </div>
           </div>

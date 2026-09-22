@@ -39,10 +39,10 @@ export default function Home() {
           <img 
             src="/images/team_celebration.jpg" 
             alt="Fiammata Racing Celebration" 
-            className="w-full h-full object-cover object-[center_15%] mix-blend-luminosity grayscale-[30%]" 
+            className="w-full h-full object-cover object-[center_15%] opacity-40" 
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#0a0a0a]/80 to-[#0a0a0a]/60"></div>
-          <div className="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+          <div className="absolute inset-0 bg-primary/5"></div>
         </motion.div>
         
         <motion.div 
@@ -64,7 +64,7 @@ export default function Home() {
             <MagneticButton>
               <Link 
                 to="/find-a-mentor" 
-                className="inline-flex items-center gap-2 bg-primary text-white font-bold text-[14px] uppercase tracking-widest px-10 h-14 rounded transition-all shadow-[0_0_20px_rgba(220,20,60,0.4)] hover:shadow-[0_0_40px_rgba(220,20,60,0.6)] border border-[#C8102E]"
+                className="inline-flex items-center gap-2 bg-primary text-white font-bold text-[14px] uppercase tracking-widest px-10 h-14 rounded transition-shadow shadow-[0_0_20px_rgba(220,20,60,0.4)] hover:shadow-[0_0_40px_rgba(220,20,60,0.6)] border border-[#C8102E]"
               >
                 <span>View Roster</span>
                 <motion.span 
@@ -214,8 +214,7 @@ export default function Home() {
           className="max-w-[1280px] mx-auto px-margin"
         >
           <div className="relative bg-gradient-to-r from-primary to-[#8B0000] text-white rounded-2xl p-10 lg:p-14 flex flex-col md:flex-row items-center justify-between gap-8 shadow-[0_20px_50px_rgba(217,56,45,0.25)] overflow-hidden border border-[#C8102E]">
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20 mix-blend-overlay"></div>
-            <div className="absolute -right-20 -top-40 w-96 h-96 bg-white opacity-10 blur-3xl rounded-full pointer-events-none"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.08),transparent_60%)] pointer-events-none"></div>
             
             <div className="flex flex-col gap-2 text-center md:text-left relative z-10 w-full">
               <ScrollRevealText 
@@ -229,7 +228,7 @@ export default function Home() {
             <div className="shrink-0 relative z-10">
               <Link 
                 to="/find-a-mentor" 
-                className="inline-flex items-center justify-center bg-white text-primary font-bold text-[14px] uppercase tracking-widest px-10 h-14 rounded transition-all shadow-xl hover:shadow-2xl hover:-translate-y-1 hover:scale-105"
+                className="inline-flex items-center justify-center bg-white text-primary font-bold text-[14px] uppercase tracking-widest px-10 h-14 rounded transition-[transform,box-shadow] shadow-xl hover:shadow-2xl hover:-translate-y-1 hover:scale-105"
               >
                 Access Roster
               </Link>

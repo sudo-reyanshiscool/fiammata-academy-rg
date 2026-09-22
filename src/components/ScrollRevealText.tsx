@@ -62,11 +62,11 @@ export const ScrollRevealText: React.FC<{
     offset: ["start 90%", "center center"]
   });
 
-  // Apply a very slow spring to the scroll progress so it lags beautifully and gives the viewer time to read
+  // Cinematic spring lag — responsive enough to not miss the section, slow enough to process
   const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 30, // Extremely low stiffness makes it slow
-    damping: 15,
-    mass: 1.5
+    stiffness: 50,
+    damping: 20,
+    mass: 0.8
   });
 
   const characters = text.split("");

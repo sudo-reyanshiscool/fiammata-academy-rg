@@ -59,7 +59,8 @@ export default function Navbar() {
   };
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    setIsScrolled(latest > 50);
+    if (latest > 70 && !isScrolled) setIsScrolled(true);
+    else if (latest < 20 && isScrolled) setIsScrolled(false);
   });
 
   const isActive = (path: string) => {
