@@ -17,7 +17,7 @@ export const mentors: Mentor[] = [
     role: "Enterprise Lead",
     image: "/images/swastik.png",
     expertise: ["Enterprise Portfolio", "Marketing", "Sponsorship Pitching", "Digital Media", "Sustainability", "Portfolio"],
-    description: "As the mastermind behind the nation's best Enterprise Portfolio, Swastik accumulated the highest enterprise points in the country and secured a national nomination in Marketing and Sponsorship. He specializes in turning team vision into a compelling brand story, offering elite guidance on digital media, corporate sustainability, and securing high-value sponsorships.",
+    description: "With experience leading an award-winning Enterprise Portfolio, Swastik helped his team secure a national nomination for Marketing and Sponsorship. He specializes in turning team vision into a compelling brand story, offering practical guidance on digital media, corporate sustainability, and securing valuable sponsorships.",
     categories: ["enterprise"],
     phone: "918130423448", // Used for WhatsApp wa.me link
     email: "Swastik316250206@genesisgs.edu.in"
