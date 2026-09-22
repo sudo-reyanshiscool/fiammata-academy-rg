@@ -46,6 +46,7 @@ export const MentorAccordion = ({ mentors }: { mentors: Mentor[] }) => {
               initial={false}
               animate={{
                 width: isCompressed ? "5rem" : isActive ? "50rem" : `${100 / mentors.length}%`,
+                maxWidth: isCompressed ? "5rem" : isActive ? "50rem" : "24rem",
                 flexGrow: isActive ? 0 : isCompressed ? 0 : 1,
               }}
               transition={smoothTransition}
@@ -66,7 +67,7 @@ export const MentorAccordion = ({ mentors }: { mentors: Mentor[] }) => {
                 <img 
                   src={mentor.image} 
                   alt={mentor.name} 
-                  className="w-full h-full object-cover object-center" 
+                  className="w-full h-full object-cover object-top" 
                 />
                 {/* Hardware-accelerated overlay instead of expensive CSS filters */}
                 <motion.div 
