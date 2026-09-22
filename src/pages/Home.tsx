@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { mentors } from '../data/mentors';
-import MentorCard from '../components/MentorCard';
+import { MentorAccordion } from '../components/MentorAccordion';
 import MagneticButton from '../components/MagneticButton';
 import Marquee from '../components/Marquee';
 import { ScrollRevealText } from '../components/ScrollRevealText';
@@ -198,12 +198,8 @@ export default function Home() {
             </Link>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {mentors.map(mentor => (
-              <motion.div key={mentor.id} variants={itemVariants}>
-                <MentorCard mentor={mentor} />
-              </motion.div>
-            ))}
+          <div className="w-full mt-4">
+            <MentorAccordion mentors={mentors} />
           </div>
         </motion.div>
       </section>
