@@ -10,9 +10,14 @@ export const MentorAccordion = ({ mentors }: { mentors: Mentor[] }) => {
 
   const handleHoverStart = (index: number) => {
     if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
+    
+    // 300ms delay if first hover (avoids accidental scroll activation)
+    // 100ms delay if moving between mentors (feels more responsive once active)
+    const delay = activeImage === null ? 300 : 100;
+    
     hoverTimeout.current = setTimeout(() => {
       setActiveImage(index);
-    }, 150);
+    }, delay);
   };
 
   const handleParentMouseLeave = () => {
