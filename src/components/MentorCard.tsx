@@ -65,18 +65,20 @@ export default function MentorCard({ mentor }: MentorCardProps) {
         </p>
 
         {/* Action Buttons */}
-        <div className="flex items-center gap-2 pt-4 border-t border-white/20 mt-auto">
+        <div className="flex items-center gap-2.5 pt-4 border-t border-white/20 mt-auto">
           <Link 
             to={`/request/${mentor.id}`} 
-            className="flex-1 inline-flex items-center justify-center h-10 rounded bg-white hover:bg-white/90 text-[#C8102E] font-bold text-[13px] uppercase tracking-wide transition-all shadow-md group-hover:shadow-lg btn-spring"
+            className="flex-1 inline-flex items-center justify-center min-h-[44px] rounded bg-white hover:bg-white/95 text-[#C8102E] font-extrabold text-[13px] uppercase tracking-wide transition-all shadow-md group-hover:shadow-lg btn-spring focus:ring-2 focus:ring-white focus:outline-none"
             onClick={(e) => e.stopPropagation()}
+            aria-label={`Request mentorship with ${mentor.name}`}
           >
             Request
           </Link>
           <Link 
             to={`/mentor/${mentor.id}`} 
-            className="flex-1 inline-flex items-center justify-center h-10 rounded bg-black/20 hover:bg-black/30 text-white font-bold text-[13px] uppercase tracking-wide transition-colors btn-spring"
+            className="flex-1 inline-flex items-center justify-center min-h-[44px] rounded bg-black/30 hover:bg-black/45 text-white font-extrabold text-[13px] uppercase tracking-wide transition-colors btn-spring border border-white/20 focus:ring-2 focus:ring-white focus:outline-none"
             onClick={(e) => e.stopPropagation()}
+            aria-label={`View profile for ${mentor.name}`}
           >
             Profile
           </Link>

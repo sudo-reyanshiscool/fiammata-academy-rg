@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Allow: /find-a-mentor
+Allow: /workshops
+Allow: /ask-an-expert
+Allow: /mentor/
+Disallow: /mentor/dashboard
+Disallow: /mentor/login
+Disallow: /mentor/signup
+Disallow: /login
+Disallow: /signup
+Disallow: /my-requests
+Disallow: /onboarding
+Disallow: /update-password
+Disallow: /forgot-password
+
+# Sitemap
+Sitemap: https://fiammata-academy.vercel.app/sitemap.xml
