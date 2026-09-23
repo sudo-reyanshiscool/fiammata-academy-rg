@@ -1,11 +1,19 @@
 {
   "communities": {
     "0": [
-      "ref_react_router_dom",
+      "ref_react",
       "ref_supabase_supabase_js",
+      "src_app",
+      "src_app_animatedpageroutes",
+      "src_app_onboardingguard",
+      "src_components_pagetransition",
+      "src_components_pagetransition_pagetransition",
+      "src_components_preloader",
+      "src_components_preloader_preloader",
       "src_context_authcontext",
       "src_context_authcontext_authcontext",
       "src_context_authcontext_authcontexttype",
+      "src_context_authcontext_authprovider",
       "src_context_toastcontext",
       "src_context_toastcontext_toast",
       "src_context_toastcontext_toastcontext",
@@ -24,10 +32,14 @@
       "src_pages_mentorsignup",
       "src_pages_mentorsignup_mentorsignup",
       "src_pages_profilesettings",
+      "src_pages_profilesettings_profilesettings",
+      "src_pages_requestmentorship_requestmentorship",
       "src_pages_signup",
       "src_pages_signup_signup",
       "src_pages_updatepassword",
       "src_pages_updatepassword_updatepassword",
+      "src_pages_workshops",
+      "src_pages_workshops_workshops",
       "src_repository_profilerepository",
       "src_repository_profilerepository_generatelicensenumber",
       "src_repository_profilerepository_profilerepository",
@@ -56,6 +68,7 @@
       "ref_lucide_react",
       "ref_oxlint",
       "ref_postcss",
+      "ref_react_dom",
       "ref_tailwindcss",
       "ref_types_node",
       "ref_types_react",
@@ -63,59 +76,36 @@
       "ref_typescript",
       "ref_vite",
       "ref_vitejs_plugin_react",
+      "src_app_app",
+      "src_index",
+      "src_main",
       "vite_config"
     ],
     "2": [
-      "ref_react_dom",
-      "src_app",
-      "src_app_animatedpageroutes",
-      "src_app_app",
-      "src_app_onboardingguard",
+      "ref_react_router_dom",
       "src_app_protectedroute",
-      "src_components_pagetransition",
-      "src_components_pagetransition_pagetransition",
-      "src_components_preloader",
-      "src_components_preloader_preloader",
-      "src_context_authcontext_authprovider",
+      "src_components_commandpalette",
+      "src_components_commandpalette_commandpalette",
+      "src_components_pitpassbanner",
+      "src_components_pitpassbanner_pitpassbanner",
       "src_context_authcontext_useauth",
-      "src_index",
-      "src_main",
+      "src_data_mentors",
+      "src_data_mentors_mentors",
       "src_pages_askexpert",
       "src_pages_askexpert_askexpert",
-      "src_pages_authportal",
-      "src_pages_authportal_authportal",
-      "src_pages_mentordashboard_mentordashboard",
-      "src_pages_myrequests_myrequests",
-      "src_pages_myrequests_myrequests_fetchrequests",
-      "src_pages_profilesettings_profilesettings",
-      "src_pages_requestmentorship_requestmentorship",
-      "src_pages_workshops",
-      "src_pages_workshops_workshops"
-    ],
-    "3": [
-      "src_components_mentorcard",
-      "src_components_mentorcard_mentorcard",
-      "src_components_mentorcard_mentorcardprops",
-      "src_components_tiltcard",
-      "src_components_tiltcard_tiltcard",
-      "src_components_tiltcard_tiltcardprops",
-      "src_data_mentors",
-      "src_data_mentors_mentor",
-      "src_data_mentors_mentors",
-      "src_pages_findmentor",
-      "src_pages_findmentor_categories",
-      "src_pages_findmentor_common_challenges",
-      "src_pages_findmentor_findmentor",
       "src_pages_mentordashboard",
+      "src_pages_mentordashboard_mentordashboard",
       "src_pages_mentorprofile",
       "src_pages_mentorprofile_mentorprofile",
       "src_pages_myrequests",
+      "src_pages_myrequests_myrequests",
+      "src_pages_myrequests_myrequests_fetchrequests",
       "src_pages_requestmentorship",
       "src_repository_requestrepository",
       "src_repository_requestrepository_mentorshiprequest",
       "src_repository_requestrepository_requestrepository"
     ],
-    "4": [
+    "3": [
       "tsconfig_app",
       "tsconfig_app_compileroptions",
       "tsconfig_app_compileroptions_allowarbitraryextensions",
@@ -137,28 +127,7 @@
       "tsconfig_app_compileroptions_verbatimmodulesyntax",
       "tsconfig_app_include"
     ],
-    "5": [
-      "ref_framer_motion",
-      "src_components_magneticbutton",
-      "src_components_magneticbutton_magneticbutton",
-      "src_components_magneticbutton_magneticbuttonprops",
-      "src_components_marquee",
-      "src_components_marquee_items",
-      "src_components_marquee_marquee",
-      "src_components_marquee_repeateditems",
-      "src_components_scrollrevealtext",
-      "src_components_scrollrevealtext_characterprops",
-      "src_components_scrollrevealtext_characterv1",
-      "src_components_scrollrevealtext_scrollrevealtext",
-      "src_pages_home",
-      "src_pages_home_containervariants",
-      "src_pages_home_home",
-      "src_pages_home_itemvariants",
-      "src_pages_onboarding",
-      "src_pages_onboarding_onboarding",
-      "src_pages_onboarding_slides"
-    ],
-    "6": [
+    "4": [
       "tsconfig_node",
       "tsconfig_node_compileroptions",
       "tsconfig_node_compileroptions_allowimportingtsextensions",
@@ -177,25 +146,41 @@
       "tsconfig_node_compileroptions_verbatimmodulesyntax",
       "tsconfig_node_include"
     ],
-    "7": [
-      "ref_react",
-      "src_components_commandpalette",
-      "src_components_commandpalette_commandpalette",
+    "5": [
+      "src_components_magneticbutton",
+      "src_components_magneticbutton_magneticbutton",
+      "src_components_magneticbutton_magneticbuttonprops",
+      "src_components_marquee",
+      "src_components_marquee_items",
+      "src_components_marquee_marquee",
+      "src_components_marquee_repeateditems",
+      "src_components_scrollrevealtext",
+      "src_components_scrollrevealtext_scrollrevealtext",
+      "src_pages_home",
+      "src_pages_home_containervariants",
+      "src_pages_home_home",
+      "src_pages_home_itemvariants",
+      "src_pages_onboarding",
+      "src_pages_onboarding_onboarding",
+      "src_pages_onboarding_slides"
+    ],
+    "6": [
+      "ref_framer_motion",
       "src_components_footer",
       "src_components_footer_footer",
       "src_components_navbar",
       "src_components_navbar_confirmsignoutbutton",
       "src_components_navbar_navbar",
-      "src_components_pitpassbanner",
-      "src_components_pitpassbanner_pitpassbanner",
       "src_components_scrolltotop",
       "src_components_scrolltotop_scrolltotop",
       "src_components_textroll",
       "src_components_textroll_textroll",
       "src_layouts_mainlayout",
-      "src_layouts_mainlayout_mainlayout"
+      "src_layouts_mainlayout_mainlayout",
+      "src_pages_authportal",
+      "src_pages_authportal_authportal"
     ],
-    "8": [
+    "7": [
       "package_devdependencies",
       "package_devdependencies_autoprefixer",
       "package_devdependencies_oxlint",
@@ -207,6 +192,19 @@
       "package_devdependencies_typescript",
       "package_devdependencies_vite",
       "package_devdependencies_vitejs_plugin_react"
+    ],
+    "8": [
+      "src_components_mentorcard",
+      "src_components_mentorcard_mentorcard",
+      "src_components_mentorcard_mentorcardprops",
+      "src_components_tiltcard",
+      "src_components_tiltcard_tiltcard",
+      "src_components_tiltcard_tiltcardprops",
+      "src_data_mentors_mentor",
+      "src_pages_findmentor",
+      "src_pages_findmentor_categories",
+      "src_pages_findmentor_common_challenges",
+      "src_pages_findmentor_findmentor"
     ],
     "9": [
       "os",
@@ -267,15 +265,15 @@
     ]
   },
   "cohesion": {
-    "0": 0.15268817204301074,
-    "1": 0.06896551724137931,
-    "2": 0.12333333333333334,
-    "3": 0.1761904761904762,
-    "4": 0.1,
-    "5": 0.14619883040935672,
-    "6": 0.11764705882352941,
-    "7": 0.21666666666666667,
-    "8": 0.18181818181818182,
+    "0": 0.12181616832779624,
+    "1": 0.06060606060606061,
+    "2": 0.18614718614718614,
+    "3": 0.1,
+    "4": 0.11764705882352941,
+    "5": 0.15,
+    "6": 0.18681318681318682,
+    "7": 0.18181818181818182,
+    "8": 0.21818181818181817,
     "9": 0.2857142857142857,
     "10": 0.3333333333333333,
     "11": 0.6666666666666666,
@@ -345,22 +343,11 @@
   ],
   "surprises": [
     {
-      "source": "Navbar()",
-      "target": "useToast()",
-      "source_files": [
-        "src/components/Navbar.tsx",
-        "src/context/ToastContext.tsx"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "calls",
-      "why": "bridges separate communities"
-    },
-    {
       "source": "ProfileSettings()",
-      "target": "useToast()",
+      "target": "useAuth()",
       "source_files": [
         "src/pages/ProfileSettings.tsx",
-        "src/context/ToastContext.tsx"
+        "src/context/AuthContext.tsx"
       ],
       "confidence": "EXTRACTED",
       "relation": "calls",
@@ -368,9 +355,20 @@
     },
     {
       "source": "RequestMentorship()",
-      "target": "useToast()",
+      "target": "useAuth()",
       "source_files": [
         "src/pages/RequestMentorship.tsx",
+        "src/context/AuthContext.tsx"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "Navbar()",
+      "target": "useToast()",
+      "source_files": [
+        "src/components/Navbar.tsx",
         "src/context/ToastContext.tsx"
       ],
       "confidence": "EXTRACTED",
@@ -403,18 +401,18 @@
   "questions": [
     {
       "type": "bridge_node",
-      "question": "Why does `react` connect `react` to `react-router-dom`, `package.json`, `App.tsx`, `RequestMentorship.tsx`, `framer-motion`?",
-      "why": "High betweenness centrality (0.092) - this node is a cross-community bridge."
+      "question": "Why does `react` connect `App.tsx` to `package.json`, `react-router-dom`, `Home.tsx`, `framer-motion`, `FindMentor.tsx`?",
+      "why": "High betweenness centrality (0.089) - this node is a cross-community bridge."
     },
     {
       "type": "bridge_node",
-      "question": "Why does `framer-motion` connect `framer-motion` to `react-router-dom`, `package.json`, `App.tsx`, `RequestMentorship.tsx`, `react`?",
-      "why": "High betweenness centrality (0.087) - this node is a cross-community bridge."
+      "question": "Why does `framer-motion` connect `framer-motion` to `App.tsx`, `package.json`, `react-router-dom`, `Home.tsx`, `FindMentor.tsx`?",
+      "why": "High betweenness centrality (0.084) - this node is a cross-community bridge."
     },
     {
       "type": "bridge_node",
-      "question": "Why does `react-router-dom` connect `react-router-dom` to `package.json`, `App.tsx`, `RequestMentorship.tsx`, `framer-motion`, `react`?",
-      "why": "High betweenness centrality (0.069) - this node is a cross-community bridge."
+      "question": "Why does `react-router-dom` connect `react-router-dom` to `App.tsx`, `package.json`, `Home.tsx`, `framer-motion`, `FindMentor.tsx`?",
+      "why": "High betweenness centrality (0.073) - this node is a cross-community bridge."
     },
     {
       "type": "isolated_nodes",
@@ -423,13 +421,13 @@
     },
     {
       "type": "low_cohesion",
-      "question": "Should `package.json` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.06896551724137931 - nodes in this community are weakly interconnected."
+      "question": "Should `App.tsx` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.12181616832779624 - nodes in this community are weakly interconnected."
     },
     {
       "type": "low_cohesion",
-      "question": "Should `App.tsx` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.12333333333333334 - nodes in this community are weakly interconnected."
+      "question": "Should `package.json` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.06060606060606061 - nodes in this community are weakly interconnected."
     },
     {
       "type": "low_cohesion",
