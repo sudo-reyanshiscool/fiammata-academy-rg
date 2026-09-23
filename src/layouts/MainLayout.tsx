@@ -2,6 +2,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import CommandPalette from '../components/CommandPalette';
 import ScrollToTop from '../components/ScrollToTop';
+import PitPassBanner from '../components/PitPassBanner';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import type { ReactNode } from 'react';
 
@@ -23,6 +24,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
       />
       <Navbar />
       <main className="w-full pt-[68px] flex-1 flex flex-col relative overflow-hidden">
+        <PitPassBanner />
         {children}
       </main>
       <Footer />

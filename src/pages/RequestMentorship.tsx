@@ -1,17 +1,18 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { mentors } from '../data/mentors';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useToast } from '../context/ToastContext';
 import { useAuth } from '../context/AuthContext';
 import { requestRepository } from '../repository/requestRepository';
+import { profileRepository } from '../repository/profileRepository';
 import MagneticButton from '../components/MagneticButton';
 
 export default function RequestMentorship() {
   const { mentorId } = useParams();
   const navigate = useNavigate();
   const mentor = mentors.find(m => m.id === mentorId);
-  const { user } = useAuth();
+  const { user, profile } = useAuth();
   const { addToast } = useToast();
 
   const [step, setStep] = useState(1);
@@ -19,6 +20,24 @@ export default function RequestMentorship() {
   const [area, setArea] = useState('');
   const [problem, setProblem] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Auto-populate from profile
+  useEffect(() => {
+    if (profile && profile.autoFillRequests) {
+      if (profile.teamName && !team) {
+        setTeam(profile.teamName);
+      }
+      if (mentor && profile.primaryCategory && !area) {
+        const matchingExpertise = mentor.expertise.find(
+          exp => exp.toLowerCase().includes(profile.primaryCategory.toLowerCase()) || 
+                 profile.primaryCategory.toLowerCase().includes(exp.toLowerCase())
+        );
+        if (matchingExpertise) {
+          setArea(matchingExpertise);
+        }
+      }
+    }
+  }, [profile, mentor, team, area]);
 
   if (!mentor) {
     return (
@@ -44,6 +63,11 @@ export default function RequestMentorship() {
     setIsSubmitting(true);
     
     try {
+      // If user hasn't set their team in profile yet, auto-save it now
+      if (user && (!profile?.teamName || !profile.profileCompleted) && team.trim()) {
+        await profileRepository.updateProfile(user, { teamName: team.trim() });
+      }
+
       await requestRepository.saveRequest({
         mentorId: mentor.id,
         studentName: user.user_metadata?.full_name || user.email || 'Unknown Student',
@@ -122,13 +146,50 @@ export default function RequestMentorship() {
               {step === 1 && (
                 <motion.div key="step1" variants={stepVariants} initial="hidden" animate="visible" exit="exit" transition={{ duration: 0.2 }} className="flex-1 flex flex-col gap-6">
                   <div className="mb-2">
-                    <h3 className="text-xl font-bold mb-1">Team Identification</h3>
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <h3 className="text-xl font-bold mb-1">Team Identification</h3>
+                      {profile?.profileCompleted ? (
+                        <span className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded border border-emerald-500/20">
+                          <span className="material-symbols-outlined text-[13px]">verified</span>
+                          Pit Pass: {profile.licenseNumber}
+                        </span>
+                      ) : (
+                        <span className="inline-flex items-center gap-1 text-[11px] font-bold text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded border border-amber-500/20">
+                          <span className="material-symbols-outlined text-[13px]">info</span>
+                          First Request Setup
+                        </span>
+                      )}
+                    </div>
                     <p className="text-white/50 text-[13px]">We need to know who you represent on the track.</p>
                   </div>
+
                   <div>
-                    <label className="block text-[11px] font-bold uppercase tracking-widest text-white/50 mb-2">Registered Team Name</label>
-                    <input type="text" value={team} onChange={(e) => setTeam(e.target.value)} required placeholder="e.g. Velocity Apex" className="w-full bg-[#000000] text-white text-[14px] px-4 py-3.5 rounded-xl border border-white/10 outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all" />
+                    <div className="flex items-center justify-between mb-2">
+                      <label className="block text-[11px] font-bold uppercase tracking-widest text-white/50">Registered Team Name</label>
+                      <Link to="/profile" className="text-[11px] text-primary hover:underline font-bold uppercase tracking-wider">
+                        {profile?.profileCompleted ? 'Edit Pit Pass' : 'Set Up Pit Pass'}
+                      </Link>
+                    </div>
+                    <input 
+                      type="text" 
+                      value={team} 
+                      onChange={(e) => setTeam(e.target.value)} 
+                      required 
+                      placeholder="e.g. Velocity Apex" 
+                      className="w-full bg-[#000000] text-white text-[14px] px-4 py-3.5 rounded-xl border border-white/10 outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all font-semibold" 
+                    />
                   </div>
+
+                  {/* Contextual Pit Pass save hint for first-time users */}
+                  {!profile?.profileCompleted && team.trim().length > 0 && (
+                    <div className="bg-primary/10 border border-primary/20 rounded-xl p-3 flex items-center justify-between gap-3">
+                      <div className="flex items-center gap-2 text-[12px] text-white/80">
+                        <span className="material-symbols-outlined text-primary text-[16px]">bolt</span>
+                        <span>Save <b>{team}</b> to your Pit Pass for future 1-click requests?</span>
+                      </div>
+                      <span className="text-[10px] font-bold text-primary uppercase tracking-wider bg-primary/20 px-2 py-0.5 rounded">Auto-Saved</span>
+                    </div>
+                  )}
                 </motion.div>
               )}
 

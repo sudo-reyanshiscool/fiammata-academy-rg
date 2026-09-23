@@ -34,6 +34,7 @@ export default function CommandPalette() {
     { name: 'Go to Home', action: () => navigate('/') },
     { name: 'Find a Mentor', action: () => navigate('/find-a-mentor') },
     { name: 'My Requests', action: () => navigate('/my-requests') },
+    { name: 'Profile & Settings', action: () => navigate('/profile') },
     { name: 'Ask an Expert', action: () => navigate('/ask-an-expert') },
     { name: 'Workshops', action: () => navigate('/workshops') },
     ...mentors.map(m => ({

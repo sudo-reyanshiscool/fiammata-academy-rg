@@ -1,0 +1,407 @@
+{
+  "communities": {
+    "0": [
+      "ref_react_router_dom",
+      "ref_supabase_supabase_js",
+      "src_context_authcontext",
+      "src_context_authcontext_authcontext",
+      "src_context_authcontext_authcontexttype",
+      "src_context_toastcontext",
+      "src_context_toastcontext_toast",
+      "src_context_toastcontext_toastcontext",
+      "src_context_toastcontext_toastcontexttype",
+      "src_context_toastcontext_toastprovider",
+      "src_context_toastcontext_toasttype",
+      "src_context_toastcontext_usetoast",
+      "src_lib_supabase",
+      "src_lib_supabase_supabase",
+      "src_pages_forgotpassword",
+      "src_pages_forgotpassword_forgotpassword",
+      "src_pages_login",
+      "src_pages_login_login",
+      "src_pages_mentorlogin",
+      "src_pages_mentorlogin_mentorlogin",
+      "src_pages_mentorsignup",
+      "src_pages_mentorsignup_mentorsignup",
+      "src_pages_profilesettings",
+      "src_pages_signup",
+      "src_pages_signup_signup",
+      "src_pages_updatepassword",
+      "src_pages_updatepassword_updatepassword",
+      "src_repository_profilerepository",
+      "src_repository_profilerepository_generatelicensenumber",
+      "src_repository_profilerepository_profilerepository",
+      "src_repository_profilerepository_userprofile"
+    ],
+    "1": [
+      "package",
+      "package_dependencies",
+      "package_dependencies_framer_motion",
+      "package_dependencies_lucide_react",
+      "package_dependencies_react",
+      "package_dependencies_react_dom",
+      "package_dependencies_react_router_dom",
+      "package_dependencies_supabase_supabase_js",
+      "package_name",
+      "package_private",
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "package_scripts_graph",
+      "package_scripts_lint",
+      "package_scripts_preview",
+      "package_type",
+      "package_version",
+      "ref_autoprefixer",
+      "ref_lucide_react",
+      "ref_oxlint",
+      "ref_postcss",
+      "ref_tailwindcss",
+      "ref_types_node",
+      "ref_types_react",
+      "ref_types_react_dom",
+      "ref_typescript",
+      "ref_vite",
+      "ref_vitejs_plugin_react",
+      "vite_config"
+    ],
+    "2": [
+      "ref_react_dom",
+      "src_app",
+      "src_app_animatedpageroutes",
+      "src_app_app",
+      "src_app_onboardingguard",
+      "src_app_protectedroute",
+      "src_components_pagetransition",
+      "src_components_pagetransition_pagetransition",
+      "src_components_preloader",
+      "src_components_preloader_preloader",
+      "src_context_authcontext_authprovider",
+      "src_context_authcontext_useauth",
+      "src_index",
+      "src_main",
+      "src_pages_askexpert",
+      "src_pages_askexpert_askexpert",
+      "src_pages_authportal",
+      "src_pages_authportal_authportal",
+      "src_pages_mentordashboard_mentordashboard",
+      "src_pages_myrequests_myrequests",
+      "src_pages_myrequests_myrequests_fetchrequests",
+      "src_pages_profilesettings_profilesettings",
+      "src_pages_requestmentorship_requestmentorship",
+      "src_pages_workshops",
+      "src_pages_workshops_workshops"
+    ],
+    "3": [
+      "src_components_mentorcard",
+      "src_components_mentorcard_mentorcard",
+      "src_components_mentorcard_mentorcardprops",
+      "src_components_tiltcard",
+      "src_components_tiltcard_tiltcard",
+      "src_components_tiltcard_tiltcardprops",
+      "src_data_mentors",
+      "src_data_mentors_mentor",
+      "src_data_mentors_mentors",
+      "src_pages_findmentor",
+      "src_pages_findmentor_categories",
+      "src_pages_findmentor_common_challenges",
+      "src_pages_findmentor_findmentor",
+      "src_pages_mentordashboard",
+      "src_pages_mentorprofile",
+      "src_pages_mentorprofile_mentorprofile",
+      "src_pages_myrequests",
+      "src_pages_requestmentorship",
+      "src_repository_requestrepository",
+      "src_repository_requestrepository_mentorshiprequest",
+      "src_repository_requestrepository_requestrepository"
+    ],
+    "4": [
+      "tsconfig_app",
+      "tsconfig_app_compileroptions",
+      "tsconfig_app_compileroptions_allowarbitraryextensions",
+      "tsconfig_app_compileroptions_allowimportingtsextensions",
+      "tsconfig_app_compileroptions_erasablesyntaxonly",
+      "tsconfig_app_compileroptions_jsx",
+      "tsconfig_app_compileroptions_lib",
+      "tsconfig_app_compileroptions_module",
+      "tsconfig_app_compileroptions_moduledetection",
+      "tsconfig_app_compileroptions_moduleresolution",
+      "tsconfig_app_compileroptions_noemit",
+      "tsconfig_app_compileroptions_nofallthroughcasesinswitch",
+      "tsconfig_app_compileroptions_nounusedlocals",
+      "tsconfig_app_compileroptions_nounusedparameters",
+      "tsconfig_app_compileroptions_skiplibcheck",
+      "tsconfig_app_compileroptions_target",
+      "tsconfig_app_compileroptions_tsbuildinfofile",
+      "tsconfig_app_compileroptions_types",
+      "tsconfig_app_compileroptions_verbatimmodulesyntax",
+      "tsconfig_app_include"
+    ],
+    "5": [
+      "ref_framer_motion",
+      "src_components_magneticbutton",
+      "src_components_magneticbutton_magneticbutton",
+      "src_components_magneticbutton_magneticbuttonprops",
+      "src_components_marquee",
+      "src_components_marquee_items",
+      "src_components_marquee_marquee",
+      "src_components_marquee_repeateditems",
+      "src_components_scrollrevealtext",
+      "src_components_scrollrevealtext_characterprops",
+      "src_components_scrollrevealtext_characterv1",
+      "src_components_scrollrevealtext_scrollrevealtext",
+      "src_pages_home",
+      "src_pages_home_containervariants",
+      "src_pages_home_home",
+      "src_pages_home_itemvariants",
+      "src_pages_onboarding",
+      "src_pages_onboarding_onboarding",
+      "src_pages_onboarding_slides"
+    ],
+    "6": [
+      "tsconfig_node",
+      "tsconfig_node_compileroptions",
+      "tsconfig_node_compileroptions_allowimportingtsextensions",
+      "tsconfig_node_compileroptions_erasablesyntaxonly",
+      "tsconfig_node_compileroptions_lib",
+      "tsconfig_node_compileroptions_module",
+      "tsconfig_node_compileroptions_moduledetection",
+      "tsconfig_node_compileroptions_noemit",
+      "tsconfig_node_compileroptions_nofallthroughcasesinswitch",
+      "tsconfig_node_compileroptions_nounusedlocals",
+      "tsconfig_node_compileroptions_nounusedparameters",
+      "tsconfig_node_compileroptions_skiplibcheck",
+      "tsconfig_node_compileroptions_target",
+      "tsconfig_node_compileroptions_tsbuildinfofile",
+      "tsconfig_node_compileroptions_types",
+      "tsconfig_node_compileroptions_verbatimmodulesyntax",
+      "tsconfig_node_include"
+    ],
+    "7": [
+      "ref_react",
+      "src_components_commandpalette",
+      "src_components_commandpalette_commandpalette",
+      "src_components_footer",
+      "src_components_footer_footer",
+      "src_components_navbar",
+      "src_components_navbar_confirmsignoutbutton",
+      "src_components_navbar_navbar",
+      "src_components_pitpassbanner",
+      "src_components_pitpassbanner_pitpassbanner",
+      "src_components_scrolltotop",
+      "src_components_scrolltotop_scrolltotop",
+      "src_components_textroll",
+      "src_components_textroll_textroll",
+      "src_layouts_mainlayout",
+      "src_layouts_mainlayout_mainlayout"
+    ],
+    "8": [
+      "package_devdependencies",
+      "package_devdependencies_autoprefixer",
+      "package_devdependencies_oxlint",
+      "package_devdependencies_postcss",
+      "package_devdependencies_tailwindcss",
+      "package_devdependencies_types_node",
+      "package_devdependencies_types_react",
+      "package_devdependencies_types_react_dom",
+      "package_devdependencies_typescript",
+      "package_devdependencies_vite",
+      "package_devdependencies_vitejs_plugin_react"
+    ],
+    "9": [
+      "os",
+      "pathlib",
+      "scripts_run_graphify",
+      "scripts_run_graphify_main",
+      "scripts_run_graphify_rationale_2",
+      "subprocess",
+      "sys"
+    ],
+    "10": [
+      "oxlintrc",
+      "oxlintrc_plugins",
+      "oxlintrc_rules",
+      "oxlintrc_rules_react_only_export_components",
+      "oxlintrc_rules_react_rules_of_hooks",
+      "oxlintrc_schema"
+    ],
+    "11": [
+      "tsconfig",
+      "tsconfig_files",
+      "tsconfig_references"
+    ],
+    "12": [
+      "vercel",
+      "vercel_cleanurls",
+      "vercel_trailingslash"
+    ],
+    "13": [
+      "graphify_build"
+    ],
+    "14": [
+      "graphify_cluster"
+    ],
+    "15": [
+      "graphify_export"
+    ],
+    "16": [
+      "graphify_extract"
+    ],
+    "17": [
+      "graphify_report"
+    ],
+    "18": [
+      "json"
+    ],
+    "19": [
+      "networkx"
+    ],
+    "20": [
+      "postcss_config"
+    ],
+    "21": [
+      "supabase_migrations_20260920000000_create_requests"
+    ],
+    "22": [
+      "tailwind_config"
+    ]
+  },
+  "cohesion": {
+    "0": 0.15268817204301074,
+    "1": 0.06896551724137931,
+    "2": 0.12333333333333334,
+    "3": 0.1761904761904762,
+    "4": 0.1,
+    "5": 0.14619883040935672,
+    "6": 0.11764705882352941,
+    "7": 0.21666666666666667,
+    "8": 0.18181818181818182,
+    "9": 0.2857142857142857,
+    "10": 0.3333333333333333,
+    "11": 0.6666666666666666,
+    "12": 0.6666666666666666,
+    "13": 1.0,
+    "14": 1.0,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0,
+    "18": 1.0,
+    "19": 1.0,
+    "20": 1.0,
+    "21": 1.0,
+    "22": 1.0
+  },
+  "gods": [
+    {
+      "id": "ref_react",
+      "label": "react",
+      "degree": 29
+    },
+    {
+      "id": "ref_framer_motion",
+      "label": "framer-motion",
+      "degree": 22
+    },
+    {
+      "id": "ref_react_router_dom",
+      "label": "react-router-dom",
+      "degree": 20
+    },
+    {
+      "id": "src_context_toastcontext_usetoast",
+      "label": "useToast()",
+      "degree": 19
+    },
+    {
+      "id": "tsconfig_app_compileroptions",
+      "label": "compilerOptions",
+      "degree": 18
+    },
+    {
+      "id": "src_context_authcontext_useauth",
+      "label": "useAuth()",
+      "degree": 17
+    },
+    {
+      "id": "tsconfig_node_compileroptions",
+      "label": "compilerOptions",
+      "degree": 15
+    },
+    {
+      "id": "src_lib_supabase_supabase",
+      "label": "supabase",
+      "degree": 10
+    },
+    {
+      "id": "src_data_mentors_mentors",
+      "label": "mentors",
+      "degree": 8
+    },
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "degree": 6
+    }
+  ],
+  "surprises": [
+    {
+      "source": "Navbar()",
+      "target": "useToast()",
+      "source_files": [
+        "src/components/Navbar.tsx",
+        "src/context/ToastContext.tsx"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "ProfileSettings()",
+      "target": "useToast()",
+      "source_files": [
+        "src/pages/ProfileSettings.tsx",
+        "src/context/ToastContext.tsx"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "RequestMentorship()",
+      "target": "useToast()",
+      "source_files": [
+        "src/pages/RequestMentorship.tsx",
+        "src/context/ToastContext.tsx"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "ProtectedRoute()",
+      "target": "useAuth()",
+      "source_files": [
+        "src/App.tsx",
+        "src/context/AuthContext.tsx"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "peripheral node `ProtectedRoute()` unexpectedly reaches hub `useAuth()`"
+    },
+    {
+      "source": "Navbar()",
+      "target": "useAuth()",
+      "source_files": [
+        "src/components/Navbar.tsx",
+        "src/context/AuthContext.tsx"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    }
+  ],
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
+}

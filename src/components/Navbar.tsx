@@ -45,13 +45,15 @@ function ConfirmSignOutButton({ onConfirm }: { onConfirm: () => void }) {
 export default function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { user, isMentor, signOut } = useAuth();
+  const { user, isMentor, profile, signOut } = useAuth();
   const { addToast } = useToast();
   const { scrollY } = useScroll();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isUserDropdownOpen, setIsUserDropdownOpen] = useState(false);
 
   const handleSignOut = async () => {
+    setIsUserDropdownOpen(false);
     await signOut();
     addToast('Connection severed. You have successfully signed out.', 'success');
     navigate('/');
@@ -104,7 +106,7 @@ export default function Navbar() {
             height: isScrolled ? "64px" : "72px"
           }}
           transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-          className="pointer-events-auto glass-panel flex items-center justify-between px-6 lg:px-10 overflow-hidden relative"
+          className="pointer-events-auto glass-panel flex items-center justify-between px-6 lg:px-10 overflow-visible relative"
         >
           <div className="flex items-center gap-3 relative z-10">
             <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3.5 group whitespace-nowrap btn-spring">
@@ -138,7 +140,7 @@ export default function Navbar() {
           
           <div className="flex items-center gap-3 relative z-10">
             {user ? (
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-2.5">
                 {isMentor ? (
                   <Link 
                     to="/mentor/dashboard" 
@@ -154,6 +156,89 @@ export default function Navbar() {
                     My Requests
                   </Link>
                 )}
+
+                {/* Interactive Profile & Settings Floating Menu */}
+                <div className="relative hidden lg:block">
+                  <button
+                    onClick={() => setIsUserDropdownOpen(!isUserDropdownOpen)}
+                    className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold text-[11px] uppercase tracking-wider transition-colors btn-spring cursor-pointer"
+                    aria-label="User Menu"
+                  >
+                    <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center text-[10px] text-white font-bold">
+                      {profile?.fullName ? profile.fullName.charAt(0).toUpperCase() : user?.email?.charAt(0).toUpperCase() || 'P'}
+                    </div>
+                    <span className="max-w-[90px] truncate">
+                      {profile?.teamName || profile?.fullName?.split(' ')[0] || 'Pit Pass'}
+                    </span>
+                    <span className="material-symbols-outlined text-[14px] text-white/50">
+                      {isUserDropdownOpen ? 'expand_less' : 'expand_more'}
+                    </span>
+                  </button>
+
+                  <AnimatePresence>
+                    {isUserDropdownOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 8, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 8, scale: 0.95 }}
+                        transition={{ duration: 0.15 }}
+                        className="absolute right-0 top-full mt-2 w-64 rounded-2xl bg-[#0c0c0e] border border-white/15 shadow-2xl p-3 z-50 text-left flex flex-col gap-1 backdrop-blur-xl"
+                      >
+                        {/* Mini Pit Pass Header */}
+                        <div className="p-3 rounded-xl bg-gradient-to-br from-white/5 to-transparent border border-white/5 mb-1">
+                          <div className="flex items-center justify-between text-[10px] text-primary font-mono uppercase tracking-wider font-bold mb-1">
+                            <span>Pit Pass</span>
+                            <span>{profile?.licenseNumber || 'FIA-2026'}</span>
+                          </div>
+                          <p className="font-display-hero font-bold text-white text-[14px] uppercase truncate">
+                            {profile?.fullName || 'Racer'}
+                          </p>
+                          <p className="text-[11px] text-white/60 truncate font-semibold">
+                            {profile?.teamName || 'Team Not Set'}
+                          </p>
+                        </div>
+
+                        <Link
+                          to="/profile"
+                          onClick={() => setIsUserDropdownOpen(false)}
+                          className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg hover:bg-white/10 text-white text-[12px] font-bold uppercase tracking-wider transition-colors"
+                        >
+                          <span className="material-symbols-outlined text-primary text-[18px]">badge</span>
+                          <span>My Pit Pass</span>
+                        </Link>
+
+                        <Link
+                          to="/my-requests"
+                          onClick={() => setIsUserDropdownOpen(false)}
+                          className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg hover:bg-white/10 text-white text-[12px] font-bold uppercase tracking-wider transition-colors"
+                        >
+                          <span className="material-symbols-outlined text-emerald-400 text-[18px]">list_alt</span>
+                          <span>My Requests</span>
+                        </Link>
+
+                        <Link
+                          to="/settings"
+                          onClick={() => setIsUserDropdownOpen(false)}
+                          className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg hover:bg-white/10 text-white text-[12px] font-bold uppercase tracking-wider transition-colors"
+                        >
+                          <span className="material-symbols-outlined text-white/70 text-[18px]">settings</span>
+                          <span>Settings</span>
+                        </Link>
+
+                        <div className="border-t border-white/10 my-1 pt-1">
+                          <button
+                            onClick={handleSignOut}
+                            className="w-full flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-red-500/15 text-red-400 text-[12px] font-bold uppercase tracking-wider transition-colors text-left"
+                          >
+                            <span className="material-symbols-outlined text-[18px]">logout</span>
+                            <span>Sign Out</span>
+                          </button>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
                 <div className="hidden lg:block btn-spring">
                   <ConfirmSignOutButton onConfirm={handleSignOut} />
                 </div>
@@ -219,6 +304,14 @@ export default function Navbar() {
                         My Requests
                       </Link>
                     )}
+                    <Link
+                      to="/profile"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="flex items-center justify-center gap-2 h-14 rounded bg-white/5 hover:bg-white/10 text-white font-bold text-[14px] uppercase tracking-widest border border-white/10 btn-spring"
+                    >
+                      <span className="material-symbols-outlined text-[18px] text-primary">settings</span>
+                      Profile & Settings
+                    </Link>
                     <button 
                       onClick={handleSignOut}
                       className="flex items-center justify-center gap-2 h-14 rounded bg-red-500/10 text-red-500 font-bold text-[14px] uppercase tracking-widest border border-red-500/20 mt-2 btn-spring"

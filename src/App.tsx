@@ -22,6 +22,8 @@ import ForgotPassword from './pages/ForgotPassword';
 import UpdatePassword from './pages/UpdatePassword';
 import Preloader from './components/Preloader';
 
+import ProfileSettings from './pages/ProfileSettings';
+
 // Protected Route Component
 function ProtectedRoute({ children, mentorOnly = false }: { children: React.ReactNode, mentorOnly?: boolean }) {
   const { user, loading, isMentor } = useAuth();
@@ -72,6 +74,12 @@ function AnimatedPageRoutes() {
         } />
         <Route path="my-requests" element={
           <ProtectedRoute><PageTransition><MyRequests /></PageTransition></ProtectedRoute>
+        } />
+        <Route path="profile" element={
+          <ProtectedRoute><PageTransition><ProfileSettings /></PageTransition></ProtectedRoute>
+        } />
+        <Route path="settings" element={
+          <ProtectedRoute><PageTransition><ProfileSettings /></PageTransition></ProtectedRoute>
         } />
         
         {/* Protected Mentor Routes */}
