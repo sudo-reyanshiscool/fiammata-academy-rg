@@ -9,36 +9,48 @@ interface TiltCardProps {
 
 export default function TiltCard({ children, className = '' }: TiltCardProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const rectRef = useRef<{ width: number; height: number; left: number; top: number } | null>(null);
 
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  const mouseXSpring = useSpring(x, { stiffness: 300, damping: 30 });
-  const mouseYSpring = useSpring(y, { stiffness: 300, damping: 30 });
+  const mouseXSpring = useSpring(x, { stiffness: 220, damping: 24, mass: 0.5 });
+  const mouseYSpring = useSpring(y, { stiffness: 220, damping: 24, mass: 0.5 });
 
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["7.5deg", "-7.5deg"]);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-7.5deg", "7.5deg"]);
-  
-  const glareX = useTransform(mouseXSpring, [-0.5, 0.5], ["100%", "-100%"]);
-  const glareY = useTransform(mouseYSpring, [-0.5, 0.5], ["100%", "-100%"]);
+  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["5deg", "-5deg"]);
+  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-5deg", "5deg"]);
+
+  const handleMouseEnter = () => {
+    if (ref.current) {
+      const rect = ref.current.getBoundingClientRect();
+      rectRef.current = {
+        width: rect.width,
+        height: rect.height,
+        left: rect.left,
+        top: rect.top,
+      };
+    }
+  };
 
   const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
-    if (!ref.current) return;
-    const rect = ref.current.getBoundingClientRect();
-    const width = rect.width;
-    const height = rect.height;
+    if (!rectRef.current) {
+      handleMouseEnter();
+    }
+    const rect = rectRef.current;
+    if (!rect) return;
+    
     const mouseX = e.clientX - rect.left;
     const mouseY = e.clientY - rect.top;
     
-    // Values from -0.5 to 0.5
-    const xPct = mouseX / width - 0.5;
-    const yPct = mouseY / height - 0.5;
+    const xPct = mouseX / rect.width - 0.5;
+    const yPct = mouseY / rect.height - 0.5;
     
     x.set(xPct);
     y.set(yPct);
   };
 
   const handleMouseLeave = () => {
+    rectRef.current = null;
     x.set(0);
     y.set(0);
   };
@@ -46,24 +58,17 @@ export default function TiltCard({ children, className = '' }: TiltCardProps) {
   return (
     <motion.div
       ref={ref}
+      onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{
         rotateX,
         rotateY,
         transformStyle: "preserve-3d",
+        willChange: "transform"
       }}
       className={`relative w-full ${className}`}
     >
-      <div className="absolute inset-0 z-50 pointer-events-none rounded-2xl overflow-hidden mix-blend-overlay">
-        <motion.div
-          style={{
-            x: glareX,
-            y: glareY,
-          }}
-          className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/30 to-transparent w-[200%] h-[200%] -left-1/2 -top-1/2 opacity-0 hover:opacity-100 transition-opacity duration-300"
-        />
-      </div>
       {children}
     </motion.div>
   );

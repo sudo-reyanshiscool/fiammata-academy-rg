@@ -39,6 +39,7 @@ export default function Home() {
           <img 
             src="/images/team_celebration.jpg" 
             alt="Fiammata Racing Celebration" 
+            decoding="async"
             className="w-full h-full object-cover object-[center_15%] opacity-40" 
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#000000] via-[#0a0a0a]/80 to-[#0a0a0a]/60"></div>
@@ -123,7 +124,9 @@ export default function Home() {
               <img 
                 src="/images/team_award.jpg" 
                 alt="Fiammata Racing Team Award" 
-                className="w-full h-auto object-contain group-hover:scale-105 transition-all duration-700"
+                loading="lazy"
+                decoding="async"
+                className="w-full h-auto object-contain group-hover:scale-105 transition-all duration-700" 
               />
             </motion.div>
           </div>

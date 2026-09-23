@@ -10,20 +10,22 @@ interface MentorCardProps {
 export default function MentorCard({ mentor }: MentorCardProps) {
   return (
     <TiltCard>
-      <article className="group relative flex flex-col justify-between bg-gradient-to-br from-[#C8102E] to-[#8B0000] rounded-2xl overflow-hidden shadow-[0_8px_24px_rgba(217,56,45,0.2)] transition-all duration-500 hover:shadow-[0_20px_40px_rgba(217,56,45,0.5)] border border-[#C8102E] cursor-pointer h-full btn-spring">
+      <article className="group relative flex flex-col justify-between bg-gradient-to-br from-[#C8102E] to-[#8B0000] rounded-2xl overflow-hidden shadow-[0_8px_24px_rgba(217,56,45,0.2)] transition-[box-shadow,border-color,transform] duration-300 ease-out hover:shadow-[0_20px_40px_rgba(217,56,45,0.5)] border border-[#C8102E] cursor-pointer h-full btn-spring">
       
       {/* Glare Effect */}
       <div className="absolute inset-0 -translate-x-[150%] bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-[-30deg] group-hover:animate-[glare_1s_ease-in-out_forwards] z-30 pointer-events-none" />
 
       {/* Top Accent Line */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-white/30 z-20 transition-all duration-300 group-hover:h-1.5" />
+      <div className="absolute top-0 left-0 right-0 h-1 bg-white/30 z-20 transition-[height] duration-200 group-hover:h-1.5" />
 
       {/* Image Area with Gradient Fade */}
       <div className="relative w-full h-[240px] sm:h-[280px] shrink-0 bg-[#0a0a0a] overflow-hidden">
         <img 
           src={mentor.image} 
           alt={mentor.name} 
-          className="absolute inset-0 w-full h-full object-cover object-top opacity-95 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 ease-out grayscale-[20%] group-hover:grayscale-0" 
+          loading="lazy"
+          decoding="async"
+          className="absolute inset-0 w-full h-full object-cover object-top opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-transform duration-500 ease-out grayscale-[15%] group-hover:grayscale-0 will-change-transform" 
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#8B0000] via-transparent to-transparent opacity-90" />
         

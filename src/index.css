@@ -14,12 +14,13 @@
     background-color: #000000;
   }
   
-  * {
-    cursor: url('/cursor.svg') 6 4, auto !important;
+  html,
+  body {
+    cursor: url('/cursor.svg') 6 4, auto;
   }
   
-  a, button, [role="button"], input[type="submit"], input[type="button"], input[type="reset"], select, .cursor-pointer, [href], a * {
-    cursor: pointer !important;
+  a, button, [role="button"], input[type="submit"], input[type="button"], input[type="reset"], select, .cursor-pointer, [href] {
+    cursor: pointer;
   }
   
   main > :first-child {
@@ -46,14 +47,21 @@
     @apply transition-transform duration-100 ease-out active:scale-[0.97] active:duration-75;
   }
   
-  /* Apple Glassmorphism */
+  /* Apple Glassmorphism — hardware-accelerated 16px blur with high performance */
   .glass-panel {
-    @apply bg-[#000000]/50 backdrop-blur-[24px] saturate-[180%] border-white/10;
+    @apply bg-[#000000]/65 backdrop-blur-md saturate-[160%] border-white/10;
+    transform: translateZ(0);
   }
   
   /* Optical Typography for large headers */
   .optical-display {
     @apply tracking-[-0.025em] leading-[1.05];
+  }
+  
+  /* GPU Compositing layer */
+  .gpu-layer {
+    transform: translateZ(0);
+    backface-visibility: hidden;
   }
 }
 

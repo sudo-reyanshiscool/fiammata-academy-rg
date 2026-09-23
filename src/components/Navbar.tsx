@@ -85,28 +85,15 @@ export default function Navbar() {
 
   return (
     <>
-      <motion.header 
-        initial={false}
-        animate={{
-          paddingTop: isScrolled ? "12px" : "0px",
-          paddingBottom: isScrolled ? "0px" : "0px",
-        }}
-        className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none"
+      <header 
+        className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none px-4"
       >
-        <motion.div 
-          initial={false}
-          animate={{
-            width: isScrolled ? "min(100%, 1140px)" : "100%",
-            borderRadius: isScrolled ? "16px" : "0px",
-            y: isScrolled ? 16 : 0,
-            borderTopColor: isScrolled ? "rgba(255, 255, 255, 0.15)" : "transparent",
-            borderLeftColor: isScrolled ? "rgba(255, 255, 255, 0.15)" : "transparent",
-            borderRightColor: isScrolled ? "rgba(255, 255, 255, 0.15)" : "transparent",
-            boxShadow: isScrolled ? "0 20px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.05) inset" : "0 4px 30px rgba(0,0,0,0.5)",
-            height: isScrolled ? "64px" : "72px"
-          }}
-          transition={{ type: "spring", bounce: 0, duration: 0.4 }}
-          className="pointer-events-auto glass-panel flex items-center justify-between px-6 lg:px-10 overflow-visible relative"
+        <div 
+          className={`pointer-events-auto glass-panel flex items-center justify-between px-6 lg:px-10 overflow-visible relative transition-[max-width,height,border-radius,margin-top,box-shadow,border-color] duration-300 ease-out will-change-[transform,max-width] ${
+            isScrolled 
+              ? "w-full max-w-[1140px] rounded-2xl h-16 mt-3 shadow-[0_20px_40px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.1)_inset] border border-white/15" 
+              : "w-full max-w-full rounded-none h-[72px] mt-0 shadow-[0_4px_30px_rgba(0,0,0,0.5)] border-b border-white/10"
+          }`}
         >
           <div className="flex items-center gap-3 relative z-10">
             <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3.5 group whitespace-nowrap btn-spring">
@@ -262,8 +249,8 @@ export default function Navbar() {
               </span>
             </button>
           </div>
-        </motion.div>
-      </motion.header>
+        </div>
+      </header>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>

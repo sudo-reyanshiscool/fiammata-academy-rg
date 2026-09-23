@@ -1,96 +1,27 @@
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import React, { useRef } from "react";
-
-type CharacterProps = {
-  char: string;
-  index: number;
-  centerIndex: number;
-  scrollYProgress: any;
-};
-
-const CharacterV1 = ({
-  char,
-  index,
-  centerIndex,
-  scrollYProgress,
-}: CharacterProps) => {
-  const isSpace = char === " ";
-  const distanceFromCenter = index - centerIndex;
-
-  const x = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [distanceFromCenter * 50, 0]
-  );
-  
-  const rotateX = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [distanceFromCenter * 30, 0]
-  );
-  
-  const opacity = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [0, 1]
-  );
-
-  return (
-    <motion.span
-      className={`inline-block ${isSpace ? "w-4 sm:w-6" : ""}`}
-      style={{
-        x,
-        rotateX,
-        opacity,
-        transformStyle: "preserve-3d",
-        willChange: "transform, opacity"
-      }}
-    >
-      {char}
-    </motion.span>
-  );
-};
+import { motion } from "framer-motion";
+import React from "react";
 
 export const ScrollRevealText: React.FC<{
   text: string;
   className?: string;
 }> = ({ text, className = "" }) => {
-  const targetRef = useRef<HTMLDivElement | null>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-    offset: ["start 90%", "center center"]
-  });
-
-  // Cinematic spring lag — responsive enough to not miss the section, slow enough to process
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 50,
-    damping: 20,
-    mass: 0.8
-  });
-
-  const characters = text.split("");
-  const centerIndex = Math.floor(characters.length / 2);
+  const words = text.split(" ");
 
   return (
-    <div
-      ref={targetRef}
-      className="relative flex items-center justify-center w-full"
-    >
-      <div
-        className={`font-display-hero text-center font-extrabold uppercase optical-display ${className}`}
-        style={{
-          perspective: "1000px",
-        }}
-      >
-        {characters.map((char, index) => (
-          <CharacterV1
+    <div className="relative flex items-center justify-center w-full">
+      <div className={`font-display-hero text-center font-extrabold uppercase optical-display flex flex-wrap justify-center gap-x-3 gap-y-1 ${className}`}>
+        {words.map((word, index) => (
+          <motion.span
             key={index}
-            char={char}
-            index={index}
-            centerIndex={centerIndex}
-            scrollYProgress={smoothProgress}
-          />
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.45, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+            className="inline-block"
+            style={{ willChange: "transform, opacity" }}
+          >
+            {word}
+          </motion.span>
         ))}
       </div>
     </div>
