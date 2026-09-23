@@ -1,19 +1,54 @@
 {
   "communities": {
     "0": [
+      "ref_framer_motion",
+      "src_components_commandpalette",
+      "src_components_commandpalette_commandpalette",
+      "src_components_magneticbutton",
+      "src_components_magneticbutton_magneticbutton",
+      "src_components_magneticbutton_magneticbuttonprops",
+      "src_components_marquee",
+      "src_components_marquee_items",
+      "src_components_marquee_marquee",
+      "src_components_marquee_repeateditems",
+      "src_components_mentorcard",
+      "src_components_mentorcard_mentorcard",
+      "src_components_mentorcard_mentorcardprops",
+      "src_components_scrollrevealtext",
+      "src_components_scrollrevealtext_scrollrevealtext",
+      "src_components_tiltcard",
+      "src_components_tiltcard_tiltcard",
+      "src_components_tiltcard_tiltcardprops",
+      "src_data_mentors",
+      "src_data_mentors_mentor",
+      "src_data_mentors_mentors",
+      "src_pages_findmentor",
+      "src_pages_findmentor_categories",
+      "src_pages_findmentor_common_challenges",
+      "src_pages_findmentor_findmentor",
+      "src_pages_home",
+      "src_pages_home_containervariants",
+      "src_pages_home_home",
+      "src_pages_home_itemvariants",
+      "src_pages_mentordashboard",
+      "src_pages_myrequests",
+      "src_pages_onboarding",
+      "src_pages_onboarding_onboarding",
+      "src_pages_onboarding_slides",
+      "src_pages_requestmentorship",
+      "src_repository_requestrepository",
+      "src_repository_requestrepository_mentorshiprequest",
+      "src_repository_requestrepository_requestrepository"
+    ],
+    "1": [
       "ref_react",
+      "ref_react_router_dom",
       "ref_supabase_supabase_js",
-      "src_app",
-      "src_app_animatedpageroutes",
-      "src_app_onboardingguard",
-      "src_components_pagetransition",
-      "src_components_pagetransition_pagetransition",
-      "src_components_preloader",
-      "src_components_preloader_preloader",
+      "src_components_scrolltotop",
+      "src_components_scrolltotop_scrolltotop",
       "src_context_authcontext",
       "src_context_authcontext_authcontext",
       "src_context_authcontext_authcontexttype",
-      "src_context_authcontext_authprovider",
       "src_context_toastcontext",
       "src_context_toastcontext_toast",
       "src_context_toastcontext_toastcontext",
@@ -32,28 +67,18 @@
       "src_pages_mentorsignup",
       "src_pages_mentorsignup_mentorsignup",
       "src_pages_profilesettings",
-      "src_pages_profilesettings_profilesettings",
       "src_pages_requestmentorship_requestmentorship",
       "src_pages_signup",
       "src_pages_signup_signup",
       "src_pages_updatepassword",
       "src_pages_updatepassword_updatepassword",
-      "src_pages_workshops",
-      "src_pages_workshops_workshops",
       "src_repository_profilerepository",
       "src_repository_profilerepository_generatelicensenumber",
       "src_repository_profilerepository_profilerepository",
       "src_repository_profilerepository_userprofile"
     ],
-    "1": [
+    "2": [
       "package",
-      "package_dependencies",
-      "package_dependencies_framer_motion",
-      "package_dependencies_lucide_react",
-      "package_dependencies_react",
-      "package_dependencies_react_dom",
-      "package_dependencies_react_router_dom",
-      "package_dependencies_supabase_supabase_js",
       "package_name",
       "package_private",
       "package_scripts",
@@ -81,31 +106,33 @@
       "src_main",
       "vite_config"
     ],
-    "2": [
-      "ref_react_router_dom",
+    "3": [
+      "src_app",
+      "src_app_animatedpageroutes",
+      "src_app_onboardingguard",
       "src_app_protectedroute",
-      "src_components_commandpalette",
-      "src_components_commandpalette_commandpalette",
+      "src_components_pagetransition",
+      "src_components_pagetransition_pagetransition",
       "src_components_pitpassbanner",
       "src_components_pitpassbanner_pitpassbanner",
+      "src_components_preloader",
+      "src_components_preloader_preloader",
+      "src_context_authcontext_authprovider",
       "src_context_authcontext_useauth",
-      "src_data_mentors",
-      "src_data_mentors_mentors",
       "src_pages_askexpert",
       "src_pages_askexpert_askexpert",
-      "src_pages_mentordashboard",
+      "src_pages_authportal",
+      "src_pages_authportal_authportal",
       "src_pages_mentordashboard_mentordashboard",
       "src_pages_mentorprofile",
       "src_pages_mentorprofile_mentorprofile",
-      "src_pages_myrequests",
       "src_pages_myrequests_myrequests",
       "src_pages_myrequests_myrequests_fetchrequests",
-      "src_pages_requestmentorship",
-      "src_repository_requestrepository",
-      "src_repository_requestrepository_mentorshiprequest",
-      "src_repository_requestrepository_requestrepository"
+      "src_pages_profilesettings_profilesettings",
+      "src_pages_workshops",
+      "src_pages_workshops_workshops"
     ],
-    "3": [
+    "4": [
       "tsconfig_app",
       "tsconfig_app_compileroptions",
       "tsconfig_app_compileroptions_allowarbitraryextensions",
@@ -127,7 +154,7 @@
       "tsconfig_app_compileroptions_verbatimmodulesyntax",
       "tsconfig_app_include"
     ],
-    "4": [
+    "5": [
       "tsconfig_node",
       "tsconfig_node_compileroptions",
       "tsconfig_node_compileroptions_allowimportingtsextensions",
@@ -146,41 +173,7 @@
       "tsconfig_node_compileroptions_verbatimmodulesyntax",
       "tsconfig_node_include"
     ],
-    "5": [
-      "src_components_magneticbutton",
-      "src_components_magneticbutton_magneticbutton",
-      "src_components_magneticbutton_magneticbuttonprops",
-      "src_components_marquee",
-      "src_components_marquee_items",
-      "src_components_marquee_marquee",
-      "src_components_marquee_repeateditems",
-      "src_components_scrollrevealtext",
-      "src_components_scrollrevealtext_scrollrevealtext",
-      "src_pages_home",
-      "src_pages_home_containervariants",
-      "src_pages_home_home",
-      "src_pages_home_itemvariants",
-      "src_pages_onboarding",
-      "src_pages_onboarding_onboarding",
-      "src_pages_onboarding_slides"
-    ],
     "6": [
-      "ref_framer_motion",
-      "src_components_footer",
-      "src_components_footer_footer",
-      "src_components_navbar",
-      "src_components_navbar_confirmsignoutbutton",
-      "src_components_navbar_navbar",
-      "src_components_scrolltotop",
-      "src_components_scrolltotop_scrolltotop",
-      "src_components_textroll",
-      "src_components_textroll_textroll",
-      "src_layouts_mainlayout",
-      "src_layouts_mainlayout_mainlayout",
-      "src_pages_authportal",
-      "src_pages_authportal_authportal"
-    ],
-    "7": [
       "package_devdependencies",
       "package_devdependencies_autoprefixer",
       "package_devdependencies_oxlint",
@@ -193,20 +186,19 @@
       "package_devdependencies_vite",
       "package_devdependencies_vitejs_plugin_react"
     ],
-    "8": [
-      "src_components_mentorcard",
-      "src_components_mentorcard_mentorcard",
-      "src_components_mentorcard_mentorcardprops",
-      "src_components_tiltcard",
-      "src_components_tiltcard_tiltcard",
-      "src_components_tiltcard_tiltcardprops",
-      "src_data_mentors_mentor",
-      "src_pages_findmentor",
-      "src_pages_findmentor_categories",
-      "src_pages_findmentor_common_challenges",
-      "src_pages_findmentor_findmentor"
+    "7": [
+      "src_components_footer",
+      "src_components_footer_footer",
+      "src_components_navbar",
+      "src_components_navbar_navbar",
+      "src_components_navbar_navbar_handleclickoutside",
+      "src_components_navbar_navbar_handlekeydown",
+      "src_components_textroll",
+      "src_components_textroll_textroll",
+      "src_layouts_mainlayout",
+      "src_layouts_mainlayout_mainlayout"
     ],
-    "9": [
+    "8": [
       "os",
       "pathlib",
       "scripts_run_graphify",
@@ -214,6 +206,15 @@
       "scripts_run_graphify_rationale_2",
       "subprocess",
       "sys"
+    ],
+    "9": [
+      "package_dependencies",
+      "package_dependencies_framer_motion",
+      "package_dependencies_lucide_react",
+      "package_dependencies_react",
+      "package_dependencies_react_dom",
+      "package_dependencies_react_router_dom",
+      "package_dependencies_supabase_supabase_js"
     ],
     "10": [
       "oxlintrc",
@@ -265,15 +266,15 @@
     ]
   },
   "cohesion": {
-    "0": 0.12181616832779624,
-    "1": 0.06060606060606061,
-    "2": 0.18614718614718614,
-    "3": 0.1,
-    "4": 0.11764705882352941,
-    "5": 0.15,
-    "6": 0.18681318681318682,
-    "7": 0.18181818181818182,
-    "8": 0.21818181818181817,
+    "0": 0.09957325746799431,
+    "1": 0.1411764705882353,
+    "2": 0.07692307692307693,
+    "3": 0.13043478260869565,
+    "4": 0.1,
+    "5": 0.11764705882352941,
+    "6": 0.18181818181818182,
+    "7": 0.24444444444444444,
+    "8": 0.2857142857142857,
     "9": 0.2857142857142857,
     "10": 0.3333333333333333,
     "11": 0.6666666666666666,
@@ -354,6 +355,28 @@
       "why": "bridges separate communities"
     },
     {
+      "source": "ProfileSettings()",
+      "target": "useToast()",
+      "source_files": [
+        "src/pages/ProfileSettings.tsx",
+        "src/context/ToastContext.tsx"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "RequestMentorship()",
+      "target": "useAuth()",
+      "source_files": [
+        "src/pages/RequestMentorship.tsx",
+        "src/context/AuthContext.tsx"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "bridges separate communities"
+    },
+    {
       "source": "ProtectedRoute()",
       "target": "useAuth()",
       "source_files": [
@@ -365,17 +388,6 @@
       "why": "peripheral node `ProtectedRoute()` unexpectedly reaches hub `useAuth()`"
     },
     {
-      "source": "Navbar()",
-      "target": "useAuth()",
-      "source_files": [
-        "src/components/Navbar.tsx",
-        "src/context/AuthContext.tsx"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "calls",
-      "why": "bridges separate communities"
-    },
-    {
       "source": "PitPassBanner()",
       "target": "useAuth()",
       "source_files": [
@@ -385,17 +397,6 @@
       "confidence": "EXTRACTED",
       "relation": "calls",
       "why": "peripheral node `PitPassBanner()` unexpectedly reaches hub `useAuth()`"
-    },
-    {
-      "source": "ProfileSettings()",
-      "target": "useAuth()",
-      "source_files": [
-        "src/pages/ProfileSettings.tsx",
-        "src/context/AuthContext.tsx"
-      ],
-      "confidence": "EXTRACTED",
-      "relation": "calls",
-      "why": "bridges separate communities"
     }
   ],
   "tokens": {
