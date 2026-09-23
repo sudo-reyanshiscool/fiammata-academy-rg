@@ -2,45 +2,8 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { TextRoll } from './TextRoll';
-
-function ConfirmSignOutButton({ onConfirm }: { onConfirm: () => void }) {
-  const [isConfirming, setIsConfirming] = useState(false);
-
-  return (
-    <div className="relative">
-      <AnimatePresence mode="wait">
-        {isConfirming ? (
-          <motion.button
-            key="confirm"
-            initial={{ y: -10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 10, opacity: 0 }}
-            onClick={() => {
-              onConfirm();
-              setIsConfirming(false);
-            }}
-            className="text-[12px] font-bold text-red-500 hover:text-red-400 transition-colors uppercase tracking-widest whitespace-nowrap bg-red-500/10 px-3 py-1.5 rounded"
-          >
-            CONFIRM OUT
-          </motion.button>
-        ) : (
-          <motion.button
-            key="signout"
-            initial={{ y: 10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -10, opacity: 0 }}
-            onClick={() => setIsConfirming(true)}
-            className="text-[12px] font-bold text-white/50 hover:text-white transition-colors uppercase tracking-widest whitespace-nowrap"
-          >
-            SIGN OUT
-          </motion.button>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-}
 
 export default function Navbar() {
   const location = useLocation();
@@ -51,6 +14,29 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isUserDropdownOpen, setIsUserDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsUserDropdownOpen(false);
+      }
+    }
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setIsUserDropdownOpen(false);
+      }
+    }
+
+    if (isUserDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('keydown', handleKeyDown);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isUserDropdownOpen]);
 
   const handleSignOut = async () => {
     setIsUserDropdownOpen(false);
@@ -145,7 +131,7 @@ export default function Navbar() {
                 )}
 
                 {/* Interactive Profile & Settings Floating Menu */}
-                <div className="relative hidden lg:block">
+                <div ref={dropdownRef} className="relative hidden lg:block">
                   <button
                     onClick={() => setIsUserDropdownOpen(!isUserDropdownOpen)}
                     className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold text-[11px] uppercase tracking-wider transition-colors btn-spring cursor-pointer"
@@ -224,10 +210,6 @@ export default function Navbar() {
                       </motion.div>
                     )}
                   </AnimatePresence>
-                </div>
-
-                <div className="hidden lg:block btn-spring">
-                  <ConfirmSignOutButton onConfirm={handleSignOut} />
                 </div>
               </div>
             ) : (
