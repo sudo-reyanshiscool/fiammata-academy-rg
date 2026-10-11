@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { requestRepository } from '../repository/requestRepository';
 import type { MentorshipRequest } from '../repository/requestRepository';
 import { mentors } from '../data/mentors';
+import type { Mentor } from '../data/mentors';
 import { useAuth } from '../context/AuthContext';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -12,7 +13,7 @@ export default function MyRequests() {
   const { user } = useAuth();
   
   // State for the Communication Link Modal
-  const [activeComm, setActiveComm] = useState<{req: MentorshipRequest, mentor: any} | null>(null);
+  const [activeComm, setActiveComm] = useState<{req: MentorshipRequest, mentor: Mentor} | null>(null);
 
   useEffect(() => {
     async function fetchRequests() {
@@ -108,13 +109,11 @@ export default function MyRequests() {
                   <div className="flex flex-col lg:flex-row justify-between gap-6">
                     <div className="flex items-start gap-5 min-w-0 flex-1">
                       <div className="relative shrink-0">
-                        <img 
-                          src={mentor.image} 
-                          alt={mentor.name} 
-                          className="w-16 h-16 sm:w-20 sm:h-20 rounded object-cover border border-white/20 grayscale group-hover:grayscale-0 transition-all"
-                        />
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center font-display-hero text-2xl font-extrabold text-white">
+                          {mentor.name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase()}
+                        </div>
                         {req.status === 'accepted' && (
-                          <div className="absolute -inset-1 border border-emerald-500/50 rounded animate-pulse" />
+                          <div className="absolute -inset-1 border border-emerald-500/50 rounded-xl animate-pulse" />
                         )}
                       </div>
                       <div className="flex flex-col min-w-0 flex-1">
@@ -223,7 +222,9 @@ export default function MyRequests() {
                 
                 <div className="bg-[#000000] border border-white/10 rounded-xl p-5 flex flex-col gap-4">
                   <div className="flex items-center gap-4">
-                    <img src={activeComm.mentor.image} alt="Mentor" className="w-12 h-12 rounded object-cover border border-white/20" />
+                    <div className="w-12 h-12 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center font-display-hero text-lg font-bold text-white shrink-0">
+                      {(activeComm.mentor.name || '').split(' ').map((n: string) => n[0]).join('').slice(0, 2).toUpperCase()}
+                    </div>
                     <div>
                       <div className="text-white font-bold uppercase tracking-widest text-[13px]">{activeComm.mentor.name}</div>
                       <div className="text-white/50 text-[11px] uppercase tracking-wider">{activeComm.mentor.role}</div>

@@ -106,7 +106,9 @@ export default function RequestMentorship() {
         </button>
 
         <div className="flex items-center gap-4 bg-[#0a0a0a] p-4 rounded-2xl border border-white/10 shadow-lg">
-          <img src={mentor.image} alt={mentor.name} className="w-16 h-16 rounded-full object-cover grayscale-[20%]" />
+          <div className="w-14 h-14 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center font-display-hero text-2xl font-extrabold text-white shrink-0">
+            {mentor.name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase()}
+          </div>
           <div>
             <h2 className="font-display-hero text-2xl font-bold uppercase tracking-wide">Requesting {mentor.name}</h2>
             <p className="text-primary text-[12px] uppercase font-bold tracking-widest">{mentor.role}</p>

@@ -8,6 +8,13 @@ interface MentorCardProps {
 }
 
 export default function MentorCard({ mentor }: MentorCardProps) {
+  const initials = mentor.name
+    .split(' ')
+    .map(n => n[0])
+    .join('')
+    .slice(0, 2)
+    .toUpperCase();
+
   return (
     <TiltCard>
       <article className="group relative flex flex-col justify-between bg-gradient-to-br from-[#b50e28] via-[#8B0000] to-[#500000] rounded-2xl overflow-hidden shadow-[0_10px_30px_rgba(200,16,46,0.25)] transition-[box-shadow,border-color,transform] duration-300 ease-out hover:shadow-[0_20px_45px_rgba(200,16,46,0.55)] border border-[#ff3355]/40 cursor-pointer h-full btn-spring">
@@ -18,19 +25,15 @@ export default function MentorCard({ mentor }: MentorCardProps) {
         {/* Top Accent Line */}
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-white/40 via-white to-white/40 z-20 transition-[height] duration-200 group-hover:h-1.5" />
 
-        {/* Image Area with Gradient Fade */}
-        <div className="relative w-full h-[240px] sm:h-[280px] shrink-0 bg-[#0a0a0a] overflow-hidden">
-          <img
-            src={mentor.image}
-            alt={mentor.name}
-            loading="lazy"
-            decoding="async"
-            className="absolute inset-0 w-full h-full object-cover object-top opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-transform duration-500 ease-out grayscale-[10%] group-hover:grayscale-0 will-change-transform"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#600000] via-[#8B0000]/40 to-transparent opacity-95" />
+        {/* Header Area without photo */}
+        <div className="relative w-full p-5 sm:p-6 pb-2 shrink-0 overflow-hidden bg-black/20 border-b border-white/10">
+          {/* Monogram Background Watermark */}
+          <span className="absolute -right-2 -bottom-6 font-display-hero text-8xl font-black text-white/[0.06] select-none pointer-events-none tracking-tighter">
+            {initials}
+          </span>
 
           {/* Top Status & Serial Badges */}
-          <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-20 pointer-events-none">
+          <div className="flex items-center justify-between mb-4 pointer-events-none">
             <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md border border-white/20 text-[9px] font-mono font-bold tracking-widest uppercase text-white">
               <span className="relative flex h-1.5 w-1.5">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
@@ -43,20 +46,18 @@ export default function MentorCard({ mentor }: MentorCardProps) {
             </span>
           </div>
 
-          {/* Floating Role Badge */}
-          <div className="absolute bottom-4 left-5 right-5 flex justify-between items-end">
-            <div>
-              <h2 className="font-display-hero text-2xl sm:text-[28px] font-extrabold text-white optical-display leading-none mb-1 drop-shadow-md">
+          {/* Initials Shield + Mentor Name & Role */}
+          <div className="flex items-center gap-3.5 relative z-10">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-white/15 backdrop-blur-md border border-white/30 flex items-center justify-center font-display-hero text-2xl font-black text-white shrink-0 group-hover:scale-105 transition-transform shadow-inner">
+              {initials}
+            </div>
+            <div className="min-w-0 flex-1">
+              <h2 className="font-display-hero text-2xl sm:text-[26px] font-extrabold text-white optical-display leading-none mb-1 drop-shadow-md truncate">
                 {mentor.name.toUpperCase()}
               </h2>
-              <p className="text-[12px] font-bold text-white/90 uppercase tracking-widest drop-shadow">
+              <p className="text-[11px] font-bold text-white/90 uppercase tracking-widest drop-shadow truncate">
                 {mentor.role.split(' Lead')[0]}
               </p>
-            </div>
-            <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/40 shadow-sm group-hover:bg-white group-hover:text-primary transition-colors">
-              <span className="material-symbols-outlined text-[16px] text-white group-hover:text-primary transition-colors">
-                arrow_forward
-              </span>
             </div>
           </div>
         </div>
