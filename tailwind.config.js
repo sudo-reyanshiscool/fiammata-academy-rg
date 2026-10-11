@@ -8,7 +8,7 @@ export default {
     extend: {
       colors: {
         "surface-container-highest": "#e5e2e1",
-        "secondary": "#b7211f",
+        "secondary": "#009FE3",
         "inverse-surface": "#313030",
         "outline": "#EAE5E2",
         "surface-bright": "#fcf9f8",
@@ -28,8 +28,8 @@ export default {
         "primary-container": "#da342b",
         "on-secondary-fixed": "#410002",
         "on-background": "#1c1b1b",
-        "primary": "#C8102E",
-        "primary-hover": "#9B0C23",
+        "primary": "#E6007E",
+        "primary-hover": "#BD0066",
         "primary-fixed-dim": "#ffb4aa",
         "secondary-fixed-dim": "#ffb4ab",
         "tertiary-container": "#bb554d",
@@ -76,20 +76,20 @@ export default {
         "space-sm": "0.5rem"
       },
       fontFamily: {
-        "sans": ["Calibri", "system-ui", "sans-serif"],
-        "display-hero": ["Oswald", "sans-serif"],
-        "body-md": ["Calibri", "system-ui", "sans-serif"],
-        "label-caps": ["Calibri", "system-ui", "sans-serif"],
-        "label-md": ["Calibri", "system-ui", "sans-serif"],
-        "display-hero-mobile": ["Calibri", "system-ui", "sans-serif"],
-        "body-lg": ["Calibri", "system-ui", "sans-serif"],
-        "headline-sm": ["Calibri", "system-ui", "sans-serif"],
-        "headline-md": ["Calibri", "system-ui", "sans-serif"],
-        "title-md": ["Calibri", "system-ui", "sans-serif"],
-        "headline-lg": ["Calibri", "system-ui", "sans-serif"],
-        "headline-lg-mobile": ["Calibri", "system-ui", "sans-serif"],
-        "label-lg": ["Calibri", "system-ui", "sans-serif"],
-        "body-sm": ["Calibri", "system-ui", "sans-serif"]
+        "sans": ["DM Sans", "sans-serif"],
+        "display-hero": ["Barlow Condensed", "sans-serif"],
+        "body-md": ["DM Sans", "sans-serif"],
+        "label-caps": ["DM Sans", "sans-serif"],
+        "label-md": ["DM Sans", "sans-serif"],
+        "display-hero-mobile": ["Barlow Condensed", "sans-serif"],
+        "body-lg": ["DM Sans", "sans-serif"],
+        "headline-sm": ["Barlow Condensed", "sans-serif"],
+        "headline-md": ["Barlow Condensed", "sans-serif"],
+        "title-md": ["Barlow Condensed", "sans-serif"],
+        "headline-lg": ["Barlow Condensed", "sans-serif"],
+        "headline-lg-mobile": ["Barlow Condensed", "sans-serif"],
+        "label-lg": ["DM Sans", "sans-serif"],
+        "body-sm": ["DM Sans", "sans-serif"]
       },
       keyframes: {
         'glare': {

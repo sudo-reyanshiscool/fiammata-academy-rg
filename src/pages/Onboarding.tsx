@@ -46,7 +46,7 @@ export default function Onboarding() {
   };
 
   return (
-    <div className="fixed inset-0 z-[100] bg-[#000000] text-white flex flex-col justify-center items-center overflow-hidden cursor-auto">
+    <div className="academy-onboarding fixed inset-0 z-[100] bg-[#000000] text-white flex flex-col justify-center items-center overflow-hidden cursor-auto">
       {/* Background FX */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#C8102E]/20 via-black to-black pointer-events-none opacity-50" />
       <motion.div
