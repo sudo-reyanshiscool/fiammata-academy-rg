@@ -46,7 +46,7 @@ input, textarea, select { color: var(--ink); }
 input::placeholder, textarea::placeholder { color: #918a95; }
 .academy-onboarding { background: var(--carbon) !important; color: white !important; }
 .academy-onboarding > .absolute.inset-0 { display: none; }
-.academy-onboarding button { background: var(--pink) !important; color: white !important; border: 0 !important; box-shadow: none !important; }
+.academy-onboarding h1.font-display-hero { font-style: normal; }
 
 /* Shared frame */
 .academy-wrap { width: min(1240px, calc(100% - 64px)); margin: 0 auto; }
@@ -189,4 +189,49 @@ input::placeholder, textarea::placeholder { color: #918a95; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+/* Fiammata details: real people first, with fewer template-like flourishes. */
+.academy-hero::before,
+.academy-footer::before,
+.academy-cta::after,
+.academy-directory-hero::after { display: none; }
+.academy-hero-visual::before { display: none; }
+.academy-photo-frame::after { position: absolute; inset: 0 0 auto; height: 5px; content: ''; background: url('/brand/stem-racing-hot-gradient.png') center 62%/cover no-repeat; }
+.academy-photo-caption > span { color: #ff8bc8; font-size: 11px; letter-spacing: .05em; text-transform: none; }
+.academy-hero h1,
+.academy-directory-hero h1 { font: 600 clamp(66px,8.2vw,112px)/.91 var(--display); text-transform: none; }
+.academy-hero h1 em,
+.academy-directory-hero h1 em { font-style: italic; }
+.academy-section-heading h2,
+.academy-section-title,
+.academy-roster-heading h2,
+.academy-cta h2 { font: 600 clamp(53px,6.2vw,82px)/.98 var(--display); text-transform: none; }
+.academy-discipline h3,
+.academy-mentor-content h3 { font-style: normal; text-transform: none; }
+.academy-photo-caption strong { font-style: normal; text-transform: none; }
+.academy-photo-index { display: none; }
+.academy-proof-avatars img { width: 34px; height: 34px; object-fit: cover; object-position: center 18%; margin-left: -6px; border: 2px solid var(--carbon); border-radius: 50%; background: white; }
+.academy-story-stat strong { color: var(--pink); font: 600 21px/1 var(--body); }
+.academy-mentor-photo { height: 295px; background: #f1eff3; }
+.academy-mentor-photo img { object-position: center top; }
+.academy-story-stat span { font-style: normal; font-weight: 600; text-transform: none; }
+.academy-mentor-monogram { background: var(--carbon); border-bottom: 3px solid var(--pink); text-shadow: none; }
+.academy-mobile-menu a,
+.academy-mobile-menu button { font-style: normal; text-transform: none; }
+.academy-button { text-transform: none; letter-spacing: .02em; font-size: 12px; }
+.academy-directory-hero-layout { display: grid; grid-template-columns: 1.15fr .85fr; align-items: center; gap: clamp(40px,7vw,90px); }
+.academy-directory-hero-inner { max-width: 720px; margin: 0; }
+.academy-directory-photo { position: relative; margin: 0; aspect-ratio: 1.45; border-left: 4px solid var(--pink); background: #15101a; }
+.academy-directory-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.academy-directory-photo figcaption { position: absolute; left: 14px; bottom: 14px; padding: 9px 11px; background: var(--carbon); color: white; font-size: 10px; letter-spacing: .04em; }
+@media (max-width: 720px) {
+  .academy-hero::before { display: none; }
+  .academy-directory-hero-layout { display: block; }
+  .academy-directory-hero-inner { margin: 0; }
+  .academy-directory-photo { display: none; }
+  .academy-mentor-photo { height: min(80vw, 340px); }
+  .academy-section-heading h2,
+  .academy-section-title,
+  .academy-roster-heading h2 { font-size: 63px; }
 }

@@ -23,9 +23,9 @@ export default function FindMentor() {
   });
 
   return <div className="academy-directory">
-    <section className="academy-directory-hero"><div className="academy-wrap academy-directory-hero-inner"><span className="academy-eyebrow">04 — Find your person</span><h1>What do you need<br /><em>help with?</em></h1><p>Connect with National Finalists, World Finalists and active World Finalist judges. Search for your challenge or choose a discipline to find the right mentor.</p>
+    <section className="academy-directory-hero"><div className="academy-wrap academy-directory-hero-layout"><div className="academy-directory-hero-inner"><span className="academy-eyebrow">Meet the mentors</span><h1>What do you need<br /><em>help with?</em></h1><p>Connect with National Finalists, World Finalists and active World Finalist judges. Search for your challenge or choose a discipline to find the right mentor.</p>
       <label className="academy-search"><Search size={19} /><span className="sr-only">Search mentors and expertise</span><input value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)} placeholder="Try “car optimisation” or a mentor’s name" /></label>
-    </div></section>
+    </div><figure className="academy-directory-photo"><img src="/images/team_award.jpg" alt="Fiammata Racing team at the National Finals" /><figcaption>Fiammata Racing · National Finals</figcaption></figure></div></section>
     <section className="academy-directory-results"><div className="academy-wrap">
       <div className="academy-filter-row" aria-label="Filter mentors by discipline">{CATEGORIES.map((category) => {
         const count = category.id === 'all' ? mentors.length : mentors.filter((mentor) => mentor.categories.includes(category.id)).length;

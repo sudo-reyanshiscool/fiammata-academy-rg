@@ -6,24 +6,24 @@ import MagneticButton from '../components/MagneticButton';
 const slides = [
   {
     id: 1,
-    subtitle: 'PROJECT APEX',
-    title: 'WELCOME TO FIAMMATA ACADEMY',
-    description: 'The definitive platform for elite STEM Racing mentorship. No fees, no barriers. Just high-performance engineering guidance.',
-    icon: 'rocket_launch'
+    subtitle: 'Welcome',
+    title: 'Welcome to Fiammata Academy',
+    description: 'Free mentorship for teams taking part in STEM Racing. No fees, no barriers.',
+    icon: 'sports_score'
   },
   {
     id: 2,
-    subtitle: 'GLOBAL ROSTER',
-    title: 'LEARN FROM THE CHAMPIONS',
-    description: 'Connect with National Finalists, World Stage competitors, and award-winning engineers across every project discipline.',
-    icon: 'public'
+    subtitle: 'Meet the mentors',
+    title: 'Learn from people who have competed',
+    description: 'Connect with National Finalists, World Finals competitors and award-winning engineers across every project discipline.',
+    icon: 'groups'
   },
   {
     id: 3,
-    subtitle: 'COMMAND CENTER',
-    title: 'START YOUR ENGINES',
-    description: 'Request a mentor, track telemetry in real-time, and optimize your portfolio to an elite standard.',
-    icon: 'speed'
+    subtitle: 'How it works',
+    title: 'Get help with your next step',
+    description: 'Request a mentor, follow your requests, review your team telemetry and strengthen your portfolio.',
+    icon: 'menu_book'
   }
 ];
 
@@ -62,8 +62,8 @@ export default function Onboarding() {
       />
 
       <div className="absolute top-8 right-8 z-50">
-        <button onClick={skip} className="text-white/40 hover:text-white font-bold text-[11px] uppercase tracking-widest transition-colors px-4 py-2">
-          Skip Initialization
+        <button onClick={skip} className="text-white/60 hover:text-white font-semibold text-[12px] transition-colors px-4 py-2">
+          Skip
         </button>
       </div>
 
@@ -77,15 +77,15 @@ export default function Onboarding() {
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col items-center"
           >
-            <div className="w-20 h-20 rounded-2xl bg-[#C8102E]/10 border border-[#C8102E]/30 flex items-center justify-center mb-8 shadow-[0_0_30px_rgba(200,16,46,0.2)]">
-              <span className="material-symbols-outlined text-[40px] text-[#C8102E]">{slides[current].icon}</span>
+            <div className="w-14 h-14 rounded-full bg-[#C8102E]/10 border border-[#C8102E]/30 flex items-center justify-center mb-6">
+              <span className="material-symbols-outlined text-[28px] text-[#ff73ba]">{slides[current].icon}</span>
             </div>
             
             <motion.span 
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] text-[#C8102E] mb-6"
+              className="px-3 py-1 text-[12px] font-semibold text-[#ff73ba] mb-4"
             >
               {slides[current].subtitle}
             </motion.span>
@@ -94,7 +94,7 @@ export default function Onboarding() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="font-display-hero text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight leading-none mb-6 drop-shadow-lg"
+              className="font-display-hero text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.02] mb-5"
             >
               {slides[current].title}
             </motion.h1>
@@ -103,7 +103,7 @@ export default function Onboarding() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-lg md:text-xl text-white/60 max-w-[600px] leading-relaxed"
+              className="text-base md:text-lg text-white/70 max-w-[600px] leading-relaxed"
             >
               {slides[current].description}
             </motion.p>
@@ -123,7 +123,7 @@ export default function Onboarding() {
           <MagneticButton>
             <button
               onClick={nextSlide}
-              className="inline-flex items-center justify-center gap-2 bg-[#C8102E] hover:bg-[#9B0C23] text-white font-bold text-[14px] uppercase tracking-widest px-12 h-14 rounded transition-all shadow-[0_0_20px_rgba(200,16,46,0.4)] hover:shadow-[0_0_40px_rgba(200,16,46,0.6)] border border-[#C8102E]"
+              className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-white font-semibold text-[14px] px-8 h-12 transition-colors border border-primary"
             >
               <span>{current === slides.length - 1 ? 'Enter Academy' : 'Continue'}</span>
               <span className="material-symbols-outlined text-[18px]">

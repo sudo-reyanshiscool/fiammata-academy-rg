@@ -20,7 +20,6 @@ import MentorSignup from './pages/MentorSignup';
 import AuthPortal from './pages/AuthPortal';
 import ForgotPassword from './pages/ForgotPassword';
 import UpdatePassword from './pages/UpdatePassword';
-import Preloader from './components/Preloader';
 
 import ProfileSettings from './pages/ProfileSettings';
 
@@ -28,7 +27,7 @@ import ProfileSettings from './pages/ProfileSettings';
 function ProtectedRoute({ children, mentorOnly = false }: { children: React.ReactNode, mentorOnly?: boolean }) {
   const { user, loading, isMentor } = useAuth();
   
-  if (loading) return <div className="flex-1 flex items-center justify-center p-20 text-white font-sans">INITIALIZING TELEMETRY...</div>;
+  if (loading) return <div className="flex-1 flex items-center justify-center p-20 text-white font-sans">Loading your account…</div>;
   if (!user) return <Navigate to="/auth-portal" replace />;
   if (mentorOnly && !isMentor) return <Navigate to="/" replace />;
   
@@ -101,7 +100,6 @@ function App() {
     <AuthProvider>
       <ToastProvider>
         <Router>
-          <Preloader />
           <OnboardingGuard>
             <Routes>
               <Route path="/onboarding" element={<Onboarding />} />

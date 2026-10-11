@@ -30,7 +30,7 @@ export default function MentorProfile() {
 
         <div className="bg-[#0a0a0a] border border-white/10 rounded-3xl p-8 sm:p-10 shadow-sm text-center flex flex-col items-center">
           <div className="relative w-28 h-28 rounded-2xl bg-white/10 border-2 border-white/20 flex items-center justify-center font-display-hero text-4xl font-extrabold text-white mb-6 shadow-[0_10px_30px_rgba(0,0,0,0.5)]">
-            {mentor.name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase()}
+            {mentor.image ? <img src={mentor.image} alt={mentor.name} className="w-full h-full rounded-2xl object-cover object-top" /> : mentor.name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase()}
           </div>
           
           <h1 className="text-[32px] sm:text-[36px] font-extrabold text-white tracking-tight leading-none mb-2">
