@@ -6,8 +6,7 @@ export default function Footer() {
       <div className="max-w-[1280px] mx-auto px-6 sm:px-8 lg:px-12 flex flex-col sm:flex-row items-center sm:items-start justify-between gap-8 sm:gap-4 text-center sm:text-left">
         <div className="flex flex-col gap-1.5">
           <span className="font-display-hero font-extrabold text-[16px] text-white uppercase tracking-widest">Fiammata Academy</span>
-          <span className="font-bold text-[12px] text-primary uppercase tracking-widest">Founded by Swastik Katiyar</span>
-          <span className="text-[13px] text-white/40 mt-3 max-w-sm leading-relaxed font-sans">
+          <span className="text-[13px] text-white/40 mt-1 max-w-sm leading-relaxed font-sans">
             An initiative of Fiammata Racing. <br className="hidden sm:block" />
             "Your Team. Our Expertise. Learn from experience. Build it yourself."
           </span>
