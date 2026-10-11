@@ -22,12 +22,12 @@ export const TelemetryBar: React.FC = () => {
       icon: 'volunteer_activism',
     },
     {
-      label: 'NATIONAL ACCOLADES',
-      value: 4,
-      suffix: '',
-      desc: 'Sustainability & Enterprise Champions',
+      label: 'WORLD FINALIST JUDGES',
+      value: 100,
+      suffix: '%',
+      desc: 'Trusted by real World Finalist Judges',
       code: 'TEL-03',
-      icon: 'emoji_events',
+      icon: 'gavel',
     },
     {
       label: 'PIT-WALL RESPONSE',

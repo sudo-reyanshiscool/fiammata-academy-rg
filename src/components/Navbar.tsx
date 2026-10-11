@@ -76,11 +76,11 @@ export default function Navbar() {
       >
         <div
           className={`pointer-events-auto glass-panel flex items-center justify-between px-6 lg:px-10 overflow-visible relative transition-[max-width,height,border-radius,margin-top,box-shadow,border-color] duration-300 ease-out will-change-[transform,max-width] ${isScrolled
-              ? "w-full max-w-[1140px] rounded-2xl h-16 mt-3 shadow-[0_20px_40px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.1)_inset] border border-white/15"
+              ? "w-full max-w-[1240px] rounded-2xl h-16 mt-3 shadow-[0_20px_40px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.1)_inset] border border-white/15"
               : "w-full max-w-full rounded-none h-[72px] mt-0 shadow-[0_4px_30px_rgba(0,0,0,0.5)] border-b border-white/10"
             }`}
         >
-          <div className="flex items-center gap-3 relative z-10">
+          <div className="flex items-center gap-3 relative z-10 shrink-0">
             <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3.5 group whitespace-nowrap btn-spring">
               <img
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuDixOz_aPV5S18pmP1os4spfKgu8ymEWq0kj8m9olfFVmxFNEt--bdb5BuhKh0pIhmBkzCOHenEvTyehgKyyOi7OcVBA-Tzb_zvwAstMkkwvfoltZwvJBcyt0Csr-alwTzaL8QnzwgxCN3MG8g9bA6B9FA-yIozUyhXgQZc2y7v-x7ytniNu6S_8RfwNSsB7iconm6rB4ARTmYyoHeLETOZkE46lsjZUXAsdb3lXJ0bsQRBC6lF8MNR73agijG6x2eKaQ"
@@ -93,14 +93,6 @@ export default function Navbar() {
                 <span className="text-[9px] font-bold tracking-[0.2em] text-primary uppercase drop-shadow-[0_0_8px_rgba(220,20,60,0.8)]">MENTORSHIP</span>
               </div>
             </Link>
-            <div className="hidden 2xl:flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono uppercase tracking-widest text-white/80">
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500" />
-              </span>
-              <span className="text-white/50">Pit Wall</span>
-              <span className="text-emerald-400 font-bold">Online</span>
-            </div>
           </div>
 
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8 relative z-10 whitespace-nowrap">

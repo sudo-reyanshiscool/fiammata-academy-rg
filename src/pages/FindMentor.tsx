@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { mentors } from '../data/mentors';
 import MentorCard from '../components/MentorCard';
-import Meteors from '../components/ui/Meteors';
 import StatusPill from '../components/ui/StatusPill';
 
 const CATEGORIES = [
@@ -35,8 +34,7 @@ export default function FindMentor() {
   return (
     <div className="flex flex-col w-full bg-[#000000] min-h-screen text-white">
       {/* Hero Section */}
-      <section className="relative w-full pt-20 pb-14 sm:pt-24 sm:pb-16 px-6 sm:px-8 border-b border-white/10 overflow-hidden bg-[#070707]">
-        <Meteors number={3} scrollSensitivity={1.0} />
+      <section className="relative w-full pt-28 pb-14 sm:pt-32 sm:pb-16 px-6 sm:px-8 border-b border-white/10 overflow-hidden bg-[#070707]">
         <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-60" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(200,16,46,0.15),transparent_65%)]" />
 
@@ -46,14 +44,14 @@ export default function FindMentor() {
               <StatusPill
                 statusText="DISCOVERY"
                 label="Verified Mentor Roster"
-                sublabel={`${filteredMentors.length} Coaches Active`}
+                sublabel="National & World Finalists"
               />
             </div>
             <h1 className="font-display-hero text-4xl sm:text-[58px] leading-[1.05] optical-display font-extrabold mb-4 text-white uppercase tracking-tight">
               What do you need <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-primary">help with?</span>
             </h1>
             <p className="text-[16px] sm:text-[18px] text-white/60 leading-relaxed font-sans">
-              Don't know who to ask? Describe your challenge below, or select a category, and we'll match you with the Fiammata engineer or manager who solved it.
+              Connect with National Finalists, World Finalists, and active World Finalist Judges. Describe your challenge below or select a discipline to get matched directly.
             </p>
           </div>
 

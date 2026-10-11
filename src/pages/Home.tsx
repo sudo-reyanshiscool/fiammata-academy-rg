@@ -5,7 +5,6 @@ import MentorCard from '../components/MentorCard';
 import MagneticButton from '../components/MagneticButton';
 import Marquee from '../components/Marquee';
 import { ScrollRevealText } from '../components/ScrollRevealText';
-import Meteors from '../components/ui/Meteors';
 import BorderBeam from '../components/ui/BorderBeam';
 import SpotlightCard from '../components/ui/SpotlightCard';
 import StatusPill from '../components/ui/StatusPill';
@@ -34,7 +33,7 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full bg-[#000000]">
       {/* Hero Section */}
-      <section className="relative w-full overflow-hidden bg-[#070707] pt-20 pb-20 border-b border-white/10">
+      <section className="relative w-full overflow-hidden bg-[#070707] pt-28 sm:pt-32 pb-20 border-b border-white/10">
         {/* Background photo & gradients */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -52,9 +51,6 @@ export default function Home() {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(200,16,46,0.18),transparent_70%)]" />
         </motion.div>
 
-        {/* Realistic Aerodynamic Bolides & Meteors */}
-        <Meteors number={4} scrollSensitivity={1.2} />
-
         <motion.div
           initial="hidden"
           animate="visible"
@@ -66,7 +62,7 @@ export default function Home() {
             <StatusPill
               statusText="PIT WALL LIVE"
               label="100% Free STEM Mentorship"
-              sublabel="By National Finalists"
+              sublabel="By National Finalists & World Finalists"
             />
           </motion.div>
 
@@ -74,9 +70,17 @@ export default function Home() {
             Engineer Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-primary drop-shadow-[0_0_35px_rgba(200,16,46,0.6)]">Podium Finish.</span>
           </motion.h1>
 
-          <motion.p variants={itemVariants} className="text-[18px] sm:text-[22px] font-medium text-white/70 tracking-tight mb-10 font-sans max-w-2xl leading-relaxed">
+          <motion.p variants={itemVariants} className="text-[18px] sm:text-[22px] font-medium text-white/70 tracking-tight mb-8 font-sans max-w-2xl leading-relaxed">
             Need help? Find the right <span className="font-bold text-white border-b-2 border-primary pb-0.5">Fiammata mentor</span> to supercharge your engineering, portfolio, and presentation.
           </motion.p>
+
+          {/* Trust Endorsement */}
+          <motion.div variants={itemVariants} className="mb-8 inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/[0.04] border border-white/10 backdrop-blur-sm text-[11px] font-mono tracking-widest text-white/80 uppercase">
+            <span className="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+            <span className="font-bold text-white">Trusted by Real World Finalist Judges</span>
+            <span className="text-white/30">•</span>
+            <span className="text-white/60">Official World-Stage Standards</span>
+          </motion.div>
 
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center gap-4 justify-center">
             <MagneticButton>
@@ -137,8 +141,8 @@ export default function Home() {
               {/* 21st.dev Spotlight Mini Cards */}
               <motion.div variants={itemVariants} className="grid grid-cols-2 gap-3.5">
                 {[
-                  { title: "National Level", desc: "Top Competitors & World Finalists", icon: "emoji_events", id: "01" },
-                  { title: "Engineering", desc: "CAD, CFD & Topology Portfolio", icon: "precision_manufacturing", id: "02" },
+                  { title: "World Finalist Judges", desc: "Real World Stage Adjudication", icon: "gavel", id: "01" },
+                  { title: "National Finalists", desc: "Top Competitors & World Finalists", icon: "emoji_events", id: "02" },
                   { title: "Award Winning", desc: "Sustainability & Enterprise", icon: "eco", id: "03" },
                   { title: "Mentorship", desc: "100% Free Peer-to-Peer", icon: "volunteer_activism", id: "04" }
                 ].map(stat => (
@@ -320,13 +324,13 @@ export default function Home() {
             <div className="flex flex-col gap-2">
               <div className="inline-flex items-center gap-2 text-[11px] font-mono font-bold text-primary tracking-widest uppercase">
                 <span className="w-2 h-0.5 bg-primary" />
-                VERIFIED STUDENT COACHES
+                VERIFIED WORLD & NATIONAL FINALIST COACHES
               </div>
               <h2 className="font-display-hero text-[34px] sm:text-[44px] text-white font-extrabold uppercase tracking-tight">
                 Meet the Roster
               </h2>
               <p className="text-[14px] sm:text-[16px] text-white/50 font-sans mt-1">
-                Experienced Fiammata Racing members ready to coach your team. 100% free.
+                Mentored by National Finalists, World Finalists, and active World Finalist Judges. 100% free.
               </p>
             </div>
             <Link
@@ -360,9 +364,6 @@ export default function Home() {
             {/* 21st.dev Border Beam */}
             <BorderBeam size={320} duration={9} colorFrom="#ffffff" colorTo="#ff99a8" borderWidth={2} />
 
-            {/* Aerodynamic background streaks */}
-            <Meteors number={2} className="opacity-40" />
-
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.12),transparent_60%)] pointer-events-none" />
 
             <div className="flex flex-col gap-2 text-center md:text-left relative z-10 w-full">
@@ -374,7 +375,7 @@ export default function Home() {
                 className="text-[36px] sm:text-[48px] lg:text-[64px] text-white leading-none mb-2 md:text-left md:justify-start justify-center flex flex-wrap"
               />
               <p className="text-[16px] lg:text-[18px] text-white/85 font-sans md:ml-1 max-w-xl">
-                Connect directly with national finalist engineers who have walked the walk and built winning portfolios.
+                Connect directly with national finalists, world finalists, and active world finalist judges who have walked the walk and built winning portfolios.
               </p>
             </div>
             <div className="shrink-0 relative z-10">

@@ -58,10 +58,10 @@ export const mentors: Mentor[] = [
   {
     id: "mentor-5",
     name: "Reyansh Gupta",
-    role: "Global Engineering Mentor",
+    role: "World Finalist Judge · Engineering",
     image: "https://ui-avatars.com/api/?name=Reyansh+Gupta&background=D9382D&color=fff&size=512&font-size=0.35&bold=true",
-    expertise: ["Engineering", "Car Optimization", "Renders", "CAD/CAM"],
-    description: "Hailing from Team Supercharged, Reyansh competed at the elite level during the 2024-25 World Finals. He brings world-class experience in high-performance car engineering and photorealistic rendering. His rigorous approach to design optimization helps teams translate theoretical aerodynamics into track-dominating physical cars.",
+    expertise: ["World Finalist Judge", "Engineering", "Car Optimization", "CAD/CAM", "Renders"],
+    description: "Serving as an active World Finalist Judge and competing at the pinnacle of the 2024-25 World Finals with Team Supercharged, he evaluates and coaches cars against rigorous international adjudication rubrics. He offers insider insight into world-stage engineering scrutiny, aerodynamic compliance, and high-performance CAD optimization.",
     categories: ["engineering"],
     phone: "917827280072",
     email: "reyansh@fiammata.com"
