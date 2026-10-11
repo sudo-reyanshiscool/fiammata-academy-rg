@@ -1,0 +1,310 @@
+{
+  "document_name": "FR 22 FULL CAR ASEMBLED reprint",
+  "overall_dimensions_mm": {
+    "length_dx": 67.63,
+    "width_dy": 229.09,
+    "height_dz": 59.79,
+    "min_pt": {
+      "x": -33.93,
+      "y": -132.56,
+      "z": -2.26
+    },
+    "max_pt": {
+      "x": 33.7,
+      "y": 96.53,
+      "z": 57.53
+    }
+  },
+  "mass_properties": {
+    "total_mass_g": 751.32,
+    "total_volume_cm3": 95.71,
+    "center_of_mass_mm": {
+      "x": -0.01,
+      "y": 10.45,
+      "z": 22.64
+    }
+  },
+  "parameters": [],
+  "bodies": [
+    {
+      "component": "(Unsaved)",
+      "body_name": "Body1",
+      "is_visible": true,
+      "is_solid": false,
+      "material": "Steel",
+      "mass_g": 0.0,
+      "volume_cm3": 0.0,
+      "dimensions_mm": {
+        "dx": 16.67,
+        "dy": 8.0,
+        "dz": 1.84
+      }
+    },
+    {
+      "component": "(Unsaved)",
+      "body_name": "Body2",
+      "is_visible": true,
+      "is_solid": true,
+      "material": "Steel",
+      "mass_g": 0.26,
+      "volume_cm3": 0.03,
+      "dimensions_mm": {
+        "dx": 5.5,
+        "dy": 4.0,
+        "dz": 5.5
+      }
+    },
+    {
+      "component": "(Unsaved)",
+      "body_name": "Body3",
+      "is_visible": true,
+      "is_solid": true,
+      "material": "Steel",
+      "mass_g": 0.26,
+      "volume_cm3": 0.03,
+      "dimensions_mm": {
+        "dx": 5.5,
+        "dy": 4.0,
+        "dz": 5.5
+      }
+    },
+    {
+      "component": "(Unsaved)/BLAZING FALCON LAST AND FINAL VERSION[1] (3)/editable (2)",
+      "body_name": "Body1",
+      "is_visible": true,
+      "is_solid": true,
+      "material": "Steel",
+      "mass_g": 480.88,
+      "volume_cm3": 61.26,
+      "dimensions_mm": {
+        "dx": 65.0,
+        "dy": 42.49,
+        "dz": 184.25
+      }
+    },
+    {
+      "component": "(Unsaved)/BLAZING FALCON LAST AND FINAL VERSION[1] (3)/HALO (3)",
+      "body_name": "Body1",
+      "is_visible": true,
+      "is_solid": true,
+      "material": "Steel",
+      "mass_g": 42.36,
+      "volume_cm3": 5.4,
+      "dimensions_mm": {
+        "dx": 50.0,
+        "dy": 14.49,
+        "dz": 24.44
+      }
+    },
+    {
+      "component": "(Unsaved)/BLAZING FALCON LAST AND FINAL VERSION[1] (3)/HALO WITH HELMET(FIAMMATA RACING F1 IN SCHOOLS NATIONALS) v1 (3)/HALO WITH HELMET(FIAMMATA RACING F1 IN SCHOOLS NATIONALS) v1.step (3)/HELMET.step (3)",
+      "body_name": "Body1",
+      "is_visible": true,
+      "is_solid": true,
+      "material": "Steel",
+      "mass_g": 11.7,
+      "volume_cm3": 1.49,
+      "dimensions_mm": {
+        "dx": 16.33,
+        "dy": 12.81,
+        "dz": 15.83
+      }
+    },
+    {
+      "component": "(Unsaved)/N26 FRONT WING v1/N26 FRONT WING v1 (1)/Component86 (1)",
+      "body_name": "Body1",
+      "is_visible": true,
+      "is_solid": false,
+      "material": "Steel",
+      "mass_g": 0.0,
+      "volume_cm3": 0.0,
+      "dimensions_mm": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dz": 0.93
+      }
+    },
+    {
+      "component": "(Unsaved)/N26 FRONT WING v1/N26 FRONT WING v1 (1)/Component86 (1)",
+      "body_name": "Body2",
+      "is_visible": true,
+      "is_solid": false,
+      "material": "Steel",
+      "mass_g": 0.0,
+      "volume_cm3": 0.0,
+      "dimensions_mm": {
+        "dx": 0.0,
+        "dy": 0.28,
+        "dz": 0.02
+      }
+    },
+    {
+      "component": "(Unsaved)/N26 FRONT WING v1/N26 FRONT WING v1 (1)/Component86 (1)",
+      "body_name": "Body3",
+      "is_visible": true,
+      "is_solid": true,
+      "material": "Steel",
+      "mass_g": 0.0,
+      "volume_cm3": 0.0,
+      "dimensions_mm": {
+        "dx": 0.0,
+        "dy": 0.0,
+        "dz": 0.01
+      }
+    },
+    {
+      "component": "(Unsaved)/N26 FRONT WING v1/N26 FRONT WING v1 (1)/Component86 (1)",
+      "body_name": "Body4",
+      "is_visible": true,
+      "is_solid": true,
+      "material": "Steel",
+      "mass_g": 0.0,
+      "volume_cm3": 0.0,
+      "dimensions_mm": {
+        "dx": 0.04,
+        "dy": 0.0,
+        "dz": 0.68
+      }
+    },
+    {
+      "component": "(Unsaved)/N26 FRONT WING v1/N26 FRONT WING v1 (1)/Component86 (1)",
+      "body_name": "Body5",
+      "is_visible": true,
+      "is_solid": true,
+      "material": "Steel",
+      "mass_g": 0.0,
+      "volume_cm3": 0.0,
+      "dimensions_mm": {
+        "dx": 0.4,
+        "dy": 0.12,
+        "dz": 0.01
+      }
+    },
+    {
+      "component": "(Unsaved)/N26 FRONT WING v1/N26 FRONT WING v1 (1)/Component86 (1)",
+      "body_name": "Body6",
+      "is_visible": true,
+      "is_solid": true,
+      "material": "Steel",
+      "mass_g": 0.0,
+      "volume_cm3": 0.0,
+      "dimensions_mm": {
+        "dx": 1.07,
+        "dy": 0.08,
+        "dz": 0.02
+      }
+    },
+    {
+      "component": "(Unsaved)/N26 FRONT WING v1/N26 FRONT WING v1 (1)/Component86 (1)",
+      "body_name": "Body7",
+      "is_visible": true,
+      "is_solid": true,
+      "material": "Steel",
+      "mass_g": 0.0,
+      "volume_cm3": 0.0,
+      "dimensions_mm": {
+        "dx": 0.93,
+        "dy": 0.09,
+        "dz": 0.05
+      }
+    },
+    {
+      "component": "(Unsaved)/N26 FRONT WING v1/N26 FRONT WING v1 (1)/Component86 (1)",
+      "body_name": "Body8",
+      "is_visible": true,
+      "is_solid": true,
+      "material": "Steel",
+      "mass_g": 0.0,
+      "volume_cm3": 0.0,
+      "dimensions_mm": {
+        "dx": 0.05,
+        "dy": 0.45,
+        "dz": 0.48
+      }
+    },
+    {
+      "component": "(Unsaved)/N26 FRONT WING v1/N26 FRONT WING v1 (1)/Component86 (1)",
+      "body_name": "Body9",
+      "is_visible": true,
+      "is_solid": true,
+      "material": "Steel",
+      "mass_g": 36.36,
+      "volume_cm3": 4.63,
+      "dimensions_mm": {
+        "dx": 66.89,
+        "dy": 45.11,
+        "dz": 14.53
+      }
+    },
+    {
+      "component": "(Unsaved)/FINAL WHEEL SUPPORT REPRINT N26 FR-22 (FRONT) v2",
+      "body_name": "Body1",
+      "is_visible": true,
+      "is_solid": true,
+      "material": "Steel",
+      "mass_g": 10.99,
+      "volume_cm3": 1.4,
+      "dimensions_mm": {
+        "dx": 67.39,
+        "dy": 10.03,
+        "dz": 17.25
+      }
+    },
+    {
+      "component": "(Unsaved)/REAR WING TO BE AS (1) v1/FR 22 REAR WING v1/NEW REAR WING THIN, NEEDS TO BE THICKER AND WIDER v9",
+      "body_name": "Body1",
+      "is_visible": true,
+      "is_solid": true,
+      "material": "Steel",
+      "mass_g": 20.63,
+      "volume_cm3": 2.63,
+      "dimensions_mm": {
+        "dx": 53.51,
+        "dy": 10.0,
+        "dz": 17.73
+      }
+    },
+    {
+      "component": "(Unsaved)/FR 22 REAR WHEEL SUPPORT v1/Wheel system (Suport main housing ) final version v1/Component84",
+      "body_name": "Body1",
+      "is_visible": true,
+      "is_solid": true,
+      "material": "Steel",
+      "mass_g": 14.15,
+      "volume_cm3": 1.8,
+      "dimensions_mm": {
+        "dx": 61.1,
+        "dy": 12.0,
+        "dz": 18.1
+      }
+    },
+    {
+      "component": "(Unsaved)/FR 22 front wheels 2 pc v1/Wheel System (Wheel) final version v1",
+      "body_name": "Body1",
+      "is_visible": true,
+      "is_solid": true,
+      "material": "Steel",
+      "mass_g": 26.8,
+      "volume_cm3": 3.41,
+      "dimensions_mm": {
+        "dx": 28.0,
+        "dy": 28.0,
+        "dz": 14.2
+      }
+    },
+    {
+      "component": "(Unsaved)/FR 22 rear wheels 2 pc v1/Wheel System (Wheel) final version v1 (1)",
+      "body_name": "Body1",
+      "is_visible": true,
+      "is_solid": true,
+      "material": "Steel",
+      "mass_g": 40.06,
+      "volume_cm3": 5.1,
+      "dimensions_mm": {
+        "dx": 28.0,
+        "dy": 28.0,
+        "dz": 17.0
+      }
+    }
+  ]
+}

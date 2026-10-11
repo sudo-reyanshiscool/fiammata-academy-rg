@@ -62,6 +62,8 @@ export const mentors: Mentor[] = [
     image: "https://ui-avatars.com/api/?name=Reyansh+Gupta&background=D9382D&color=fff&size=512&font-size=0.35&bold=true",
     expertise: ["Engineering", "Car Optimization", "Renders", "CAD/CAM"],
     description: "Hailing from Team Supercharged, Reyansh competed at the elite level during the 2024-25 World Finals. He brings world-class experience in high-performance car engineering and photorealistic rendering. His rigorous approach to design optimization helps teams translate theoretical aerodynamics into track-dominating physical cars.",
-    categories: ["engineering"]
+    categories: ["engineering"],
+    phone: "917827280072",
+    email: "reyansh@fiammata.com"
   }
 ];

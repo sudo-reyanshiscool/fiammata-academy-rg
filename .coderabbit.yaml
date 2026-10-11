@@ -1,0 +1,11 @@
+# .coderabbit.yaml
+language: "en-US"
+reviews:
+  profile: "chill" # Keeps reviews encouraging and focused on real bugs rather than nitpicks
+  request_changes_workflow: false
+  high_level_summary: true
+  auto_review:
+    enabled: true
+    drafts: false
+chat:
+  auto_reply: true

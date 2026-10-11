@@ -71,22 +71,21 @@ export default function Navbar() {
 
   return (
     <>
-      <header 
+      <header
         className="fixed top-0 left-0 right-0 z-50 flex justify-center pointer-events-none px-4"
       >
-        <div 
-          className={`pointer-events-auto glass-panel flex items-center justify-between px-6 lg:px-10 overflow-visible relative transition-[max-width,height,border-radius,margin-top,box-shadow,border-color] duration-300 ease-out will-change-[transform,max-width] ${
-            isScrolled 
-              ? "w-full max-w-[1140px] rounded-2xl h-16 mt-3 shadow-[0_20px_40px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.1)_inset] border border-white/15" 
+        <div
+          className={`pointer-events-auto glass-panel flex items-center justify-between px-6 lg:px-10 overflow-visible relative transition-[max-width,height,border-radius,margin-top,box-shadow,border-color] duration-300 ease-out will-change-[transform,max-width] ${isScrolled
+              ? "w-full max-w-[1140px] rounded-2xl h-16 mt-3 shadow-[0_20px_40px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.1)_inset] border border-white/15"
               : "w-full max-w-full rounded-none h-[72px] mt-0 shadow-[0_4px_30px_rgba(0,0,0,0.5)] border-b border-white/10"
-          }`}
+            }`}
         >
           <div className="flex items-center gap-3 relative z-10">
             <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center gap-3.5 group whitespace-nowrap btn-spring">
-              <img 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDixOz_aPV5S18pmP1os4spfKgu8ymEWq0kj8m9olfFVmxFNEt--bdb5BuhKh0pIhmBkzCOHenEvTyehgKyyOi7OcVBA-Tzb_zvwAstMkkwvfoltZwvJBcyt0Csr-alwTzaL8QnzwgxCN3MG8g9bA6B9FA-yIozUyhXgQZc2y7v-x7ytniNu6S_8RfwNSsB7iconm6rB4ARTmYyoHeLETOZkE46lsjZUXAsdb3lXJ0bsQRBC6lF8MNR73agijG6x2eKaQ" 
-                alt="Fiammata Racing" 
-                className="h-[32px] w-auto object-contain rounded transition-transform group-hover:scale-105" 
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDixOz_aPV5S18pmP1os4spfKgu8ymEWq0kj8m9olfFVmxFNEt--bdb5BuhKh0pIhmBkzCOHenEvTyehgKyyOi7OcVBA-Tzb_zvwAstMkkwvfoltZwvJBcyt0Csr-alwTzaL8QnzwgxCN3MG8g9bA6B9FA-yIozUyhXgQZc2y7v-x7ytniNu6S_8RfwNSsB7iconm6rB4ARTmYyoHeLETOZkE46lsjZUXAsdb3lXJ0bsQRBC6lF8MNR73agijG6x2eKaQ"
+                alt="Fiammata Racing"
+                className="h-[32px] w-auto object-contain rounded transition-transform group-hover:scale-105"
               />
               <div className="h-6 w-px bg-white/10 hidden sm:block"></div>
               <div className="hidden sm:flex flex-col leading-tight">
@@ -94,8 +93,16 @@ export default function Navbar() {
                 <span className="text-[9px] font-bold tracking-[0.2em] text-primary uppercase drop-shadow-[0_0_8px_rgba(220,20,60,0.8)]">MENTORSHIP</span>
               </div>
             </Link>
+            <div className="hidden 2xl:flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono uppercase tracking-widest text-white/80">
+              <span className="relative flex h-1.5 w-1.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500" />
+              </span>
+              <span className="text-white/50">Pit Wall</span>
+              <span className="text-emerald-400 font-bold">Online</span>
+            </div>
           </div>
-          
+
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8 relative z-10 whitespace-nowrap">
             <Link to="/" className={`${linkClass("/")} btn-spring`}>
               <TextRoll>Home</TextRoll>
@@ -110,20 +117,20 @@ export default function Navbar() {
               <TextRoll>Workshops</TextRoll>
             </Link>
           </nav>
-          
+
           <div className="flex items-center gap-3 relative z-10">
             {user ? (
               <div className="flex items-center gap-2.5">
                 {isMentor ? (
-                  <Link 
-                    to="/mentor/dashboard" 
+                  <Link
+                    to="/mentor/dashboard"
                     className="hidden lg:inline-flex items-center px-4 py-2 rounded text-[11px] font-bold bg-primary/10 text-primary border border-primary/30 hover:bg-primary/20 uppercase tracking-widest whitespace-nowrap btn-spring"
                   >
                     Command Center
                   </Link>
                 ) : (
-                  <Link 
-                    to="/my-requests" 
+                  <Link
+                    to="/my-requests"
                     className="hidden lg:inline-flex items-center px-4 py-2 rounded text-[11px] font-bold text-white hover:bg-white/5 border border-white/10 uppercase tracking-widest whitespace-nowrap btn-spring"
                   >
                     My Requests
@@ -213,7 +220,7 @@ export default function Navbar() {
                 </div>
               </div>
             ) : (
-              <Link 
+              <Link
                 to="/auth-portal"
                 className="hidden lg:block text-[12px] font-bold text-white/50 hover:text-white transition-colors ml-2 uppercase tracking-widest whitespace-nowrap btn-spring"
               >
@@ -222,7 +229,7 @@ export default function Navbar() {
             )}
 
             {/* Mobile Menu Toggle Button */}
-            <button 
+            <button
               className="lg:hidden flex items-center justify-center w-10 h-10 rounded bg-white/5 text-white/70 hover:text-white hover:bg-white/10 btn-spring"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
@@ -249,14 +256,14 @@ export default function Navbar() {
               <Link to="/find-a-mentor" onClick={() => setIsMobileMenuOpen(false)} className={`${mobileLinkClass("/find-a-mentor")} btn-spring`}>Find a Mentor</Link>
               <Link to="/ask-an-expert" onClick={() => setIsMobileMenuOpen(false)} className={`${mobileLinkClass("/ask-an-expert")} btn-spring`}>Ask an Expert</Link>
               <Link to="/workshops" onClick={() => setIsMobileMenuOpen(false)} className={`${mobileLinkClass("/workshops")} btn-spring`}>Workshops</Link>
-              
+
               <div className="mt-8 border-t border-white/10 pt-8 flex flex-col gap-4">
                 {user ? (
                   <>
                     <div className="text-[10px] font-bold text-white/30 uppercase tracking-widest mb-2">Authenticated As {isMentor ? 'Mentor' : 'Student'}</div>
                     {isMentor ? (
-                      <Link 
-                        to="/mentor/dashboard" 
+                      <Link
+                        to="/mentor/dashboard"
                         onClick={() => setIsMobileMenuOpen(false)}
                         className="flex items-center justify-center gap-2 h-14 rounded bg-primary text-white font-bold text-[14px] uppercase tracking-widest btn-spring"
                       >
@@ -264,8 +271,8 @@ export default function Navbar() {
                         Command Center
                       </Link>
                     ) : (
-                      <Link 
-                        to="/my-requests" 
+                      <Link
+                        to="/my-requests"
                         onClick={() => setIsMobileMenuOpen(false)}
                         className="flex items-center justify-center gap-2 h-14 rounded bg-white/10 text-white font-bold text-[14px] uppercase tracking-widest border border-white/20 btn-spring"
                       >
@@ -281,7 +288,7 @@ export default function Navbar() {
                       <span className="material-symbols-outlined text-[18px] text-primary">settings</span>
                       Profile & Settings
                     </Link>
-                    <button 
+                    <button
                       onClick={handleSignOut}
                       className="flex items-center justify-center gap-2 h-14 rounded bg-red-500/10 text-red-500 font-bold text-[14px] uppercase tracking-widest border border-red-500/20 mt-2 btn-spring"
                     >
@@ -290,7 +297,7 @@ export default function Navbar() {
                     </button>
                   </>
                 ) : (
-                  <Link 
+                  <Link
                     to="/auth-portal"
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="flex items-center justify-center gap-2 h-14 rounded bg-white text-black font-bold text-[14px] uppercase tracking-widest btn-spring"
@@ -301,7 +308,7 @@ export default function Navbar() {
                 )}
               </div>
             </div>
-            
+
             <div className="mt-auto pt-8 text-center text-[10px] text-white/30 uppercase tracking-widest font-bold">
               Fiammata OS v2.0
             </div>
