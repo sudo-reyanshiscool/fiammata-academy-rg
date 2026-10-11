@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowDown, ArrowRight, ArrowUpRight, ClipboardList, Cog, Handshake, Mic2 } from 'lucide-react';
 import { mentors } from '../data/mentors';
 import MentorCard from '../components/MentorCard';
+import MagicCard from '../components/ui/MagicCard';
 
 const disciplines = [
   {
@@ -101,9 +102,11 @@ export default function Home() {
           <div className="academy-section-topline"><span className="academy-eyebrow">Where we can help</span><p>Tailored guidance across every judged portfolio criterion, car design regulation and verbal presentation.</p></div>
           <h2 className="academy-section-title">One team.<br /><em>Every discipline.</em></h2>
           <div className="academy-discipline-grid">
-            {disciplines.map(({ number, title, description, details, icon: Icon }) => <Link to="/find-a-mentor" className="academy-discipline" key={number}>
-              <Icon className="academy-discipline-icon" size={25} strokeWidth={1.6} /><h3>{title}</h3><p>{description}</p><small>{details}</small><span className="academy-discipline-arrow"><ArrowUpRight size={18} /></span>
-            </Link>)}
+            {disciplines.map(({ number, title, description, details, icon: Icon }) => <MagicCard className="academy-discipline-shell" key={number}>
+              <Link to="/find-a-mentor" className="academy-discipline">
+                <Icon className="academy-discipline-icon" size={25} strokeWidth={1.6} /><h3>{title}</h3><p>{description}</p><small>{details}</small><span className="academy-discipline-arrow"><ArrowUpRight size={18} /></span>
+              </Link>
+            </MagicCard>)}
           </div>
         </div>
       </section>
