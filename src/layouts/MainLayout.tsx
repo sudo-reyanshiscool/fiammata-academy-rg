@@ -18,7 +18,7 @@ export default function MainLayout({ children }: { children: ReactNode }) {
         style={{ scaleX: scrollYProgress, willChange: 'transform' }}
       />
       <Navbar />
-      <main className="w-full pt-[76px] flex-1 flex flex-col relative">
+      <main className="w-full pt-[78px] flex-1 flex flex-col relative">
         <PitPassBanner />
         {children}
       </main>

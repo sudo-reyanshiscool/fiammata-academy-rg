@@ -41,7 +41,7 @@ export default function Navbar() {
   return <header className="academy-header">
     <div className="academy-nav-inner">
       <Link to="/" className="academy-wordmark" onClick={() => setMobileOpen(false)} aria-label="Fiammata Academy home">
-        <span className="academy-wordmark-icon" aria-hidden="true">F</span><span className="academy-wordmark-copy"><strong>FIAMMATA</strong><small>ACADEMY</small></span>
+        <span className="academy-wordmark-copy"><strong>FIAMMATA</strong><small>ACADEMY</small></span>
       </Link>
       <nav className="academy-nav-links" aria-label="Main navigation">{links.map(({ to, label }) => <Link key={to} to={to} className={location.pathname === to ? 'is-current' : ''}>{label}</Link>)}</nav>
       <div className="academy-nav-actions">
