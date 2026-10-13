@@ -1,17 +1,76 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { supabase } from '../lib/supabase';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
 
+const emailPlaceholders = [
+  'landonorris@mclaren.com',
+  'oscarpiastri@mclaren.com',
+  'charlesleclerc@ferrari.com',
+  'lewishamilton@ferrari.com',
+  'georgerussell@mercedesamgf1.com',
+  'kimiantonelli@mercedesamgf1.com',
+  'maxverstappen@redbullracing.com',
+  'isackhadjar@redbullracing.com',
+  'fernandoalonso@astonmartinf1.com',
+  'lancestroll@astonmartinf1.com',
+  'carlossainz@williamsf1.com',
+  'alexalbon@williamsf1.com',
+  'pierregasly@alpinef1.com',
+  'francocolapinto@alpinef1.com',
+  'estebanocon@haasf1team.com',
+  'oliverbearman@haasf1team.com',
+  'liamlawson@visacashapprb.com',
+  'arvidlindblad@visacashapprb.com',
+  'nicohulkenberg@audi-f1.com',
+  'gabrielbortoleto@audi-f1.com',
+  'sergioperez@cadillacf1team.com',
+  'valtteribottas@cadillacf1team.com',
+];
+
+const passwordPlaceholders = [
+  'PapayaRules2026!',
+  'OscarStoleMyWin81',
+  'ForzaFerrariPain16',
+  'BonoMyTyresAreGone44',
+  'GeorgeIsAlwaysRight63',
+  'TooYoungToRentACar12',
+  'SimplyLovely33!',
+  'RedBullGaveMeWings6',
+  'ElPlanNeverDies14',
+  'DaddyOwnsTheTeam18',
+  'SmoothOperator55!',
+  'AlexNeedsMoreSleep23',
+  'PierreGaslyyyyy10!',
+  'FrancoTheRizzMaster43',
+  'OconDidNothingWrong31',
+  'BearmanVsActualBear87',
+  'LiamNeedsMoreRedBull30',
+  'RookieOfTheCentury41',
+  'HulkFinallyGotAPodium27',
+  'BrazilianRocket5!',
+  'ChecoStillHasASteeringWheel11',
+  'ValtteriCoffeeAndCycling77',
+];
+
 export default function Login() {
   const [email, setEmail] = useState('');
+  const [placeholderIndex, setPlaceholderIndex] = useState(0);
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
   const navigate = useNavigate();
   const { addToast } = useToast();
   const { signInWithGoogle } = useAuth();
+
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setPlaceholderIndex((index) => (index + 1) % emailPlaceholders.length);
+    }, 2200);
+
+    return () => window.clearInterval(interval);
+  }, []);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -69,8 +128,8 @@ export default function Login() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full bg-[#000000] text-[14px] px-4 py-3 rounded-xl border border-white/10/80 outline-none focus:bg-[#0a0a0a] focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all"
-              placeholder="team@velocityapex.org"
+              className="w-full bg-[#000000] text-white text-[14px] px-4 py-3 rounded-xl border border-white/10/80 outline-none focus:bg-[#0a0a0a] focus:border-primary focus:ring-1 focus:ring-primary/20 transition-all"
+              placeholder={emailPlaceholders[placeholderIndex]}
             />
           </div>
           <div>
@@ -84,13 +143,13 @@ export default function Login() {
               onChange={(e) => setPassword(e.target.value)}
               required
               className="w-full bg-[#000000] text-white text-[14px] px-4 py-3 rounded-xl border border-white/10 outline-none focus:border-white/30 focus:ring-1 focus:ring-white/20 transition-all"
-              placeholder="••••••••"
+              placeholder={passwordPlaceholders[placeholderIndex]}
             />
           </div>
           <button 
             type="submit" 
             disabled={loading || googleLoading}
-            className="w-full bg-primary hover:bg-primary/90 text-white font-bold text-[15px] h-12 rounded-full transition-all shadow-sm active:scale-[0.98] disabled:opacity-70 flex items-center justify-center gap-2 mt-2"
+            className="w-full bg-primary hover:bg-[#9B0C23] text-white font-bold text-[15px] h-12 rounded-full transition-all shadow-sm active:scale-[0.98] disabled:opacity-70 flex items-center justify-center gap-2 mt-2"
           >
             {loading ? 'Logging in...' : 'Log In'}
           </button>
