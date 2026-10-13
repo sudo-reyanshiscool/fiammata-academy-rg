@@ -18,8 +18,8 @@ export const BorderBeam: React.FC<BorderBeamProps> = ({
   duration = 15,
   anchor = 90,
   borderWidth = 1.5,
-  colorFrom = "#C8102E",
-  colorTo = "#ff6b81",
+  colorFrom = "#ED6D05",
+  colorTo = "#ED6D05",
   delay = 0,
 }) => {
   return (

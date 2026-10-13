@@ -105,7 +105,7 @@ export default function ProfileSettings() {
         
         {/* Header Breadcrumb / Title */}
         <div className="mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest bg-primary/10 text-primary border border-primary/20 mb-3 shadow-[0_0_15px_rgba(217,56,45,0.2)]">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest bg-primary/10 text-primary border border-primary/20 mb-3 shadow-[0_0_15px_rgba(237,109,5,0.2)]">
             <span className="material-symbols-outlined text-[14px]">badge</span>
             Pilot / Racer Credentials
           </div>
@@ -124,7 +124,7 @@ export default function ProfileSettings() {
           <div className="flex flex-col gap-6">
             
             {/* Holographic Pit Pass Identity Card */}
-            <div className="bg-gradient-to-br from-[#121216] via-[#0c0c0e] to-[#08080a] rounded-3xl p-6 sm:p-7 border border-primary/30 shadow-[0_0_40px_rgba(200,16,46,0.15)] relative overflow-hidden group">
+            <div className="bg-gradient-to-br from-[#121216] via-[#0c0c0e] to-[#08080a] rounded-3xl p-6 sm:p-7 border border-primary/30 shadow-[0_0_40px_rgba(237,109,5,0.15)] relative overflow-hidden group">
               {/* Shimmer / Hologram Glare Effect */}
               <div className="absolute inset-0 -translate-x-[150%] bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-[-30deg] group-hover:animate-[glare_1.5s_ease-in-out_forwards] pointer-events-none" />
               <div className="absolute top-0 right-0 w-44 h-44 bg-primary/15 rounded-bl-full pointer-events-none blur-3xl" />
@@ -166,15 +166,15 @@ export default function ProfileSettings() {
                 </div>
                 <div className="bg-white/5 p-2 rounded-xl border border-white/5">
                   <span className="text-white/40 block text-[9px] uppercase tracking-wider font-bold">Stage</span>
-                  <span className="font-bold text-emerald-400 truncate block">{competitionStage}</span>
+                  <span className="font-bold text-brand-green truncate block">{competitionStage}</span>
                 </div>
               </div>
 
               {/* Status Footer */}
               <div className="bg-black/40 rounded-xl p-3 border border-white/5 flex items-center justify-between text-[11px] relative z-10">
                 <span className="text-white/60">Status:</span>
-                <span className="font-bold text-emerald-400 flex items-center gap-1.5 uppercase tracking-wider">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                <span className="font-bold text-brand-green flex items-center gap-1.5 uppercase tracking-wider">
+                  <span className="w-1.5 h-1.5 rounded-full bg-brand-green" />
                   {teamName.trim() ? '1-Click Ready' : 'Incomplete'}
                 </span>
               </div>
@@ -201,7 +201,7 @@ export default function ProfileSettings() {
                 className="w-full flex items-center justify-between p-3.5 rounded-xl bg-white/5 hover:bg-white/10 transition-colors text-[13px] font-bold uppercase tracking-wider text-left border border-white/5 min-h-[44px]"
               >
                 <div className="flex items-center gap-2.5">
-                  <span className="material-symbols-outlined text-emerald-400 text-[18px]">event</span>
+                  <span className="material-symbols-outlined text-brand-green text-[18px]">event</span>
                   <span>View Workshops</span>
                 </div>
                 <span className="material-symbols-outlined text-[16px] text-white/40">arrow_forward</span>

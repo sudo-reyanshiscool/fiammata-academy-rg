@@ -51,7 +51,7 @@ export default function MentorLogin() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[70vh] px-4 w-full">
-      <div className="w-full max-w-md bg-[#0a0a0a] p-8 rounded-3xl border border-primary/20 shadow-[0_0_50px_rgba(200,16,46,0.1)] relative overflow-hidden">
+      <div className="w-full max-w-md bg-[#0a0a0a] p-8 rounded-3xl border border-primary/20 shadow-[0_0_50px_rgba(237,109,5,0.1)] relative overflow-hidden">
         
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
 
@@ -93,7 +93,7 @@ export default function MentorLogin() {
           <button 
             type="submit" 
             disabled={loading}
-            className="w-full bg-primary hover:bg-[#9B0C23] text-white font-bold text-[13px] uppercase tracking-widest h-12 rounded transition-all shadow-[0_0_15px_rgba(200,16,46,0.3)] hover:shadow-[0_0_25px_rgba(200,16,46,0.5)] border border-primary disabled:opacity-50 mt-4 flex items-center justify-center gap-2"
+            className="w-full bg-primary hover:bg-primary/90 text-white font-bold text-[13px] uppercase tracking-widest h-12 rounded transition-all shadow-[0_0_15px_rgba(237,109,5,0.3)] hover:shadow-[0_0_25px_rgba(237,109,5,0.5)] border border-primary disabled:opacity-50 mt-4 flex items-center justify-center gap-2"
           >
             {loading ? 'Authenticating...' : 'Establish Connection'}
           </button>

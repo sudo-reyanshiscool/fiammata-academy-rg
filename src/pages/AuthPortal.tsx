@@ -62,7 +62,7 @@ export default function AuthPortal() {
           <motion.div variants={itemVariants}>
             <Link 
               to="/mentor/login"
-              className="flex flex-col h-full bg-[#0a0a0a] p-8 rounded-3xl border border-primary/20 hover:border-primary/50 transition-all group hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(200,16,46,0.15)] relative overflow-hidden"
+              className="flex flex-col h-full bg-[#0a0a0a] p-8 rounded-3xl border border-primary/20 hover:border-primary/50 transition-all group hover:-translate-y-1 hover:shadow-[0_10px_40px_rgba(237,109,5,0.15)] relative overflow-hidden"
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-50 group-hover:opacity-100 transition-opacity" />
               <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border border-primary/20">

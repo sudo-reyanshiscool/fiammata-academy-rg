@@ -89,8 +89,8 @@ export default function MentorDashboard() {
                   transition={{ delay: i * 0.05 }}
                   key={req.id} 
                   className={`bg-[#0a0a0a] rounded-xl p-5 sm:p-7 border transition-all ${
-                    req.status === 'pending' ? 'border-amber-500/30' : 
-                    req.status === 'accepted' ? 'border-emerald-500/30' : 
+                    req.status === 'pending' ? 'border-brand-gold/30' :
+                    req.status === 'accepted' ? 'border-brand-green/30' :
                     'border-white/10 opacity-75'
                   }`}
                 >
@@ -98,8 +98,8 @@ export default function MentorDashboard() {
                     <div className="flex flex-col min-w-0 flex-1">
                       <div className="flex flex-wrap items-center gap-3 mb-2">
                         <span className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-bold tracking-widest border ${
-                          req.status === 'pending' ? 'bg-amber-500/10 text-amber-500 border-amber-500/30' :
-                          req.status === 'accepted' ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30' :
+                          req.status === 'pending' ? 'bg-brand-gold/10 text-brand-gold border-brand-gold/30' :
+                          req.status === 'accepted' ? 'bg-brand-green/10 text-brand-green border-brand-green/30' :
                           req.status === 'declined' ? 'bg-primary/10 text-primary border-primary/30' :
                           'bg-white/5 text-white/50 border-white/10'
                         }`}>
@@ -135,7 +135,7 @@ export default function MentorDashboard() {
                         <>
                           <button 
                             onClick={() => handleStatusUpdate(req.id, 'accepted')}
-                            className="w-full inline-flex items-center justify-center gap-2 font-bold text-[12px] uppercase tracking-widest px-6 h-10 rounded bg-emerald-500 text-[#000000] hover:bg-emerald-400 transition-all"
+                            className="w-full inline-flex items-center justify-center gap-2 font-bold text-[12px] uppercase tracking-widest px-6 h-10 rounded bg-brand-green text-[#000000] hover:bg-brand-green transition-all"
                           >
                             Accept
                           </button>
