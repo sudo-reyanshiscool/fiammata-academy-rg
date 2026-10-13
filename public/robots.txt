@@ -15,4 +15,4 @@ Disallow: /update-password
 Disallow: /forgot-password
 
 # Sitemap
-Sitemap: https://fiammata-academy.vercel.app/sitemap.xml
+Sitemap: https://fiammata-academy-rg.vercel.app/sitemap.xml

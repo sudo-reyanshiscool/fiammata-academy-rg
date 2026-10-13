@@ -37,7 +37,7 @@ export default function Workshops() {
     "@graph": [
       {
         "@type": "EducationEvent",
-        "@id": "https://fiammata-academy.vercel.app/workshops#masterclass",
+        "@id": "https://fiammata-academy-rg.vercel.app/workshops#masterclass",
         "name": "Fiammata In-Person STEM Masterclass",
         "description": "An elite, hands-on masterclass covering enterprise portfolio scaling, project management, and aerodynamic car optimization.",
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
@@ -55,7 +55,7 @@ export default function Workshops() {
         "organizer": {
           "@type": "EducationalOrganization",
           "name": "Fiammata Academy",
-          "url": "https://fiammata-academy.vercel.app/"
+          "url": "https://fiammata-academy-rg.vercel.app/"
         },
         "offers": {
           "@type": "Offer",
@@ -72,7 +72,7 @@ export default function Workshops() {
       },
       {
         "@type": "EducationEvent",
-        "@id": "https://fiammata-academy.vercel.app/workshops#enterprise-basics",
+        "@id": "https://fiammata-academy-rg.vercel.app/workshops#enterprise-basics",
         "name": "Enterprise Portfolio Basics (Virtual Workshop)",
         "description": "Foundational workshop on structuring a high-scoring enterprise portfolio and pitching sponsors for STEM competitions.",
         "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
@@ -80,7 +80,7 @@ export default function Workshops() {
         "organizer": {
           "@type": "EducationalOrganization",
           "name": "Fiammata Academy",
-          "url": "https://fiammata-academy.vercel.app/"
+          "url": "https://fiammata-academy-rg.vercel.app/"
         },
         "offers": {
           "@type": "Offer",
