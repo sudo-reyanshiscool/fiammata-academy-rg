@@ -107,7 +107,7 @@ export default function Workshops() {
       <div className="max-w-[1140px] mx-auto w-full">
         {/* Header Section */}
         <div className="mb-12">
-          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-widest bg-primary/10 text-primary border border-primary/30 mb-4 shadow-[0_0_20px_rgba(230,0,126,0.2)]">
+          <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[11px] font-bold uppercase tracking-widest bg-primary/10 text-primary border border-primary/30 mb-4 shadow-[0_0_20px_rgba(237,109,5,0.2)]">
             <span className="material-symbols-outlined text-[15px]">event_upcoming</span>
             Hands-on Learning Sessions
           </span>
@@ -123,7 +123,7 @@ export default function Workshops() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
           
           {/* Main In-Person Workshop (Large Bento Tile, 2 cols) */}
-          <div className="bg-[#0c0c0e] rounded-2xl p-7 sm:p-9 border border-white/10 shadow-lg flex flex-col justify-between hover:border-primary/50 hover:shadow-[0_0_35px_rgba(230,0,126,0.2)] transition-all group relative overflow-hidden md:col-span-2">
+          <div className="bg-[#0c0c0e] rounded-2xl p-7 sm:p-9 border border-white/10 shadow-lg flex flex-col justify-between hover:border-primary/50 hover:shadow-[0_0_35px_rgba(237,109,5,0.2)] transition-all group relative overflow-hidden md:col-span-2">
             <div className="absolute top-0 right-0 w-80 h-80 bg-primary/10 rounded-bl-full pointer-events-none blur-2xl group-hover:bg-primary/20 transition-all duration-700" />
             
             <div className="relative z-10">
@@ -190,7 +190,7 @@ export default function Workshops() {
           </div>
 
           {/* Virtual Workshop (1 col) */}
-          <div className="bg-[#0c0c0e] rounded-2xl p-7 border border-white/10 shadow-lg flex flex-col justify-between hover:border-primary/50 hover:shadow-[0_0_30px_rgba(230,0,126,0.15)] transition-all group">
+          <div className="bg-[#0c0c0e] rounded-2xl p-7 border border-white/10 shadow-lg flex flex-col justify-between hover:border-primary/50 hover:shadow-[0_0_30px_rgba(237,109,5,0.15)] transition-all group">
             <div>
               <div className="flex items-center justify-between gap-2 mb-6">
                 <span className="inline-flex items-center px-2.5 py-1 rounded text-[10px] uppercase tracking-widest font-bold bg-white/5 text-white/80 border border-white/10 group-hover:bg-primary/10 group-hover:text-primary group-hover:border-primary/30 transition-colors">

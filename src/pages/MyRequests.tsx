@@ -60,7 +60,7 @@ export default function MyRequests() {
             <p className="text-white/50 mb-6 font-sans text-[13px]">Awaiting mentorship request initialization.</p>
             <Link 
               to="/find-a-mentor" 
-              className="inline-flex items-center justify-center bg-primary hover:bg-[#961B81] text-white font-bold text-[13px] px-8 h-12 rounded uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(230,0,126,0.3)] hover:shadow-[0_0_30px_rgba(230,0,126,0.5)]"
+              className="inline-flex items-center justify-center bg-primary hover:bg-primary/90 text-white font-bold text-[13px] px-8 h-12 rounded uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(237,109,5,0.3)] hover:shadow-[0_0_30px_rgba(237,109,5,0.5)]"
             >
               Initialize Request
             </Link>
@@ -136,22 +136,22 @@ export default function MyRequests() {
                         <div className="mt-8 mb-2">
                           <div className="flex items-center w-full max-w-sm">
                             <div className="flex flex-col items-center">
-                              <div className="w-3 h-3 rounded-full bg-[#E6007E] shadow-[0_0_10px_rgba(230,0,126,0.5)] z-10" />
-                              <span className="text-[9px] font-bold font-sans mt-2 text-[#E6007E] uppercase tracking-widest">Sent</span>
+                              <div className="w-3 h-3 rounded-full bg-[#ED6D05] shadow-[0_0_10px_rgba(237,109,5,0.5)] z-10" />
+                              <span className="text-[9px] font-bold font-sans mt-2 text-[#ED6D05] uppercase tracking-widest">Sent</span>
                             </div>
                             <div className="h-px flex-1 bg-white/10 relative -translate-y-3 mx-2">
-                              <div className={`absolute left-0 top-0 h-full transition-all duration-1000 ${req.status !== 'pending' ? 'w-full bg-[#E6007E]' : 'w-0'}`} />
+                              <div className={`absolute left-0 top-0 h-full transition-all duration-1000 ${req.status !== 'pending' ? 'w-full bg-[#ED6D05]' : 'w-0'}`} />
                             </div>
                             <div className="flex flex-col items-center">
-                              <div className={`w-3 h-3 rounded-full z-10 transition-colors duration-1000 ${req.status !== 'pending' ? 'bg-[#E6007E] shadow-[0_0_10px_rgba(230,0,126,0.5)]' : 'bg-[#000000] border border-white/20'}`} />
-                              <span className={`text-[9px] font-bold font-sans mt-2 uppercase tracking-widest ${req.status !== 'pending' ? 'text-[#E6007E]' : 'text-white/30'}`}>Review</span>
+                              <div className={`w-3 h-3 rounded-full z-10 transition-colors duration-1000 ${req.status !== 'pending' ? 'bg-[#ED6D05] shadow-[0_0_10px_rgba(237,109,5,0.5)]' : 'bg-[#000000] border border-white/20'}`} />
+                              <span className={`text-[9px] font-bold font-sans mt-2 uppercase tracking-widest ${req.status !== 'pending' ? 'text-[#ED6D05]' : 'text-white/30'}`}>Review</span>
                             </div>
                             <div className="h-px flex-1 bg-white/10 relative -translate-y-3 mx-2">
-                              <div className={`absolute left-0 top-0 h-full transition-all duration-1000 ${req.status === 'accepted' ? 'w-full bg-brand-green' : req.status === 'declined' ? 'w-full bg-[#E6007E]' : 'w-0'}`} />
+                              <div className={`absolute left-0 top-0 h-full transition-all duration-1000 ${req.status === 'accepted' ? 'w-full bg-brand-green' : req.status === 'declined' ? 'w-full bg-[#ED6D05]' : 'w-0'}`} />
                             </div>
                             <div className="flex flex-col items-center">
-                              <div className={`w-3 h-3 rounded-full z-10 transition-colors duration-1000 ${req.status === 'accepted' ? 'bg-brand-green shadow-[0_0_10px_rgba(0,138,63,0.5)]' : req.status === 'declined' ? 'bg-[#E6007E] shadow-[0_0_10px_rgba(230,0,126,0.5)]' : 'bg-[#000000] border border-white/20'}`} />
-                              <span className={`text-[9px] font-bold font-sans mt-2 uppercase tracking-widest ${req.status === 'accepted' ? 'text-brand-green' : req.status === 'declined' ? 'text-[#E6007E]' : 'text-white/30'}`}>
+                              <div className={`w-3 h-3 rounded-full z-10 transition-colors duration-1000 ${req.status === 'accepted' ? 'bg-brand-green shadow-[0_0_10px_rgba(0,138,63,0.5)]' : req.status === 'declined' ? 'bg-[#ED6D05] shadow-[0_0_10px_rgba(237,109,5,0.5)]' : 'bg-[#000000] border border-white/20'}`} />
+                              <span className={`text-[9px] font-bold font-sans mt-2 uppercase tracking-widest ${req.status === 'accepted' ? 'text-brand-green' : req.status === 'declined' ? 'text-[#ED6D05]' : 'text-white/30'}`}>
                                 {req.status === 'accepted' ? 'Accepted' : req.status === 'declined' ? 'Declined' : 'Decision'}
                               </span>
                             </div>

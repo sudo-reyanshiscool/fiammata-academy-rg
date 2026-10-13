@@ -41,12 +41,12 @@ export function ToastProvider({ children }: { children: ReactNode }) {
               exit={{ opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
               className={`pointer-events-auto flex items-center gap-3 px-5 py-3.5 rounded-xl border backdrop-blur-md shadow-2xl min-w-[250px]
                 ${toast.type === 'success' ? 'bg-[#0a0a0a]/90 border-[#008A3F]/30' : ''}
-                ${toast.type === 'error' ? 'bg-[#0a0a0a]/90 border-[#E6007E]/30' : ''}
+                ${toast.type === 'error' ? 'bg-[#0a0a0a]/90 border-[#ED6D05]/30' : ''}
                 ${toast.type === 'info' ? 'bg-[#0a0a0a]/90 border-white/10' : ''}
               `}
             >
               {toast.type === 'success' && <span className="material-symbols-outlined text-[#008A3F]">check_circle</span>}
-              {toast.type === 'error' && <span className="material-symbols-outlined text-[#E6007E]">error</span>}
+              {toast.type === 'error' && <span className="material-symbols-outlined text-[#ED6D05]">error</span>}
               {toast.type === 'info' && <span className="material-symbols-outlined text-white/50">info</span>}
               
               <span className="text-[13px] font-bold text-white tracking-wide">{toast.message}</span>

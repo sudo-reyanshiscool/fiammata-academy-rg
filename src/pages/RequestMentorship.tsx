@@ -124,7 +124,7 @@ export default function RequestMentorship() {
           <div className="flex items-center w-full bg-[#000000] p-4 border-b border-white/5">
             {[1, 2, 3].map((num) => (
               <div key={num} className="flex items-center flex-1 last:flex-none">
-                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-[12px] font-bold transition-all ${step >= num ? 'bg-primary text-white shadow-[0_0_15px_rgba(230,0,126,0.5)]' : 'bg-white/5 text-white/30 border border-white/10'}`}>
+                <div className={`w-8 h-8 rounded-full flex items-center justify-center text-[12px] font-bold transition-all ${step >= num ? 'bg-primary text-white shadow-[0_0_15px_rgba(237,109,5,0.5)]' : 'bg-white/5 text-white/30 border border-white/10'}`}>
                   {num}
                 </div>
                 {num < 3 && (
@@ -246,7 +246,7 @@ export default function RequestMentorship() {
             {/* Actions */}
             <div className="mt-8 pt-6 border-t border-white/5 flex justify-end">
               <MagneticButton>
-                <button type="submit" disabled={isSubmitting} className="inline-flex items-center gap-2 bg-primary hover:bg-[#961B81] text-white font-bold text-[13px] uppercase tracking-widest px-8 h-12 rounded transition-all shadow-[0_0_15px_rgba(230,0,126,0.3)] hover:shadow-[0_0_25px_rgba(230,0,126,0.5)] border border-primary disabled:opacity-50">
+                <button type="submit" disabled={isSubmitting} className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold text-[13px] uppercase tracking-widest px-8 h-12 rounded transition-all shadow-[0_0_15px_rgba(237,109,5,0.3)] hover:shadow-[0_0_25px_rgba(237,109,5,0.5)] border border-primary disabled:opacity-50">
                   {isSubmitting ? 'Transmitting...' : step === 3 ? 'Send Request' : 'Next Step'}
                   {!isSubmitting && <span className="material-symbols-outlined text-[18px]">{step === 3 ? 'send' : 'arrow_forward'}</span>}
                 </button>

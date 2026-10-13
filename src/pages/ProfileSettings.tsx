@@ -105,7 +105,7 @@ export default function ProfileSettings() {
         
         {/* Header Breadcrumb / Title */}
         <div className="mb-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest bg-primary/10 text-primary border border-primary/20 mb-3 shadow-[0_0_15px_rgba(230,0,126,0.2)]">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest bg-primary/10 text-primary border border-primary/20 mb-3 shadow-[0_0_15px_rgba(237,109,5,0.2)]">
             <span className="material-symbols-outlined text-[14px]">badge</span>
             Pilot / Racer Credentials
           </div>
@@ -124,7 +124,7 @@ export default function ProfileSettings() {
           <div className="flex flex-col gap-6">
             
             {/* Holographic Pit Pass Identity Card */}
-            <div className="bg-gradient-to-br from-[#121216] via-[#0c0c0e] to-[#08080a] rounded-3xl p-6 sm:p-7 border border-primary/30 shadow-[0_0_40px_rgba(230,0,126,0.15)] relative overflow-hidden group">
+            <div className="bg-gradient-to-br from-[#121216] via-[#0c0c0e] to-[#08080a] rounded-3xl p-6 sm:p-7 border border-primary/30 shadow-[0_0_40px_rgba(237,109,5,0.15)] relative overflow-hidden group">
               {/* Shimmer / Hologram Glare Effect */}
               <div className="absolute inset-0 -translate-x-[150%] bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-[-30deg] group-hover:animate-[glare_1.5s_ease-in-out_forwards] pointer-events-none" />
               <div className="absolute top-0 right-0 w-44 h-44 bg-primary/15 rounded-bl-full pointer-events-none blur-3xl" />

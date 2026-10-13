@@ -137,7 +137,7 @@ export default function Signup() {
           <button 
             type="submit" 
             disabled={loading || googleLoading}
-            className="w-full bg-primary hover:bg-[#961B81] text-white font-bold text-[15px] h-12 rounded-full transition-all shadow-sm active:scale-[0.98] disabled:opacity-70 flex items-center justify-center gap-2 mt-4"
+            className="w-full bg-primary hover:bg-primary/90 text-white font-bold text-[15px] h-12 rounded-full transition-all shadow-sm active:scale-[0.98] disabled:opacity-70 flex items-center justify-center gap-2 mt-4"
           >
             {loading ? 'Creating account...' : 'Create Account'}
           </button>

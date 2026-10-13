@@ -25,13 +25,13 @@ export default {
         "on-error-container": "#93000a",
         "surface-dim": "#dcd9d9",
         "tertiary": "#312783",
-        "primary-container": "#961B81",
+        "primary-container": "#312783",
         "on-secondary-fixed": "#410002",
         "on-background": "#1c1b1b",
-        "primary": "#E6007E",
+        "primary": "#ED6D05",
         "brand-green": "#008A3F",
         "brand-gold": "#FCBC00",
-        "primary-hover": "#961B81",
+        "primary-hover": "#312783",
         "primary-fixed-dim": "#ffb4aa",
         "secondary-fixed-dim": "#ffb4ab",
         "tertiary-container": "#bb554d",
@@ -55,9 +55,9 @@ export default {
         "inverse-on-surface": "#f3f0ef",
         "surface": "#FFFFFF",
         "tertiary-fixed-dim": "#ffb4ac",
-        "surface-tint": "#E6007E",
+        "surface-tint": "#ED6D05",
         "surface-container": "#F2ECE9",
-        "accent-tag": "#FBE6F1"
+        "accent-tag": "#FFF0DB"
       },
       borderRadius: {
         "DEFAULT": "0.375rem",
