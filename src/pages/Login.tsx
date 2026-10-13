@@ -90,7 +90,7 @@ export default function Login() {
           <button 
             type="submit" 
             disabled={loading || googleLoading}
-            className="w-full bg-primary hover:bg-[#9B0C23] text-white font-bold text-[15px] h-12 rounded-full transition-all shadow-sm active:scale-[0.98] disabled:opacity-70 flex items-center justify-center gap-2 mt-2"
+            className="w-full bg-primary hover:bg-[#961B81] text-white font-bold text-[15px] h-12 rounded-full transition-all shadow-sm active:scale-[0.98] disabled:opacity-70 flex items-center justify-center gap-2 mt-2"
           >
             {loading ? 'Logging in...' : 'Log In'}
           </button>

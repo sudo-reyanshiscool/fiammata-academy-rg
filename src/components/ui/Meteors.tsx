@@ -275,7 +275,7 @@ export const Meteors: React.FC<MeteorsProps> = ({
           } else if (ember.life > 0.3) {
             ctx.fillStyle = `rgba(255, 90, 20, ${alpha * 0.8})`;
           } else {
-            ctx.fillStyle = `rgba(200, 16, 46, ${alpha * 0.6})`;
+            ctx.fillStyle = `rgba(230, 0, 126, ${alpha * 0.6})`;
           }
           ctx.fill();
         }
@@ -297,7 +297,7 @@ export const Meteors: React.FC<MeteorsProps> = ({
 
         const outerGrad = ctx.createLinearGradient(headX, headY, tailTipX, tailTipY);
         outerGrad.addColorStop(0, 'rgba(255, 140, 40, 0.45)');
-        outerGrad.addColorStop(0.18, 'rgba(225, 6, 0, 0.32)');
+        outerGrad.addColorStop(0.18, 'rgba(230, 0, 126, 0.32)');
         outerGrad.addColorStop(0.55, 'rgba(180, 0, 25, 0.16)');
         outerGrad.addColorStop(1, 'rgba(120, 0, 15, 0)');
 
@@ -322,7 +322,7 @@ export const Meteors: React.FC<MeteorsProps> = ({
         plasmaGrad.addColorStop(0, 'rgba(255, 255, 240, 0.95)');
         plasmaGrad.addColorStop(0.08, 'rgba(255, 195, 60, 0.88)');
         plasmaGrad.addColorStop(0.26, 'rgba(255, 65, 0, 0.72)');
-        plasmaGrad.addColorStop(0.60, 'rgba(200, 16, 46, 0.42)');
+        plasmaGrad.addColorStop(0.60, 'rgba(230, 0, 126, 0.42)');
         plasmaGrad.addColorStop(1, 'rgba(140, 0, 20, 0)');
 
         const innerWHead = coreRadius * 1.3;
@@ -391,7 +391,7 @@ export const Meteors: React.FC<MeteorsProps> = ({
         const haloGrad = ctx.createRadialGradient(headX, headY, 0, headX, headY, glowRadius);
         haloGrad.addColorStop(0, 'rgba(255, 255, 255, 0.95)');
         haloGrad.addColorStop(0.12, 'rgba(255, 200, 70, 0.65)');
-        haloGrad.addColorStop(0.35, 'rgba(225, 6, 0, 0.35)');
+        haloGrad.addColorStop(0.35, 'rgba(230, 0, 126, 0.35)');
         haloGrad.addColorStop(0.75, 'rgba(160, 0, 25, 0.12)');
         haloGrad.addColorStop(1, 'rgba(0, 0, 0, 0)');
 

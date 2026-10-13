@@ -53,7 +53,7 @@ export const TelemetryBar: React.FC = () => {
           <SpotlightCard
             key={metric.code}
             className="p-4 sm:p-5 bg-[#0a0a0a]/90 backdrop-blur-md border-white/10 hover:border-primary/40 flex flex-col justify-between"
-            spotlightColor="rgba(200, 16, 46, 0.2)"
+            spotlightColor="rgba(230, 0, 126, 0.2)"
             spotlightSize={320}
           >
             <div className="flex items-center justify-between mb-3">

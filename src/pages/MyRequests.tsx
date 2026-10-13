@@ -60,7 +60,7 @@ export default function MyRequests() {
             <p className="text-white/50 mb-6 font-sans text-[13px]">Awaiting mentorship request initialization.</p>
             <Link 
               to="/find-a-mentor" 
-              className="inline-flex items-center justify-center bg-primary hover:bg-[#9B0C23] text-white font-bold text-[13px] px-8 h-12 rounded uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(217,56,45,0.3)] hover:shadow-[0_0_30px_rgba(217,56,45,0.5)]"
+              className="inline-flex items-center justify-center bg-primary hover:bg-[#961B81] text-white font-bold text-[13px] px-8 h-12 rounded uppercase tracking-widest transition-all shadow-[0_0_20px_rgba(230,0,126,0.3)] hover:shadow-[0_0_30px_rgba(230,0,126,0.5)]"
             >
               Initialize Request
             </Link>
@@ -77,14 +77,14 @@ export default function MyRequests() {
               
               switch (req.status) {
                 case 'pending':
-                  statusClasses = 'bg-amber-500/10 text-amber-500 border-amber-500/30';
+                  statusClasses = 'bg-brand-gold/10 text-brand-gold border-brand-gold/30';
                   statusLabel = 'AWAITING REVIEW';
-                  pulseColor = 'bg-amber-500';
+                  pulseColor = 'bg-brand-gold';
                   break;
                 case 'accepted':
-                  statusClasses = 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30';
+                  statusClasses = 'bg-brand-green/10 text-brand-green border-brand-green/30';
                   statusLabel = 'LINK ESTABLISHED';
-                  pulseColor = 'bg-emerald-400';
+                  pulseColor = 'bg-brand-green';
                   break;
                 case 'completed':
                   statusClasses = 'bg-white/5 text-white/50 border-white/10';
@@ -104,7 +104,7 @@ export default function MyRequests() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1 }}
                   key={req.id} 
-                  className={`bg-[#0a0a0a] rounded-xl p-5 sm:p-7 border transition-all hover:-translate-y-0.5 ${req.status === 'accepted' ? 'border-emerald-500/30 shadow-[0_0_30px_rgba(16,185,129,0.05)]' : 'border-white/10'}`}
+                  className={`bg-[#0a0a0a] rounded-xl p-5 sm:p-7 border transition-all hover:-translate-y-0.5 ${req.status === 'accepted' ? 'border-brand-green/30 shadow-[0_0_30px_rgba(0,138,63,0.05)]' : 'border-white/10'}`}
                 >
                   <div className="flex flex-col lg:flex-row justify-between gap-6">
                     <div className="flex items-start gap-5 min-w-0 flex-1">
@@ -113,7 +113,7 @@ export default function MyRequests() {
                           {mentor.name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase()}
                         </div>
                         {req.status === 'accepted' && (
-                          <div className="absolute -inset-1 border border-emerald-500/50 rounded-xl animate-pulse" />
+                          <div className="absolute -inset-1 border border-brand-green/50 rounded-xl animate-pulse" />
                         )}
                       </div>
                       <div className="flex flex-col min-w-0 flex-1">
@@ -136,22 +136,22 @@ export default function MyRequests() {
                         <div className="mt-8 mb-2">
                           <div className="flex items-center w-full max-w-sm">
                             <div className="flex flex-col items-center">
-                              <div className="w-3 h-3 rounded-full bg-[#C8102E] shadow-[0_0_10px_rgba(200,16,46,0.5)] z-10" />
-                              <span className="text-[9px] font-bold font-sans mt-2 text-[#C8102E] uppercase tracking-widest">Sent</span>
+                              <div className="w-3 h-3 rounded-full bg-[#E6007E] shadow-[0_0_10px_rgba(230,0,126,0.5)] z-10" />
+                              <span className="text-[9px] font-bold font-sans mt-2 text-[#E6007E] uppercase tracking-widest">Sent</span>
                             </div>
                             <div className="h-px flex-1 bg-white/10 relative -translate-y-3 mx-2">
-                              <div className={`absolute left-0 top-0 h-full transition-all duration-1000 ${req.status !== 'pending' ? 'w-full bg-[#C8102E]' : 'w-0'}`} />
+                              <div className={`absolute left-0 top-0 h-full transition-all duration-1000 ${req.status !== 'pending' ? 'w-full bg-[#E6007E]' : 'w-0'}`} />
                             </div>
                             <div className="flex flex-col items-center">
-                              <div className={`w-3 h-3 rounded-full z-10 transition-colors duration-1000 ${req.status !== 'pending' ? 'bg-[#C8102E] shadow-[0_0_10px_rgba(200,16,46,0.5)]' : 'bg-[#000000] border border-white/20'}`} />
-                              <span className={`text-[9px] font-bold font-sans mt-2 uppercase tracking-widest ${req.status !== 'pending' ? 'text-[#C8102E]' : 'text-white/30'}`}>Review</span>
+                              <div className={`w-3 h-3 rounded-full z-10 transition-colors duration-1000 ${req.status !== 'pending' ? 'bg-[#E6007E] shadow-[0_0_10px_rgba(230,0,126,0.5)]' : 'bg-[#000000] border border-white/20'}`} />
+                              <span className={`text-[9px] font-bold font-sans mt-2 uppercase tracking-widest ${req.status !== 'pending' ? 'text-[#E6007E]' : 'text-white/30'}`}>Review</span>
                             </div>
                             <div className="h-px flex-1 bg-white/10 relative -translate-y-3 mx-2">
-                              <div className={`absolute left-0 top-0 h-full transition-all duration-1000 ${req.status === 'accepted' ? 'w-full bg-emerald-500' : req.status === 'declined' ? 'w-full bg-[#C8102E]' : 'w-0'}`} />
+                              <div className={`absolute left-0 top-0 h-full transition-all duration-1000 ${req.status === 'accepted' ? 'w-full bg-brand-green' : req.status === 'declined' ? 'w-full bg-[#E6007E]' : 'w-0'}`} />
                             </div>
                             <div className="flex flex-col items-center">
-                              <div className={`w-3 h-3 rounded-full z-10 transition-colors duration-1000 ${req.status === 'accepted' ? 'bg-emerald-500 shadow-[0_0_10px_rgba(16,185,129,0.5)]' : req.status === 'declined' ? 'bg-[#C8102E] shadow-[0_0_10px_rgba(200,16,46,0.5)]' : 'bg-[#000000] border border-white/20'}`} />
-                              <span className={`text-[9px] font-bold font-sans mt-2 uppercase tracking-widest ${req.status === 'accepted' ? 'text-emerald-500' : req.status === 'declined' ? 'text-[#C8102E]' : 'text-white/30'}`}>
+                              <div className={`w-3 h-3 rounded-full z-10 transition-colors duration-1000 ${req.status === 'accepted' ? 'bg-brand-green shadow-[0_0_10px_rgba(0,138,63,0.5)]' : req.status === 'declined' ? 'bg-[#E6007E] shadow-[0_0_10px_rgba(230,0,126,0.5)]' : 'bg-[#000000] border border-white/20'}`} />
+                              <span className={`text-[9px] font-bold font-sans mt-2 uppercase tracking-widest ${req.status === 'accepted' ? 'text-brand-green' : req.status === 'declined' ? 'text-[#E6007E]' : 'text-white/30'}`}>
                                 {req.status === 'accepted' ? 'Accepted' : req.status === 'declined' ? 'Declined' : 'Decision'}
                               </span>
                             </div>
@@ -164,7 +164,7 @@ export default function MyRequests() {
                       {req.status === 'accepted' ? (
                         <button 
                           onClick={() => setActiveComm({ req, mentor })}
-                          className="w-full lg:w-auto inline-flex items-center justify-center gap-2 font-bold text-[12px] uppercase tracking-widest px-6 h-10 rounded bg-emerald-500 text-[#000000] hover:bg-emerald-400 transition-all shadow-[0_0_15px_rgba(16,185,129,0.3)]"
+                          className="w-full lg:w-auto inline-flex items-center justify-center gap-2 font-bold text-[12px] uppercase tracking-widest px-6 h-10 rounded bg-brand-green text-[#000000] hover:bg-brand-green transition-all shadow-[0_0_15px_rgba(0,138,63,0.3)]"
                         >
                           <span className="material-symbols-outlined text-[16px]">terminal</span>
                           Open Comm Link
@@ -200,17 +200,17 @@ export default function MyRequests() {
               initial={{ scale: 0.95, y: 20 }}
               animate={{ scale: 1, y: 0 }}
               exit={{ scale: 0.95, y: 20 }}
-              className="w-full max-w-md bg-[#0a0a0a] rounded-2xl border border-emerald-500/30 overflow-hidden shadow-[0_0_50px_rgba(16,185,129,0.15)]"
+              className="w-full max-w-md bg-[#0a0a0a] rounded-2xl border border-brand-green/30 overflow-hidden shadow-[0_0_50px_rgba(0,138,63,0.15)]"
             >
-              <div className="bg-emerald-500/10 p-6 flex flex-col items-center border-b border-emerald-500/20 text-center relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-1 bg-emerald-500" />
-                <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-4 shadow-[0_0_30px_rgba(16,185,129,0.3)]">
+              <div className="bg-brand-green/10 p-6 flex flex-col items-center border-b border-brand-green/20 text-center relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1 bg-brand-green" />
+                <div className="w-16 h-16 rounded-full bg-brand-green/20 text-brand-green flex items-center justify-center mb-4 shadow-[0_0_30px_rgba(0,138,63,0.3)]">
                   <span className="material-symbols-outlined text-[32px]">satellite_alt</span>
                 </div>
                 <h3 className="font-display-hero text-2xl font-extrabold text-white uppercase tracking-tight mb-1">
                   Secure Link Established
                 </h3>
-                <p className="text-[13px] text-emerald-400/80 uppercase tracking-widest font-bold">
+                <p className="text-[13px] text-brand-green/80 uppercase tracking-widest font-bold">
                   Connection Active
                 </p>
               </div>
@@ -233,8 +233,8 @@ export default function MyRequests() {
                   
                   <div className="h-px w-full bg-white/10" />
                   
-                  <a href={`https://wa.me/${activeComm.mentor.phone || '919999999999'}?text=Hi%20${activeComm.mentor.name.split(' ')[0]}!%20I'm%20reaching%20out%20from%20the%20Fiammata%20Mentorship%20Network.`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-emerald-400 hover:text-emerald-300 transition-colors group">
-                    <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center group-hover:bg-emerald-500/20 transition-colors">
+                  <a href={`https://wa.me/${activeComm.mentor.phone || '919999999999'}?text=Hi%20${activeComm.mentor.name.split(' ')[0]}!%20I'm%20reaching%20out%20from%20the%20Fiammata%20Mentorship%20Network.`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-brand-green hover:text-brand-green transition-colors group">
+                    <div className="w-8 h-8 rounded-full bg-brand-green/10 flex items-center justify-center group-hover:bg-brand-green/20 transition-colors">
                       <span className="material-symbols-outlined text-[16px]">chat</span>
                     </div>
                     <div className="flex flex-col">

@@ -65,7 +65,7 @@ export default function Signup() {
   if (success) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[70vh] px-4 w-full text-center">
-        <div className="w-16 h-16 rounded-full bg-[#E8F5E9] text-[#2E7D32] flex items-center justify-center mb-6 shadow-sm border-4 border-white/5">
+        <div className="w-16 h-16 rounded-full bg-[#E6F3EA] text-[#008A3F] flex items-center justify-center mb-6 shadow-sm border-4 border-white/5">
           <span className="material-symbols-outlined text-[32px]">check_circle</span>
         </div>
         <h1 className="text-2xl font-extrabold text-white tracking-tight mb-2">Check your email</h1>
@@ -137,7 +137,7 @@ export default function Signup() {
           <button 
             type="submit" 
             disabled={loading || googleLoading}
-            className="w-full bg-primary hover:bg-[#9B0C23] text-white font-bold text-[15px] h-12 rounded-full transition-all shadow-sm active:scale-[0.98] disabled:opacity-70 flex items-center justify-center gap-2 mt-4"
+            className="w-full bg-primary hover:bg-[#961B81] text-white font-bold text-[15px] h-12 rounded-full transition-all shadow-sm active:scale-[0.98] disabled:opacity-70 flex items-center justify-center gap-2 mt-4"
           >
             {loading ? 'Creating account...' : 'Create Account'}
           </button>

@@ -48,7 +48,7 @@ export default function Onboarding() {
   return (
     <div className="academy-onboarding fixed inset-0 z-[100] bg-[#000000] text-white flex flex-col justify-center items-center overflow-hidden cursor-auto">
       {/* Background FX */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#C8102E]/20 via-black to-black pointer-events-none opacity-50" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#E6007E]/20 via-black to-black pointer-events-none opacity-50" />
       <motion.div
         animate={{ 
           backgroundPosition: ['0% 0%', '100% 100%'],
@@ -77,15 +77,15 @@ export default function Onboarding() {
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
             className="flex flex-col items-center"
           >
-            <div className="w-14 h-14 rounded-full bg-[#C8102E]/10 border border-[#C8102E]/30 flex items-center justify-center mb-6">
-              <span className="material-symbols-outlined text-[28px] text-[#ff73ba]">{slides[current].icon}</span>
+            <div className="w-14 h-14 rounded-full bg-[#E6007E]/10 border border-[#E6007E]/30 flex items-center justify-center mb-6">
+              <span className="material-symbols-outlined text-[28px] text-[#E6007E]">{slides[current].icon}</span>
             </div>
             
             <motion.span 
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="px-3 py-1 text-[12px] font-semibold text-[#ff73ba] mb-4"
+              className="px-3 py-1 text-[12px] font-semibold text-[#E6007E] mb-4"
             >
               {slides[current].subtitle}
             </motion.span>
@@ -115,7 +115,7 @@ export default function Onboarding() {
             {slides.map((_, i) => (
               <motion.div
                 key={i}
-                className={`h-1 rounded-full transition-all duration-500 ${current === i ? 'w-10 bg-[#C8102E] shadow-[0_0_10px_rgba(200,16,46,0.8)]' : 'w-4 bg-white/20'}`}
+                className={`h-1 rounded-full transition-all duration-500 ${current === i ? 'w-10 bg-[#E6007E] shadow-[0_0_10px_rgba(230,0,126,0.8)]' : 'w-4 bg-white/20'}`}
               />
             ))}
           </div>

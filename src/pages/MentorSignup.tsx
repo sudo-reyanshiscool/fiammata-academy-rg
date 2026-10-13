@@ -60,7 +60,7 @@ export default function MentorSignup() {
   if (success) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[70vh] px-4 w-full text-center">
-        <div className="w-16 h-16 rounded-full bg-[#E8F5E9] text-[#2E7D32] flex items-center justify-center mb-6 shadow-sm border-4 border-white/5">
+        <div className="w-16 h-16 rounded-full bg-[#E6F3EA] text-[#008A3F] flex items-center justify-center mb-6 shadow-sm border-4 border-white/5">
           <span className="material-symbols-outlined text-[32px]">check_circle</span>
         </div>
         <h1 className="text-2xl font-extrabold text-white tracking-tight mb-2 uppercase font-display-hero">Authorization Granted</h1>
@@ -76,7 +76,7 @@ export default function MentorSignup() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-[70vh] px-4 w-full py-10">
-      <div className="w-full max-w-md bg-[#0a0a0a] p-8 rounded-3xl border border-primary/20 shadow-[0_0_50px_rgba(200,16,46,0.1)] relative overflow-hidden">
+      <div className="w-full max-w-md bg-[#0a0a0a] p-8 rounded-3xl border border-primary/20 shadow-[0_0_50px_rgba(230,0,126,0.1)] relative overflow-hidden">
         
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
 
@@ -117,7 +117,7 @@ export default function MentorSignup() {
           <button 
             type="submit" 
             disabled={loading}
-            className="w-full bg-primary hover:bg-[#9B0C23] text-white font-bold text-[13px] uppercase tracking-widest h-12 rounded transition-all shadow-[0_0_15px_rgba(200,16,46,0.3)] hover:shadow-[0_0_25px_rgba(200,16,46,0.5)] border border-primary disabled:opacity-50 mt-4 flex items-center justify-center gap-2"
+            className="w-full bg-primary hover:bg-[#961B81] text-white font-bold text-[13px] uppercase tracking-widest h-12 rounded transition-all shadow-[0_0_15px_rgba(230,0,126,0.3)] hover:shadow-[0_0_25px_rgba(230,0,126,0.5)] border border-primary disabled:opacity-50 mt-4 flex items-center justify-center gap-2"
           >
             {loading ? 'Verifying...' : 'Establish Access'}
           </button>

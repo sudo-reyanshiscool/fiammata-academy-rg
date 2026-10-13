@@ -29,7 +29,7 @@ export default function AskExpert() {
   return (
     <div className="flex-1 flex flex-col w-full bg-[#000000] min-h-screen text-white pt-16 pb-20 px-6 sm:px-8">
       <div className="max-w-[800px] mx-auto w-full">
-        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest bg-primary/10 text-primary border border-primary/20 mb-4 shadow-[0_0_15px_rgba(200,16,46,0.2)]">
+        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold uppercase tracking-widest bg-primary/10 text-primary border border-primary/20 mb-4 shadow-[0_0_15px_rgba(230,0,126,0.2)]">
           <span className="material-symbols-outlined text-[14px]">forum</span>
           Direct Line
         </span>
@@ -68,7 +68,7 @@ export default function AskExpert() {
                 className="w-full bg-[#000000] text-[14px] p-4 rounded border border-white/10 text-white placeholder:text-white/30 outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all shadow-inner font-sans"
               ></textarea>
             </div>
-            <button type="submit" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary hover:bg-[#9B0C23] text-white font-bold text-[14px] uppercase tracking-widest px-10 h-14 rounded transition-all shadow-[0_0_20px_rgba(200,16,46,0.4)] hover:shadow-[0_0_40px_rgba(200,16,46,0.6)] hover:-translate-y-1">
+            <button type="submit" className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary hover:bg-[#961B81] text-white font-bold text-[14px] uppercase tracking-widest px-10 h-14 rounded transition-all shadow-[0_0_20px_rgba(230,0,126,0.4)] hover:shadow-[0_0_40px_rgba(230,0,126,0.6)] hover:-translate-y-1">
               <span className="material-symbols-outlined text-[18px]">send</span>
               Submit Telemetry
             </button>

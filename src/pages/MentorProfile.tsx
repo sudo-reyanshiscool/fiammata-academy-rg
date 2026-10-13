@@ -57,7 +57,7 @@ export default function MentorProfile() {
 
           <Link 
             to={`/request/${mentor.id}`} 
-            className="w-full sm:w-auto inline-flex items-center justify-center bg-primary hover:bg-primary-hover text-white font-bold text-[15px] px-10 h-12 rounded-full transition-all shadow-[0_4px_16px_rgba(224,43,32,0.3)] active:scale-[0.98]"
+            className="w-full sm:w-auto inline-flex items-center justify-center bg-primary hover:bg-primary-hover text-white font-bold text-[15px] px-10 h-12 rounded-full transition-all shadow-[0_4px_16px_rgba(230,0,126,0.3)] active:scale-[0.98]"
           >
             Request Mentor
           </Link>

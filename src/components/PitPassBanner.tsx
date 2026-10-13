@@ -18,7 +18,7 @@ export default function PitPassBanner() {
         initial={{ height: 0, opacity: 0 }}
         animate={{ height: 'auto', opacity: 1 }}
         exit={{ height: 0, opacity: 0 }}
-        className="w-full bg-gradient-to-r from-[#C8102E]/20 via-[#1a0507] to-[#0a0a0a] border-b border-primary/30 px-4 py-3 relative z-30"
+        className="w-full bg-gradient-to-r from-[#E6007E]/20 via-[#1a0507] to-[#0a0a0a] border-b border-primary/30 px-4 py-3 relative z-30"
       >
         <div className="max-w-[1280px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
           <div className="flex items-center gap-3">
@@ -38,7 +38,7 @@ export default function PitPassBanner() {
           <div className="flex items-center gap-2 shrink-0">
             <Link
               to="/profile"
-              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-primary hover:bg-primary/90 text-white font-extrabold text-[11px] uppercase tracking-wider transition-all shadow-[0_0_15px_rgba(200,16,46,0.3)] btn-spring"
+              className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-lg bg-primary hover:bg-primary/90 text-white font-extrabold text-[11px] uppercase tracking-wider transition-all shadow-[0_0_15px_rgba(230,0,126,0.3)] btn-spring"
             >
               <span>Setup in 15s</span>
               <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
